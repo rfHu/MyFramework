@@ -1,14 +1,23 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
-public class GenerateUnityPackageName {
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
-    [MenuItem("RHFramework/1.自动生成package名字")]
-    public static void MenuClicked()
+namespace RHFramework
+{
+
+    public class GenerateUnityPackageName
     {
-        Debug.Log("RHFramework_" + DateTime.Now.ToString("yyyyMMdd_HH"));
+
+#if UNITY_EDITOR
+        [MenuItem("RHFramework/1.自动生成package名字")]
+#endif
+
+        public static void MenuClicked()
+        {
+            Debug.Log("RHFramework_" + DateTime.Now.ToString("yyyyMMdd_HH"));
+        }
     }
 }
