@@ -67,6 +67,7 @@
     <Compile Include="Assets\RHFramework\4.导出 UnityPackage\ExportUnityPackage.cs" />
     <Compile Include="Assets\RHFramework\5.打开文件夹\OpenInFolder.cs" />
     <Compile Include="Assets\RHFramework\6.复用 MenuItem\ReuseMenuItem.cs" />
+    <Compile Include="Assets\RHFramework\7.自定义快捷键 %e\CustomShortCut.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>E:/STClone/MyFramework/MyFrameWork/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
