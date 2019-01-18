@@ -64,6 +64,7 @@
     <Compile Include="Assets\RHFramework\1.自动生成包名\GenerateUnityPackageName.cs" />
     <Compile Include="Assets\RHFramework\2.复制文本到剪切板\CopyText2Clipboard.cs" />
     <Compile Include="Assets\RHFramework\3.生成包名并复制到剪切板\GeneratorUnityPackageName2Clipboard.cs" />
+    <Compile Include="Assets\RHFramework\4.导出 UnityPackage\ExportUnityPackage.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>E:/STClone/MyFramework/MyFrameWork/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
