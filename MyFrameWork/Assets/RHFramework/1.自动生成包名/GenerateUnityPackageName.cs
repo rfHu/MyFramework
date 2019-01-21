@@ -15,7 +15,7 @@ namespace RHFramework
         [MenuItem("RHFramework/1.自动生成package名字")]
 #endif
 
-        public static void MenuClicked()
+        private static void MenuClicked()
         {
             Debug.Log("RHFramework_" + DateTime.Now.ToString("yyyyMMdd_HH"));
         }
