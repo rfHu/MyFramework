@@ -69,6 +69,7 @@
     <Compile Include="Assets\RHFramework\6.复用 MenuItem\ReuseMenuItem.cs" />
     <Compile Include="Assets\RHFramework\7.自定义快捷键 %e\CustomShortCut.cs" />
     <Compile Include="Assets\RHFramework\8.总结之前的方法\PreviousFunction.cs" />
+    <Compile Include="Assets\RHFramework\9_\ResolutionCheck.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>E:/STClone/MyFramework/MyFrameWork/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
