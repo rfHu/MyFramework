@@ -64,6 +64,8 @@
     <Compile Include="Assets\RHFramework\1.自动生成包名\GenerateUnityPackageName.cs" />
     <Compile Include="Assets\RHFramework\10.transform 位置赋值\TransformLocalPosSimplify.cs" />
     <Compile Include="Assets\RHFramework\11.transform 重置\TransformIdentity.cs" />
+    <Compile Include="Assets\RHFramework\12.概率函数\PercentFunction.cs" />
+    <Compile Include="Assets\RHFramework\13.GameObject显示隐藏\GameObjectActiveImprovments.cs" />
     <Compile Include="Assets\RHFramework\2.复制文本到剪切板\CopyText2Clipboard.cs" />
     <Compile Include="Assets\RHFramework\3.生成包名并复制到剪切板\GeneratorUnityPackageName2Clipboard.cs" />
     <Compile Include="Assets\RHFramework\4.导出 UnityPackage\ExportUnityPackage.cs" />
