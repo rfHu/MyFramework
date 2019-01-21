@@ -61,19 +61,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\RHFramework\1.自动生成包名\GenerateUnityPackageName.cs" />
-    <Compile Include="Assets\RHFramework\10.transform 位置赋值\TransformLocalPosSimplify.cs" />
-    <Compile Include="Assets\RHFramework\11.transform 重置\TransformIdentity.cs" />
-    <Compile Include="Assets\RHFramework\12.概率函数\PercentFunction.cs" />
-    <Compile Include="Assets\RHFramework\13.GameObject显示隐藏\GameObjectActiveImprovments.cs" />
-    <Compile Include="Assets\RHFramework\2.复制文本到剪切板\CopyText2Clipboard.cs" />
-    <Compile Include="Assets\RHFramework\3.生成包名并复制到剪切板\GeneratorUnityPackageName2Clipboard.cs" />
-    <Compile Include="Assets\RHFramework\4.导出 UnityPackage\ExportUnityPackage.cs" />
-    <Compile Include="Assets\RHFramework\5.打开文件夹\OpenInFolder.cs" />
-    <Compile Include="Assets\RHFramework\6.复用 MenuItem\ReuseMenuItem.cs" />
-    <Compile Include="Assets\RHFramework\7.自定义快捷键 %e\CustomShortCut.cs" />
-    <Compile Include="Assets\RHFramework\8.总结之前的方法\PreviousFunction.cs" />
-    <Compile Include="Assets\RHFramework\9.屏幕宽高比判断\ResolutionCheck.cs" />
+    <Compile Include="Assets\RHFramework\1.导出UnityPackage %e\Exporter.cs" />
+    <Compile Include="Assets\RHFramework\2.复制文件到剪切板\CommonUtil.cs" />
+    <Compile Include="Assets\RHFramework\3.MenuItem复用\EditorUtil.cs" />
+    <Compile Include="Assets\RHFramework\4.屏幕宽高比判断\ResolutionCheck.cs" />
+    <Compile Include="Assets\RHFramework\5.transform 位置赋值简化\TransformSimplify.cs" />
+    <Compile Include="Assets\RHFramework\6.概率函数\MathUtil.cs" />
+    <Compile Include="Assets\RHFramework\7.GameObject显示隐藏\GameObjectSimplify.cs" />
+    <Compile Include="Assets\RHFramework\8.Partial 关键字\PartialKeyWord.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>E:/STClone/MyFramework/MyFrameWork/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
