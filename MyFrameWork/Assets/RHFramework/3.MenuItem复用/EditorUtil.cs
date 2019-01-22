@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace RHFramework
 {
-    public class EditorUtil
+    public partial class EditorUtil
     {
 
         public static void OpenInForder(string folderPath)
@@ -27,6 +27,8 @@ namespace RHFramework
         {
             EditorApplication.ExecuteMenuItem(menuName);
         }
+
+
 
         [MenuItem("RHFramework/3.复用 MenuItem", false , 3)]
         private static void MenuClicked6()

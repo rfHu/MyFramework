@@ -6,7 +6,7 @@ using UnityEditor;
 
 namespace RHFramework
 {
-    public class MathUtil
+    public partial class MathUtil
     {
         public static bool Percent(int percent)
         {

@@ -7,7 +7,7 @@ using UnityEditor;
 
 namespace RHFramework
 {
-    public class ResolutionCheck
+    public partial class ResolutionCheck
     {
         public static float GetAspectRatio()
         {

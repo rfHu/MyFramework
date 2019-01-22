@@ -6,7 +6,7 @@ namespace RHFramework
 {
     public class Exporter
     {
-        public static string GeneratePackageName()
+        private static string GeneratePackageName()
         {
             return "RHFramework_" + DateTime.Now.ToString("yyyyMMdd_HH");
         }

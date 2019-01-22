@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class CommomUtil
+public partial class CommomUtil
 {
     public static void CopyText(string text)
     {
