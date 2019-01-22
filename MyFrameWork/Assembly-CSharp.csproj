@@ -63,6 +63,8 @@
   <ItemGroup>
     <Compile Include="Assets\RHFramework\1.导出UnityPackage %e\Exporter.cs" />
     <Compile Include="Assets\RHFramework\10.MonoBehaviour 简化\MonoBehaviourSimplify.cs" />
+    <Compile Include="Assets\RHFramework\11.计时功能\DelayWithDelayCoroutine.cs" />
+    <Compile Include="Assets\RHFramework\12.简单消息机制\MsgDispatcher.cs" />
     <Compile Include="Assets\RHFramework\2.复制文件到剪切板\CommonUtil.cs" />
     <Compile Include="Assets\RHFramework\3.MenuItem复用\EditorUtil.cs" />
     <Compile Include="Assets\RHFramework\4.屏幕宽高比判断\ResolutionCheck.cs" />
