@@ -28,8 +28,7 @@ namespace RHFramework
     public class PartialKeyWord
     {
 #if UNITY_EDITOR
-        [UnityEditor.MenuItem("RHFramework/8.partial 关键字", false, 9)]
-#endif
+        [UnityEditor.MenuItem("RHFramework/8.partial 关键字", false, 8)]
         private static void MenuClicked()
         {
             var parentTrans = new GameObject("Parent").transform;
@@ -38,5 +37,6 @@ namespace RHFramework
             TransformSimplify.AddChild(parentTrans, childTrans);
             GameObjectSimplify.Hide(childTrans);
         }
+#endif
     }
 }

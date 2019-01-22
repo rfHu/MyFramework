@@ -60,7 +60,7 @@ namespace RHFramework
         /// Transform重置
         /// </summary>
         /// <param name="transform"></param>
-        private static void Identity(Transform transform)
+        public static void Identity(Transform transform)
         {
             transform.localPosition = Vector3.zero;
             transform.localRotation = Quaternion.identity;
