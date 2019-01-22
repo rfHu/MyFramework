@@ -20,7 +20,7 @@ namespace RHFramework
         }
     }
 
-    public class Hide : NewBehaviourSimplify
+    public class Hide : MonoBehaviourSimplify
     {
         private void Awake()
         {
