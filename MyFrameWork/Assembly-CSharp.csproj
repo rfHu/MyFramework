@@ -69,6 +69,7 @@
     <Compile Include="Assets\RHFramework\6.概率函数\MathUtil.cs" />
     <Compile Include="Assets\RHFramework\7.GameObject显示隐藏\GameObjectSimplify.cs" />
     <Compile Include="Assets\RHFramework\8.Partial 关键字\PartialKeyWord.cs" />
+    <Compile Include="Assets\RHFramework\9.从容器中取出随机值\MathUtil.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>E:/STClone/MyFramework/MyFrameWork/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
