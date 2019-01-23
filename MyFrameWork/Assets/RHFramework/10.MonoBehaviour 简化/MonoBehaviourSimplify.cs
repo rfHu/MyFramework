@@ -27,6 +27,11 @@ namespace RHFramework
             Hide();
         }
 
+        protected override void OnBeforeDestroy()
+        {
+            throw new System.NotImplementedException();
+        }
+
 #if UNITY_EDITOR
         [UnityEditor.MenuItem("RHFramework/10.Monobehaivor 简化", false, 10)]
         private static void MenuClicked()

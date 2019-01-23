@@ -185,6 +185,10 @@
 -define:UNITY_TEAM_LICENSE
 -define:ENABLE_VSTU
 "Assets/RHFramework/1.导出UnityPackage %e/Exporter.cs"
+"Assets/RHFramework/10.MonoBehaviour 简化/MonoBehaviourSimplify.cs"
+"Assets/RHFramework/11.计时功能/DelayWithDelayCoroutine.cs"
+"Assets/RHFramework/12.简单消息机制/MsgDispatcher.cs"
+"Assets/RHFramework/13.集成消息机制到MomobihaviorSimplify/B.cs"
 "Assets/RHFramework/2.复制文件到剪切板/CommonUtil.cs"
 "Assets/RHFramework/3.MenuItem复用/EditorUtil.cs"
 "Assets/RHFramework/4.屏幕宽高比判断/ResolutionCheck.cs"
@@ -192,4 +196,4 @@
 "Assets/RHFramework/6.概率函数/MathUtil.cs"
 "Assets/RHFramework/7.GameObject显示隐藏/GameObjectSimplify.cs"
 "Assets/RHFramework/8.Partial 关键字/PartialKeyWord.cs"
-Assets/RHFramework/9_/NewBehaviourScript.cs
+"Assets/RHFramework/9.从容器中取出随机值/MathUtil.cs"

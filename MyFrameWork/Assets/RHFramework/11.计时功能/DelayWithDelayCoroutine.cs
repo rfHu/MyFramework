@@ -38,6 +38,10 @@ namespace RHFramework
             var gameObj = new GameObject("GO");
             gameObj.AddComponent<DelayWithCoroutine>();
         }
+
+        protected override void OnBeforeDestroy()
+        {
+        }
 #endif
     }
 }

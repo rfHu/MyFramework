@@ -188,6 +188,7 @@
 "Assets/RHFramework/10.MonoBehaviour 简化/MonoBehaviourSimplify.cs"
 "Assets/RHFramework/11.计时功能/DelayWithDelayCoroutine.cs"
 "Assets/RHFramework/12.简单消息机制/MsgDispatcher.cs"
+"Assets/RHFramework/13.集成消息机制到MomobihaviorSimplify/B.cs"
 "Assets/RHFramework/2.复制文件到剪切板/CommonUtil.cs"
 "Assets/RHFramework/3.MenuItem复用/EditorUtil.cs"
 "Assets/RHFramework/4.屏幕宽高比判断/ResolutionCheck.cs"
