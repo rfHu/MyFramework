@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Knowledges\Texture读取制作\NewBehaviourScript.cs" />
     <Compile Include="Assets\RHFramework\1.导出UnityPackage %e\Exporter.cs" />
     <Compile Include="Assets\RHFramework\10.MonoBehaviour 简化\MonoBehaviourSimplify.cs" />
     <Compile Include="Assets\RHFramework\11.计时功能\DelayWithDelayCoroutine.cs" />
