@@ -10,6 +10,7 @@ namespace RHFramework
 
         List<MsgRecord> mMsgRecorder = new List<MsgRecord>();
 
+
         private class MsgRecord
         {
             private MsgRecord() { }
@@ -28,8 +29,9 @@ namespace RHFramework
                 retMsgRecord.Name = msgName;
                 retMsgRecord.OnMsgReceived = onMsgReceived;
 
-                return new MsgRecord();
+                return retMsgRecord;
             }
+
 
             public void Recycle()
             {
@@ -39,20 +41,11 @@ namespace RHFramework
             }
         }
         
-        public void RegisterMsg(string msgName, Action<object> onMsgReceived)
+        protected void RegisterMsg(string msgName, Action<object> onMsgReceived)
         {
             MsgDispatcher.Register(msgName, onMsgReceived);
-
-            //var msgRecord = MsgRecord.Allocate();
-
-            //msgRecord.Name = msgName;
-            //msgRecord.OnMsgReceived = onMsgReceived;
-
-            //mMsgRecorder.Add(msgRecord);
-
             mMsgRecorder.Add(MsgRecord.Allocate(msgName, onMsgReceived));
         }
-
 
         private void OnDestroy()
         {
@@ -61,7 +54,6 @@ namespace RHFramework
             foreach (var msgRecord in mMsgRecorder)
             {
                 MsgDispatcher.UnRegister(msgRecord.Name, msgRecord.OnMsgReceived);
-
                 msgRecord.Recycle();
             }
 
