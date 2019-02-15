@@ -87,6 +87,7 @@
     <Compile Include="Assets\RHFramework\Framework\Util\MathUtil.cs" />
     <Compile Include="Assets\RHFramework\Framework\Util\MsgDispatcher.cs" />
     <Compile Include="Assets\RHFramework\Framework\Util\ResolutionCheck.cs" />
+    <Compile Include="Assets\RHFramework\Framework\Util\SimpleObjectPool.cs" />
     <Compile Include="Assets\RHFramework\Framework\Util\TransformSimplify.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>E:/STClone/MyFramework/MyFrameWork/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
