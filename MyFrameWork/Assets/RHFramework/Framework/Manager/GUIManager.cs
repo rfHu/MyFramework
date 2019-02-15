@@ -1,27 +1,87 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace RHFramework
 {
-    public class GUIManager 
+    public enum UILayer
     {
-        public static void LoadPanel(string panelName)
+        Bg,
+        Common,
+        Top
+    }
+
+    public class GUIManager : MonoBehaviour
+    {
+        #region Canvas相关属性和方法
+        private static GameObject mPrivateUIRoot;
+
+        public static GameObject UIRoot
         {
-            var canvasObj = GameObject.Find("Canvas");
+            get
+            {
+                if (mPrivateUIRoot == null)
+                {
+                    var uirootPrefab = Resources.Load<GameObject>("UIRoot");
+                    mPrivateUIRoot = GameObject.Instantiate(uirootPrefab);
+                    mPrivateUIRoot.name = "UIRoot";
+                }
 
-            var homePanelPrefab = Resources.Load<GameObject>(panelName);
-            var homePanelObj = Object.Instantiate(homePanelPrefab);
+                return mPrivateUIRoot;
+            }
+        }
 
-            homePanelObj.transform.SetParent(canvasObj.transform);
+        public static void SetResolution(float width, float height, float matchWidthOrHeight)
+        {
+            var canvasScaler = UIRoot.GetComponent<CanvasScaler>();
+            canvasScaler.referenceResolution = new Vector2(width, height);
+            canvasScaler.matchWidthOrHeight = matchWidthOrHeight;
+        }
+        #endregion
 
-            var homeRectTrans = homePanelObj.transform as RectTransform;
+        public static Dictionary<string, GameObject> mpanelsDict = new Dictionary<string, GameObject>();
 
-            homeRectTrans.offsetMin = Vector2.zero;
-            homeRectTrans.offsetMax = Vector2.zero;
-            homeRectTrans.anchoredPosition3D = Vector3.zero;
-            homeRectTrans.anchorMin = Vector2.zero;
-            homeRectTrans.anchorMax = Vector2.one;
+        public static void UnloadPanel(string panelName)
+        {
+            if (mpanelsDict.ContainsKey(panelName))
+            {
+                Destroy(mpanelsDict[panelName]);
+            }
+        }
+
+        public static GameObject LoadPanel(string panelName, UILayer layer)
+        {
+            var panelPrefab = Resources.Load<GameObject>(panelName);
+            var panel = Instantiate(panelPrefab);
+            panel.name = panelName;
+
+            mpanelsDict.Add(panel.name, panel);
+
+            switch (layer)
+            {
+                case UILayer.Bg:
+                    panel.transform.SetParent(UIRoot.transform.Find("Bg"));
+                    break;
+                case UILayer.Common:
+                    panel.transform.SetParent(UIRoot.transform.Find("Common"));
+                    break;
+                case UILayer.Top:
+                    panel.transform.SetParent(UIRoot.transform.Find("Top"));
+                    break;
+                default:
+                    break;
+            }
+
+            var panelRectTrans = panel.transform as RectTransform;
+
+            panelRectTrans.offsetMin = Vector2.zero;
+            panelRectTrans.offsetMax = Vector2.zero;
+            panelRectTrans.anchoredPosition3D = Vector3.zero;
+            panelRectTrans.anchorMin = Vector2.zero;
+            panelRectTrans.anchorMax = Vector2.one;
+
+            return panel;
         }
     }
 }
