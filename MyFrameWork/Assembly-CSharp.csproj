@@ -67,6 +67,7 @@
     <Compile Include="Assets\RHFramework\Example\11.MainManager\Game\GameModule.cs" />
     <Compile Include="Assets\RHFramework\Example\11.MainManager\Home\HomeModule.cs" />
     <Compile Include="Assets\RHFramework\Example\12.GUIManager\GUIExample.cs" />
+    <Compile Include="Assets\RHFramework\Example\13.AudioManager\AudioExample.cs" />
     <Compile Include="Assets\RHFramework\Example\2.MenuItem复用\EditorUtilExample.cs" />
     <Compile Include="Assets\RHFramework\Example\3.屏幕宽高比判断\ResolutionCheckExample.cs" />
     <Compile Include="Assets\RHFramework\Example\4.transform 位置赋值简化\TransformSimplifyExample.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Assets\RHFramework\Example\7.Hide 脚本\HideExample.cs" />
     <Compile Include="Assets\RHFramework\Example\8.计时功能\DelayWithDelayCoroutine.cs" />
     <Compile Include="Assets\RHFramework\Example\9.简单消息机制\MsgDispatcherExample.cs" />
+    <Compile Include="Assets\RHFramework\Framework\Manager\AudioManager.cs" />
     <Compile Include="Assets\RHFramework\Framework\Manager\GUIManager.cs" />
     <Compile Include="Assets\RHFramework\Framework\Manager\MainManager.cs" />
     <Compile Include="Assets\RHFramework\Framework\MonoBehaviourSimplify.cs" />
