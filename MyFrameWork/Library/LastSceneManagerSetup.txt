@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/RHFramework/Example/11.MainManager/Home/Home.unity
+- path: Assets/RHFramework/Example/TempScene.unity
   isLoaded: 1
   isActive: 1

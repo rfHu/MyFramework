@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace RHFramework
 {
@@ -23,13 +24,13 @@ namespace RHFramework
         /// <value>The current count.</value>
         public int CurCount
         {
-            get { return mCachedStack.Count; }
+            get { return mCacheStack.Count; }
         }
         #endregion
 
         protected IObjectFactory<T> mFactory;
 
-        Stack<T> mCachedStack = new Stack<T>();
+        protected Stack<T> mCacheStack = new Stack<T>();
 
         /// <summary>
         /// default is 5
@@ -38,9 +39,51 @@ namespace RHFramework
 
         public virtual T Allocate()
         {
-            return mCachedStack.Count == 0 ? mFactory.Create() : mCachedStack.Pop();
+            return mCacheStack.Count == 0 ? mFactory.Create() : mCacheStack.Pop();
         }
 
         public abstract bool Recycle(T obj);
+    }
+
+    public class CustomObjectFactory<T> : IObjectFactory<T>
+    {
+        protected Func<T> mFactoryMethod;
+
+        public CustomObjectFactory(Func<T> factoryMethod)
+        {
+            mFactoryMethod = factoryMethod;
+        }
+
+        public T Create()
+        {
+            return mFactoryMethod();
+        }
+    }
+
+    public class SimpleObjectPool<T> : Pool<T>
+    {
+        readonly Action<T> mResetMethod;
+
+        public SimpleObjectPool(Func<T> factoryMethod, Action<T> resetMethod = null, int initCount = 0)
+        {
+            mFactory = new CustomObjectFactory<T>(factoryMethod);
+            mResetMethod = resetMethod;
+
+            for (int i = 0; i < initCount; i++)
+            {
+                mCacheStack.Push(mFactory.Create());
+            }
+        }
+
+        public override bool Recycle(T obj)
+        {
+            if (mResetMethod != null)
+            {
+                mResetMethod(obj);
+            }
+
+            mCacheStack.Push(obj);
+            return true;
+        }
     }
 }
