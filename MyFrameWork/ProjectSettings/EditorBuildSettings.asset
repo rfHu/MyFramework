@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/RHFramework/Example/11.MainManager/Game/Game.unity
     guid: a58aca295d5983c43a4d2411d5bd958f
+  - enabled: 1
+    path: Assets/RHFramework/Example/15.LevelManager/Level.unity
+    guid: 19173e97bda4f344eb247b25cd60e84f
   m_configObjects: {}
