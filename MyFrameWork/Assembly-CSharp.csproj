@@ -70,6 +70,8 @@
     <Compile Include="Assets\RHFramework\Example\13.AudioManager\AudioExample.cs" />
     <Compile Include="Assets\RHFramework\Example\14.PoolManager\PoolExample.cs" />
     <Compile Include="Assets\RHFramework\Example\15.LevelManager\LevelManagerExample.cs" />
+    <Compile Include="Assets\RHFramework\Example\16.SingletonExample\SingletonExample.cs" />
+    <Compile Include="Assets\RHFramework\Example\17.MonoSingletonExample\MonoSingletonExample.cs" />
     <Compile Include="Assets\RHFramework\Example\2.MenuItem复用\EditorUtilExample.cs" />
     <Compile Include="Assets\RHFramework\Example\3.屏幕宽高比判断\ResolutionCheckExample.cs" />
     <Compile Include="Assets\RHFramework\Example\4.transform 位置赋值简化\TransformSimplifyExample.cs" />
@@ -88,24 +90,26 @@
     <Compile Include="Assets\RHFramework\Framework\Util\GameObjectSimplify.cs" />
     <Compile Include="Assets\RHFramework\Framework\Util\Hide.cs" />
     <Compile Include="Assets\RHFramework\Framework\Util\MathUtil.cs" />
+    <Compile Include="Assets\RHFramework\Framework\Util\MonoSingleton.cs" />
     <Compile Include="Assets\RHFramework\Framework\Util\MsgDispatcher.cs" />
     <Compile Include="Assets\RHFramework\Framework\Util\ResolutionCheck.cs" />
     <Compile Include="Assets\RHFramework\Framework\Util\SimpleObjectPool.cs" />
+    <Compile Include="Assets\RHFramework\Framework\Util\Singleton.cs" />
     <Compile Include="Assets\RHFramework\Framework\Util\TransformSimplify.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>E:/STClone/MyFramework/MyFrameWork/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>E:/WorkPlace/MyFramework/MyFrameWork/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>E:/STClone/MyFramework/MyFrameWork/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>E:/WorkPlace/MyFramework/MyFrameWork/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>E:/STClone/MyFramework/MyFrameWork/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>E:/WorkPlace/MyFramework/MyFrameWork/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>E:/STClone/MyFramework/MyFrameWork/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>E:/WorkPlace/MyFramework/MyFrameWork/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>E:/STClone/MyFramework/MyFrameWork/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>E:/WorkPlace/MyFramework/MyFrameWork/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -307,6 +311,15 @@
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.5f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.Editor">
+      <HintPath>E:/WorkPlace/MyFramework/MyFrameWork/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.StandardEvents">
+      <HintPath>E:/WorkPlace/MyFramework/MyFrameWork/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.Tracker">
+      <HintPath>E:/WorkPlace/MyFramework/MyFrameWork/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.5f1/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
