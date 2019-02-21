@@ -72,6 +72,7 @@
     <Compile Include="Assets\RHFramework\Example\15.LevelManager\LevelManagerExample.cs" />
     <Compile Include="Assets\RHFramework\Example\16.SingletonExample\SingletonExample.cs" />
     <Compile Include="Assets\RHFramework\Example\17.MonoSingletonExample\MonoSingletonExample.cs" />
+    <Compile Include="Assets\RHFramework\Example\18.StaticThisExtension\StaticThisExtensions.cs" />
     <Compile Include="Assets\RHFramework\Example\2.MenuItem复用\EditorUtilExample.cs" />
     <Compile Include="Assets\RHFramework\Example\3.屏幕宽高比判断\ResolutionCheckExample.cs" />
     <Compile Include="Assets\RHFramework\Example\4.transform 位置赋值简化\TransformSimplifyExample.cs" />
