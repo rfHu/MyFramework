@@ -2,31 +2,19 @@
 
 namespace RHFramework
 {
-    public class AudioManager : MonoBehaviour
+    public class AudioManager : MonoSingleton<AudioManager>
     {
-        private static AudioManager mInstance;
-
-        public static AudioManager Instance
-        {
-            get
-            {
-                if (mInstance == null)
-                {
-                    mInstance = new GameObject("AudioManager").AddComponent<AudioManager>();
-
-                    DontDestroyOnLoad(mInstance);
-                }
-
-                return mInstance;
-            }
-        }
-
         private AudioSource mMusicSource = null;
 
         private AudioListener mAudioListener;
 
         private void CheckAudioListener()
         {
+            if (!mAudioListener)
+            {
+                mAudioListener = FindObjectOfType<AudioListener>();
+            }
+
             if (!mAudioListener)
             {
                 mAudioListener = gameObject.AddComponent<AudioListener>();
