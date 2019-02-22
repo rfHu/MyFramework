@@ -62,6 +62,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Knowledges\EditorWindowTest\Editor\RHBuildAssetBundle.cs" />
+    <Compile Include="Assets\Knowledges\Xudawang Lab\ExcelToObject\Tools\Excel2Unity\Editor\ExcelTools.cs" />
+    <Compile Include="Assets\Knowledges\Xudawang Lab\ExcelToObject\Tools\Excel2Unity\Editor\ExcelUtility.cs" />
     <Compile Include="Assets\RHFramework\Framework\Editor\Exporter.cs" />
     <Compile Include="Assets\RHFramework\Test\Editor\V0_0_4.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
@@ -312,6 +314,24 @@
     </Reference>
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+    </Reference>
+    <Reference Include="LitJson">
+      <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Knowledges/Xudawang Lab/ExcelToObject/Tools/LitJson.dll</HintPath>
+    </Reference>
+    <Reference Include="Excel">
+      <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Knowledges/Xudawang Lab/ExcelToObject/Tools/Excel2Unity/Editor/Plugins/Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Knowledges/Xudawang Lab/ExcelToObject/Tools/Excel2Unity/Editor/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Knowledges/Xudawang Lab/ExcelToObject/Tools/Excel2Unity/Editor/Plugins/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Knowledges/Xudawang Lab/ExcelToObject/Tools/Excel2Unity/Editor/Plugins/System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Plugins/System.Drawing.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/mscorlib.dll</HintPath>

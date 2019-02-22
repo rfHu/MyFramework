@@ -170,3 +170,5 @@ E:\STClone\MyFramework\MyFrameWork\obj\Debug\Assembly-CSharp.csproj.CoreCompileI
 E:\STClone\MyFramework\MyFrameWork\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 E:\STClone\MyFramework\MyFrameWork\obj\Debug\Assembly-CSharp.dll
 E:\STClone\MyFramework\MyFrameWork\obj\Debug\Assembly-CSharp.pdb
+E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\LitJson.dll
+E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\System.Drawing.dll
