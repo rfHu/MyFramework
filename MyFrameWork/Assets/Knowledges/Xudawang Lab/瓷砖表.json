@@ -469,7 +469,7 @@
   },
   {
     "productSeries": "畅销类",
-    "color": "金沙系列 ",
+    "color": "金沙系列",
     "productNameCHS": "蓝金沙",
     "productNameEn": "Palissandro Bluette",
     "id": "D695852BMT",
@@ -481,7 +481,7 @@
   },
   {
     "productSeries": "畅销类",
-    "color": "金沙系列 ",
+    "color": "金沙系列",
     "productNameCHS": "白金沙",
     "productNameEn": "Palissandro Bronzetto",
     "id": "D692833BMT",
@@ -493,7 +493,7 @@
   },
   {
     "productSeries": "畅销类",
-    "color": "金沙系列 ",
+    "color": "金沙系列",
     "productNameCHS": "黑金沙",
     "productNameEn": "Palissandro Black",
     "id": "D696833BMT",
@@ -526,18 +526,6 @@
     "depth": "1200",
     "price": "728",
     "matType": "有"
-  },
-  {
-    "productSeries": "畅销类",
-    "color": "白色",
-    "productNameCHS": "皇家白玉",
-    "productNameEn": "White Onyx",
-    "id": "D9182806BM",
-    "productNum": "2806",
-    "width": "900",
-    "depth": "1800",
-    "price": "998",
-    "matType": "复制"
   },
   {
     "productSeries": "畅销类",
@@ -796,7 +784,7 @@
     "color": "白色",
     "productNameCHS": "卡拉拉白（拉槽面）",
     "productNameEn": "Statuario Calacatta",
-    "id": "D1262809BM",
+    "id": "D1262819N",
     "productNum": "2809",
     "width": "600",
     "depth": "1200",
@@ -982,18 +970,6 @@
     "depth": "1200",
     "price": "828",
     "matType": "有"
-  },
-  {
-    "productSeries": "经典类",
-    "color": "灰色",
-    "productNameCHS": "阿波罗灰",
-    "productNameEn": "Claros Grey (dark)",
-    "id": "D9185886BM",
-    "productNum": "5886",
-    "width": "900",
-    "depth": "1800",
-    "price": "1098",
-    "matType": "复制"
   },
   {
     "productSeries": "经典类",
@@ -1437,7 +1413,7 @@
     "width": "900",
     "depth": "900",
     "price": "890",
-    "matType": "复制"
+    "matType": "有"
   },
   {
     "productSeries": "珍稀类",

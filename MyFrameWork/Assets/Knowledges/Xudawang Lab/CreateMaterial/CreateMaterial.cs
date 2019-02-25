@@ -10,18 +10,18 @@ public class CreateMaterial : Editor
     [MenuItem("MyTools/BuildFloorMaterial")]
     private static void CreateMat()
     {
-        Material tempMat = AssetDatabase.LoadAssetAtPath<Material>("Assets/Editor/CreateMaterial/TempMat.mat");
+        Material tempMat = AssetDatabase.LoadAssetAtPath<Material>("Assets/Knowledges/Xudawang Lab/CreateMaterial/TempMat.mat");
 
 
 
-        CreateMat(tempMat, "Assets/Editor/CreateMaterial", "test", 2000, 2000, 2, 2, "Assets/Editor/CreateMaterial/testT.png");
+        CreateMat(tempMat, "Assets/Knowledges/Xudawang Lab/CreateMaterial", "test", 2000, 2000, 2, 2, "Assets/Knowledges/Xudawang Lab/CreateMaterial/testT.png");
 
 
 
         AssetDatabase.RemoveUnusedAssetBundleNames();
         AssetDatabase.Refresh();
     }
-    
+
     [MenuItem("MyTools/BuildAllMaterial")]
     private static void BuildAllMaterial()
     {
@@ -31,14 +31,14 @@ public class CreateMaterial : Editor
 
         DirectoryInfo parentDir = new DirectoryInfo(filesParentPath);
 
-        FileInfo[] fileSub = parentDir.GetFiles("*.tga");
+        FileInfo[] fileSub = parentDir.GetFiles("*.png");
 
         foreach (var file in fileSub)
         {
             var arr = file.Name.Split(new char[] { '_', '.' }, StringSplitOptions.RemoveEmptyEntries);
             CreateMat(tempMat, "Assets/Knowledges/Xudawang Lab/Materials", arr[0], float.Parse(arr[1]), float.Parse(arr[2]), float.Parse(arr[3]), float.Parse(arr[4]), "Assets/Knowledges/Xudawang Lab/finalpic/" + file.Name);
         }
-        
+
         AssetDatabase.RemoveUnusedAssetBundleNames();
         AssetDatabase.Refresh();
 

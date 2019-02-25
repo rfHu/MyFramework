@@ -331,7 +331,7 @@
       <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Knowledges/Xudawang Lab/ExcelToObject/Tools/Excel2Unity/Editor/Plugins/System.Data.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing">
-      <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Plugins/System.Drawing.dll</HintPath>
+      <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Knowledges/Xudawang Lab/Plugins/System.Drawing.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/mscorlib.dll</HintPath>

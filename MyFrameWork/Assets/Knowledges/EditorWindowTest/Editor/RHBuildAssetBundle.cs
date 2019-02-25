@@ -50,6 +50,11 @@ namespace RHFramework
             {
                 Build();
             }
+
+            if (GUILayout.Button("生成文件夹"))
+            {
+                CreateDir();
+            }
 #endif
 
 #if UNITY_IOS
@@ -80,7 +85,7 @@ namespace RHFramework
                 }
                 else if (Directory.Exists(path))
                 {
-                    var prefabs = Directory.GetFiles(path, "*", SearchOption.AllDirectories).Where(s => s.ToLower().EndsWith("." + targetExtension));
+                    var prefabs = Directory.GetFiles(path, "*", SearchOption.AllDirectories).Where(s => s.EndsWith("." + targetExtension));
                     foreach (var prefab in prefabs)
                     {
                         string tempPath = prefab.Replace(@"\", "/");
@@ -103,7 +108,7 @@ namespace RHFramework
                 strTemp = strTemp.Substring(strTemp.IndexOf("Assets"));
                 Debug.Log(strTemp);
 
-                string abName = strTemp.Substring(strTemp.LastIndexOf('/') + 1, strTemp.IndexOf("." + targetExtension) - strTemp.LastIndexOf('/') - 1).ToLower();
+                string abName = strTemp.Substring(strTemp.LastIndexOf('/') + 1, strTemp.IndexOf("." + targetExtension) - strTemp.LastIndexOf('/') - 1) + ".res";
                 Debug.Log(abName);
 
                 AssetBundleBuild tempABBuild = new AssetBundleBuild();
@@ -122,6 +127,21 @@ namespace RHFramework
             
             Debug.Log(string.Format("生成成功，共处理{0}个预制体", buildMaps.Count));
             AssetDatabase.Refresh();
+        }
+
+        private void CreateDir()
+        {
+            string pp = @"E:\STClone\MyFramework\MyFrameWork\AssetBundles";
+
+            DirectoryInfo parentDir = new DirectoryInfo(pp);
+
+            FileInfo[] fileSub = parentDir.GetFiles("*.res");
+
+            foreach (var file in fileSub)
+            {
+                DirectoryInfo di = Directory.CreateDirectory(pp + "/" + file.Name.Substring(0,file.Name.IndexOf(".")));
+                File.Copy(file.FullName,di.FullName + "/"+ file.Name);
+            }
         }
     }
 }

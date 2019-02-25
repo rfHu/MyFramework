@@ -62,11 +62,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Knowledges\Texture读取制作\NewBehaviourScript.cs" />
+    <Compile Include="Assets\Knowledges\Xudawang Lab\BatchPictures.cs" />
     <Compile Include="Assets\Knowledges\Xudawang Lab\CreateMaterial\ChangeTextureType.cs" />
     <Compile Include="Assets\Knowledges\Xudawang Lab\CreateMaterial\CreateMaterial.cs" />
     <Compile Include="Assets\Knowledges\Xudawang Lab\ExcelToObject\Codes\JsonToObject.cs" />
     <Compile Include="Assets\Knowledges\Xudawang Lab\ExcelToObject\ImageTGA.cs" />
-    <Compile Include="Assets\Knowledges\Xudawang Lab\test.cs" />
     <Compile Include="Assets\RHFramework\Example\1.复制文件到剪切板\CommonUtilExample.cs" />
     <Compile Include="Assets\RHFramework\Example\10.框架示例\FrameworkExample.cs" />
     <Compile Include="Assets\RHFramework\Example\11.MainManager\Game\GameModule.cs" />
@@ -105,7 +105,6 @@
     <Compile Include="Assets\RHFramework\Test\V0_0_4.cs" />
     <None Include="Assets\Knowledges\Xudawang Lab\CreateMaterial\Base Floor.shader" />
     <None Include="Assets\Knowledges\Xudawang Lab\ExcelToObject\更新说明.txt" />
-    <None Include="Assets\Knowledges\Xudawang Lab\ErrorDirectory.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>E:/STClone/MyFramework/MyFrameWork/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -326,7 +325,7 @@
       <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Knowledges/Xudawang Lab/ExcelToObject/Tools/LitJson.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing">
-      <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Plugins/System.Drawing.dll</HintPath>
+      <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Knowledges/Xudawang Lab/Plugins/System.Drawing.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
