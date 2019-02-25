@@ -12,16 +12,16 @@ namespace RHFramework
         {
             GameObject gameObject = new GameObject();
 
-            TransformSimplify.SetLocalPosX(gameObject.transform, 5);
-            TransformSimplify.SetLocalPosY(gameObject.transform, 5);
-            TransformSimplify.SetLocalPosZ(gameObject.transform, 5);
+            gameObject.transform.SetLocalPosX(5);
+            gameObject.transform.SetLocalPosY(5);
+            gameObject.transform.SetLocalPosZ(5);
 
-            TransformSimplify.Identity(gameObject.transform);
+            gameObject.transform.Identity();
 
             var parentTrans = new GameObject("Parent").transform;
             var childTrans = new GameObject("Child").transform;
 
-            TransformSimplify.AddChild(parentTrans, childTrans);
+            parentTrans.AddChild(childTrans);
         }
 #endif
     }

@@ -86,6 +86,8 @@
     <Compile Include="Assets\RHFramework\Example\7.Hide 脚本\HideExample.cs" />
     <Compile Include="Assets\RHFramework\Example\8.计时功能\DelayWithDelayCoroutine.cs" />
     <Compile Include="Assets\RHFramework\Example\9.简单消息机制\MsgDispatcherExample.cs" />
+    <Compile Include="Assets\RHFramework\Framework\Extension\GameObjectExtension.cs" />
+    <Compile Include="Assets\RHFramework\Framework\Extension\TransformExtension.cs" />
     <Compile Include="Assets\RHFramework\Framework\Manager\AudioManager.cs" />
     <Compile Include="Assets\RHFramework\Framework\Manager\GUIManager.cs" />
     <Compile Include="Assets\RHFramework\Framework\Manager\LevelManager.cs" />
@@ -93,7 +95,6 @@
     <Compile Include="Assets\RHFramework\Framework\MonoBehaviourSimplify.cs" />
     <Compile Include="Assets\RHFramework\Framework\Util\CommonUtil.cs" />
     <Compile Include="Assets\RHFramework\Framework\Util\EditorUtil.cs" />
-    <Compile Include="Assets\RHFramework\Framework\Util\GameObjectSimplify.cs" />
     <Compile Include="Assets\RHFramework\Framework\Util\Hide.cs" />
     <Compile Include="Assets\RHFramework\Framework\Util\MathUtil.cs" />
     <Compile Include="Assets\RHFramework\Framework\Util\MonoSingleton.cs" />
@@ -101,7 +102,6 @@
     <Compile Include="Assets\RHFramework\Framework\Util\ResolutionCheck.cs" />
     <Compile Include="Assets\RHFramework\Framework\Util\SimpleObjectPool.cs" />
     <Compile Include="Assets\RHFramework\Framework\Util\Singleton.cs" />
-    <Compile Include="Assets\RHFramework\Framework\Util\TransformSimplify.cs" />
     <Compile Include="Assets\RHFramework\Test\V0_0_4.cs" />
     <None Include="Assets\Knowledges\Xudawang Lab\CreateMaterial\Base Floor.shader" />
     <None Include="Assets\Knowledges\Xudawang Lab\ExcelToObject\更新说明.txt" />

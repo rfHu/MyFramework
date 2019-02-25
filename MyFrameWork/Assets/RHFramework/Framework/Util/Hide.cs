@@ -6,7 +6,7 @@ namespace RHFramework
     {
         private void Awake()
         {
-            Hide();
+            this.Hide();
         }
 
         protected override void OnBeforeDestroy()
