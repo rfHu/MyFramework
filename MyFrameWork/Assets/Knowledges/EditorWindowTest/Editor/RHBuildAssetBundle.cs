@@ -9,7 +9,7 @@ namespace RHFramework
 {
     public class BuildAssetBundle : EditorWindow
     {
-        [MenuItem("MyKnowledge/AssetBundlesTool", false, 2)]
+        [MenuItem("图片批处理/3.集体打包工具", false,  4)]
         static void Init()
         {
             Rect rect = new Rect(0, 0, 500, 300);
@@ -19,7 +19,7 @@ namespace RHFramework
 
         private List<string> selectionPathes = new List<string>();
 
-        private string assetBundlePath = "AssetBundles";
+        private string assetBundlePath;
 
         private string targetExtension = "prefab";
 
@@ -41,7 +41,9 @@ namespace RHFramework
 
             EditorGUILayout.TextField("选择目录和/或文件", allPath);
 
-            GUILayout.Label(string.Format("{0}{1}", "导出路径:", assetBundlePath));
+            assetBundlePath = EditorGUILayout.TextField("导出路径", assetBundlePath);
+
+            //GUILayout.Label(string.Format("{0}{1}", "导出路径:", assetBundlePath));
 
             targetExtension = EditorGUILayout.TextField("目标扩展名", targetExtension);
 
@@ -101,7 +103,7 @@ namespace RHFramework
                 }
             }
 
-            List<AssetBundleBuild> buildMaps = new List<AssetBundleBuild>();
+            //List<AssetBundleBuild> buildMaps = new List<AssetBundleBuild>();
             foreach (string item in allPrefab)
             {
                 string strTemp = item.Replace(@"\", "/");
@@ -114,18 +116,18 @@ namespace RHFramework
                 AssetBundleBuild tempABBuild = new AssetBundleBuild();
                 tempABBuild.assetBundleName = abName;
                 tempABBuild.assetNames = new string[] { strTemp };
-                buildMaps.Add(tempABBuild);
-            }
 
+                AssetBundleBuild[] buildMaps = new AssetBundleBuild[] { tempABBuild };
 #if UNITY_STANDALONE_WIN
-            BuildPipeline.BuildAssetBundles(assetBundlePath, buildMaps.ToArray(), BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows64);
+                BuildPipeline.BuildAssetBundles(assetBundlePath + "/" + abName.Remove(abName.IndexOf('.')), buildMaps.ToArray(), BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows64);
 #endif
 
 #if UNITY_IOS
-            BuildPipeline.BuildAssetBundles(assetBundlePath, buildMaps.ToArray(), BuildAssetBundleOptions.None, BuildTarget.iOS);
+            BuildPipeline.BuildAssetBundles(assetBundlePath + "/" + abName.Remove(abName.IndexOf('.')), buildMaps.ToArray(), buildMaps.ToArray(), BuildAssetBundleOptions.None, BuildTarget.iOS);
 #endif
-            
-            Debug.Log(string.Format("生成成功，共处理{0}个预制体", buildMaps.Count));
+            }
+
+            Debug.Log(string.Format("生成成功，共处理{0}个预制体", allPrefab.Count));
             AssetDatabase.Refresh();
         }
 
@@ -139,8 +141,8 @@ namespace RHFramework
 
             foreach (var file in fileSub)
             {
-                DirectoryInfo di = Directory.CreateDirectory(pp + "/" + file.Name.Substring(0,file.Name.IndexOf(".")));
-                File.Copy(file.FullName,di.FullName + "/"+ file.Name);
+                DirectoryInfo di = Directory.CreateDirectory(pp + "/" + file.Name.Substring(0, file.Name.IndexOf(".")));
+                File.Copy(file.FullName, di.FullName + "/" + file.Name);
             }
         }
     }

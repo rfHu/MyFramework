@@ -62,7 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Knowledges\Texture读取制作\NewBehaviourScript.cs" />
-    <Compile Include="Assets\Knowledges\Xudawang Lab\BatchPictures.cs" />
     <Compile Include="Assets\Knowledges\Xudawang Lab\CreateMaterial\ChangeTextureType.cs" />
     <Compile Include="Assets\Knowledges\Xudawang Lab\CreateMaterial\CreateMaterial.cs" />
     <Compile Include="Assets\Knowledges\Xudawang Lab\ExcelToObject\Codes\JsonToObject.cs" />

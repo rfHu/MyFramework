@@ -54,7 +54,7 @@ public class ExcelTools : EditorWindow
 	/// <summary>
 	/// 显示当前窗口	
 	/// </summary>
-	[MenuItem("Plugins/ExcelTools")]
+	[MenuItem("图片批处理/1.Excel转Json", false , 1)]
 	static void ShowExcelTools()
 	{
 		Init();
@@ -169,10 +169,10 @@ public class ExcelTools : EditorWindow
 
 	}
 
-	/// <summary>
-	/// 加载Excel
-	/// </summary>
-	private static void LoadExcel()
+    /// <summary>
+    /// 加载Excel
+    /// </summary>
+    private static void LoadExcel()
 	{
 		if(excelList==null) excelList=new List<string>();
 		excelList.Clear();
