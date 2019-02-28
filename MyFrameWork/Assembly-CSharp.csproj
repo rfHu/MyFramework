@@ -62,6 +62,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Knowledges\Texture读取制作\NewBehaviourScript.cs" />
+    <Compile Include="Assets\Knowledges\Texture读取制作\Scripts\TextureUtil.cs" />
+    <Compile Include="Assets\Knowledges\Texture读取制作\Scripts\ZipUtil.cs" />
     <Compile Include="Assets\Knowledges\Xudawang Lab\CreateMaterial\ChangeTextureType.cs" />
     <Compile Include="Assets\Knowledges\Xudawang Lab\CreateMaterial\CreateMaterial.cs" />
     <Compile Include="Assets\Knowledges\Xudawang Lab\ExcelToObject\Codes\JsonToObject.cs" />
@@ -104,21 +106,6 @@
     <Compile Include="Assets\RHFramework\Test\V0_0_4.cs" />
     <None Include="Assets\Knowledges\Xudawang Lab\CreateMaterial\Base Floor.shader" />
     <None Include="Assets\Knowledges\Xudawang Lab\ExcelToObject\更新说明.txt" />
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>E:/STClone/MyFramework/MyFrameWork/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>E:/STClone/MyFramework/MyFrameWork/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>E:/STClone/MyFramework/MyFrameWork/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>E:/STClone/MyFramework/MyFrameWork/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>E:/STClone/MyFramework/MyFrameWork/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
     </Reference>
@@ -319,6 +306,9 @@
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.6f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Knowledges/Texture读取制作/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="LitJson">
       <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Knowledges/Xudawang Lab/ExcelToObject/Tools/LitJson.dll</HintPath>
