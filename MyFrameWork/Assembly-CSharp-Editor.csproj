@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Knowledges\EditorWindowTest\Editor\RHBuildAssetBundle.cs" />
+    <Compile Include="Assets\Knowledges\Texture读取制作\Editor\PHBDXWindow.cs" />
     <Compile Include="Assets\Knowledges\Xudawang Lab\Editor\BatchPictures.cs" />
     <Compile Include="Assets\Knowledges\Xudawang Lab\ExcelToObject\Tools\Excel2Unity\Editor\ExcelTools.cs" />
     <Compile Include="Assets\Knowledges\Xudawang Lab\ExcelToObject\Tools\Excel2Unity\Editor\ExcelUtility.cs" />

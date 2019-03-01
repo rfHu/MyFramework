@@ -17,11 +17,11 @@ namespace RHFramework {
 
             //DrawIcon(new Texture2D[] { texture2D1, texture2D2 }, new Texture2D[] { pic1, pic2, pic3, pic4, pic5 });
             //RGBImageUtil.DrawPartPics(new Texture2D[] { texture2D1, texture2D2 });
-            RGBImageUtil.DrawPartImg(new Bitmap[] 
-            {
-                new Bitmap(@"E:\STClone\MyFramework\MyFrameWork\Assets\Knowledges\Texture读取制作\Resources\28.png"),
-                new Bitmap(@"E:\STClone\MyFramework\MyFrameWork\Assets\Knowledges\Texture读取制作\Resources\28_1.png")
-            });
+            //RGBImageUtil.DrawPartImg(new Bitmap[] 
+            //{
+            //    new Bitmap(@"E:\STClone\MyFramework\MyFrameWork\Assets\Knowledges\Texture读取制作\Resources\28.png"),
+            //    new Bitmap(@"E:\STClone\MyFramework\MyFrameWork\Assets\Knowledges\Texture读取制作\Resources\28_1.png")
+            //});
 
             texture2D1 = texture2D2 = null;
 
@@ -172,7 +172,7 @@ namespace RHFramework {
         //    Debug.Log("finish");
         //}
 
-        public static void DrawPartImg(Bitmap[] RGBImages, int finalWidth = 280, int finalHeight = 280)
+        public static void DrawPartImg(Bitmap[] RGBImages, string savePath, string savename)
         {
             //获得新图宽高
             var width = RGBImages[0].Width;
@@ -228,9 +228,9 @@ namespace RHFramework {
 
             for (int i = 0; i < images.Count; i++)
             {
-                images[i].ScaleToSize(finalWidth, finalHeight);
+                //images[i].ScaleToSize(finalWidth, finalHeight);
 
-                SaveImagePNG(images[i], Application.dataPath + "/" + i + ".png");
+                SaveImagePNG(images[i], string.Format("{0}/partimg_{1}_{2}.png", savePath, savename, i));
 
                 images[i].Dispose();
             }
@@ -253,7 +253,7 @@ namespace RHFramework {
             return image;
         }
 
-        public static Bitmap ScaleToSize(this Bitmap bitmap, int width, int height)
+        public static Bitmap ScaleToSize(Bitmap bitmap, int width, int height)
         {
             if (bitmap.Width == width && bitmap.Height == height)
             {
@@ -269,7 +269,7 @@ namespace RHFramework {
 
             return scaledBitmap;
         }
-        
+
         private static void SaveImagePNG(Bitmap image, string path)
         {
             image.Save(path);
