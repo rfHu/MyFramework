@@ -105,7 +105,7 @@ namespace RHFramework
                     continue;
                 }
 
-                if (!file.Name.Contains("rgb"))
+                if (file.Name.Contains("part"))
                 {
                     var filepath = file.FullName;
                     var img = Image.FromFile(file.FullName);
