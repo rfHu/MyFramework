@@ -149,10 +149,10 @@ namespace RHFramework
                     {
                         jsonData.icon_img = file.Name.Substring(0, file.Name.LastIndexOf('.'));
                     }
-                    else if (name.Contains("rgb"))
-                    {
-                        jsonData.rgb_imgs.Add(file.Name.Substring(0, file.Name.LastIndexOf('.')));
-                    }
+                    //else if (name.Contains("rgb"))
+                    //{
+                    //    jsonData.rgb_imgs.Add(file.Name.Substring(0, file.Name.LastIndexOf('.')));
+                    //}
                 }
 
                 var rgbFiles = files.Where(f => f.Name.Substring(0, 3) == "rgb").OrderBy(f => f.Name[f.Name.LastIndexOf('.') - 1]).ToArray();
@@ -160,6 +160,8 @@ namespace RHFramework
                 
                 foreach (var rgbfile in rgbFiles)
                 {
+                    jsonData.rgb_imgs.Add(rgbfile.Name.Substring(0, rgbfile.Name.LastIndexOf('.')));
+
                     var arr=  rgbfile.FullName.Split(new char[] { '_' }, StringSplitOptions.RemoveEmptyEntries);
                     for (int i = 2; i < arr.Length - 1; i++)
                     {

@@ -185,7 +185,7 @@ namespace RHFramework {
             {
                 for (int x = 0; x < width; x++)
                 {
-                    var picLayerNum = 0;
+                    var picLayerNum = -1;
 
                     for (int i = 0; i < RGBImages.Length; i++)
                     {
@@ -220,7 +220,7 @@ namespace RHFramework {
                             image = DrawWgoleImageColor(image, System.Drawing.Color.FromArgb(0,0,0,0));
                             images.Add(image);
                         }
-
+                        images[0].SetPixel(x, y, ColorTranslator.FromHtml("#ffffff"));
                         images[picLayerNum].SetPixel(x, y, ColorTranslator.FromHtml("#ffffff"));
                     }
                 }
@@ -228,8 +228,6 @@ namespace RHFramework {
 
             for (int i = 0; i < images.Count; i++)
             {
-                //images[i].ScaleToSize(finalWidth, finalHeight);
-
                 SaveImagePNG(images[i], string.Format("{0}/partimg_{1}_{2}.png", savePath, savename, i));
 
                 images[i].Dispose();
