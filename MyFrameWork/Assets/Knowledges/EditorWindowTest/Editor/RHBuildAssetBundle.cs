@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEditor;//注意要引用
+using UnityEditor;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;

@@ -393,7 +393,7 @@ public class BatchPictures : EditorWindow
         foreach (var file in fileSub)
         {
             var arr = file.Name.Split(new char[] { '_', '.' }, StringSplitOptions.RemoveEmptyEntries);
-            CreateMat(tempMat, materialsSavePath, arr[0], float.Parse(arr[1]), float.Parse(arr[2]), float.Parse(arr[3]), float.Parse(arr[4]), assetFilesParentPath + file.Name);
+            CreateMat(tempMat, materialsSavePath, arr[0], float.Parse(arr[1]), float.Parse(arr[2]), float.Parse(arr[3]), float.Parse(arr[4]), assetFilesParentPath + "/" + file.Name);
         }
 
         AssetDatabase.RemoveUnusedAssetBundleNames();
@@ -414,7 +414,7 @@ public class BatchPictures : EditorWindow
         if (textureImporter != null)
         {
             //textureImporter.textureType = TextureImporterType.Default;
-            textureImporter.isReadable = true;
+            //textureImporter.isReadable = true;
             //textureImporter.wrapMode = TextureWrapMode.Clamp;
             textureImporter.maxTextureSize = 8192;
         }

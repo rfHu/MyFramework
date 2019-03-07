@@ -61,7 +61,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Knowledges\Texture读取制作\NewBehaviourScript.cs" />
+    <Compile Include="Assets\Knowledges\Texture读取制作\DecompressTest.cs" />
+    <Compile Include="Assets\Knowledges\Texture读取制作\RGBImageUtil.cs" />
     <Compile Include="Assets\Knowledges\Texture读取制作\Scripts\TextureUtil.cs" />
     <Compile Include="Assets\Knowledges\Texture读取制作\Scripts\ZipUtil.cs" />
     <Compile Include="Assets\Knowledges\Xudawang Lab\CreateMaterial\ChangeTextureType.cs" />

@@ -86,7 +86,7 @@ namespace RHFramework
                 {
                     var filepath = file.FullName;
                     var img = new Bitmap(file.FullName);
-                    var scaledImg = RGBImageUtil.ScaleToSize(img, 280, 280);
+                    var scaledImg = RGBImageUtil.UniformScale(img, 280);
                     img.Dispose();
                     File.Delete(file.FullName);
                     scaledImg.Save(filepath);
@@ -99,11 +99,11 @@ namespace RHFramework
         {
             foreach (var file in files)
             {
-                if (file.Name.Contains("part") && file.Name[file.Name.LastIndexOf(".") - 1] == '0' )
-                {
-                    file.Delete();
-                    continue;
-                }
+                //if (file.Name.Contains("part") && file.Name[file.Name.LastIndexOf(".") - 1] == '0' )
+                //{
+                //    file.Delete();
+                //    continue;
+                //}
 
                 if (file.Name.Contains("part"))
                 {
@@ -149,10 +149,12 @@ namespace RHFramework
                     {
                         jsonData.icon_img = file.Name.Substring(0, file.Name.LastIndexOf('.'));
                     }
-                    //else if (name.Contains("rgb"))
-                    //{
-                    //    jsonData.rgb_imgs.Add(file.Name.Substring(0, file.Name.LastIndexOf('.')));
-                    //}
+                }
+
+                var partImgFiles = files.Where(f => f.Name.Contains("partimg")).OrderBy(f => f.Name[f.Name.LastIndexOf('.') - 1]).ToArray();
+                foreach (var file in partImgFiles)
+                {
+                    jsonData.part_img_files.Add(file.Name.Substring(0, file.Name.LastIndexOf('.')));
                 }
 
                 var rgbFiles = files.Where(f => f.Name.Substring(0, 3) == "rgb").OrderBy(f => f.Name[f.Name.LastIndexOf('.') - 1]).ToArray();
@@ -198,7 +200,7 @@ namespace RHFramework
                 {
                     if (file.Name.Contains("icon"))
                     {
-                        file.MoveTo(path + "\\OutPut\\" + file.Name);
+                        file.CopyTo(path + "\\OutPut\\" + file.Name);
                         break;
                     }
                 }
@@ -207,12 +209,13 @@ namespace RHFramework
                 {
                     continue;
                 }
-
-                ZipUtil.ZipFile(DI.FullName, string.Format("{0}\\OutPut\\{1}.zip", path, DI.Name));
+                
+                ZipUtil.ZipDir(DI.FullName, string.Format("{0}\\OutPut\\{1}.zip", path, DI.Name));
             }
         }
     }
 
+    [System.Serializable]
     public class BDXPHJsonData
     {
         public int type;
@@ -220,6 +223,7 @@ namespace RHFramework
         public string icon_img;
         public List<string> rgb_imgs = new List<string>();
         public int total_part_num;
+        public List<string> part_img_files = new List<string>();
         public List<string> part_imgs = new List<string>();
     }
 }

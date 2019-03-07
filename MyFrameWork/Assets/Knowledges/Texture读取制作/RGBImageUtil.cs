@@ -106,72 +106,6 @@ namespace RHFramework {
             texture = null;
         }
 
-        //public static void DrawPartPics(Texture2D[] RGBtextures, int finalWidth = 280, int finalHeight = 280)
-        //{
-        //    //获得新图宽高
-        //    var width = RGBtextures[0].width;
-        //    var height = RGBtextures[0].height;
-
-        //    List<Texture2D> textures = new List<Texture2D>();
-
-        //    //计算像素
-        //    for (int y = 0; y < height; y++)
-        //    {
-        //        for (int x = 0; x < width; x++)
-        //        {
-        //            var picLayerNum = -1;
-
-        //            for (int i = 0; i < RGBtextures.Length; i++)
-        //            {
-        //                Color tempColor = RGBtextures[i].GetPixel(x, y);
-
-        //                if (tempColor == Color.black)
-        //                {
-        //                    continue;
-        //                }
-        //                else
-        //                {
-        //                    if (tempColor.r != 0)
-        //                    {
-        //                        picLayerNum = i * 3 + 2;
-        //                    }
-        //                    else if (tempColor.g != 0)
-        //                    {
-        //                        picLayerNum = i * 3 + 1;
-        //                    }
-        //                    else if (tempColor.b != 0)
-        //                    {
-        //                        picLayerNum = i * 3;
-        //                    }
-        //                }
-        //            }
-
-        //            if (picLayerNum != -1)
-        //            {
-        //                while (picLayerNum + 1 > textures.Count)
-        //                {
-        //                    var texture2D = new Texture2D(width, height);
-        //                    texture2D = TextureUtil.DrawTexture2DColor(texture2D, Color.clear);
-        //                    textures.Add(texture2D);
-        //                }
-
-        //                textures[picLayerNum].SetPixel(x, y, new Color(0.4f, 0.4f, 0.4f));
-        //            }
-        //        }
-        //    }
-
-        //    for (int i = 0; i < textures.Count; i++)
-        //    {
-        //        textures[i] = TextureUtil.ScaleTexture(textures[i], finalWidth, finalHeight);
-
-        //        SaveTexture2PNG(textures[i], Application.dataPath + "/" + i + ".png");
-
-        //        textures[i] = null;
-        //    }
-
-        //    Debug.Log("finish");
-        //}
-
         public static void DrawPartImg(Bitmap[] RGBImages, string savePath, string savename)
         {
             //获得新图宽高
@@ -249,6 +183,34 @@ namespace RHFramework {
             }
             
             return image;
+        }
+
+        /// <summary>
+        /// 等比缩放至长边等于LongLength
+        /// </summary>
+        /// <param name="bitmap"></param>
+        /// <param name="longLength"></param>
+        /// <returns></returns>
+        public static Bitmap UniformScale(Bitmap bitmap, int longLength)
+        {
+            if (bitmap.Width == bitmap.Height)
+            {
+                return ScaleToSize(bitmap, longLength, longLength);
+            }
+            else if (bitmap.Width > bitmap.Height)
+            {
+
+                return ScaleToSize(bitmap, longLength, longLength * bitmap.Height / bitmap.Width);
+            }
+            else if (bitmap.Width < bitmap.Height)
+            {
+
+                return ScaleToSize(bitmap, longLength * bitmap.Width / bitmap.Height, longLength);
+            }
+            else
+            {
+                return bitmap;
+            }
         }
 
         public static Bitmap ScaleToSize(Bitmap bitmap, int width, int height)
