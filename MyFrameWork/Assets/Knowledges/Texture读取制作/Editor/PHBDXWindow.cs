@@ -196,11 +196,18 @@ namespace RHFramework
             foreach (var DI in DirSub)
             {
                 var files = DI.GetFiles();
+                var savePath = path + "\\OutPut\\" + DI.Name;
+
                 foreach (var file in files)
                 {
+                    if (!Directory.Exists(savePath))
+                    {
+                        Directory.CreateDirectory(savePath);
+                    }
+
                     if (file.Name.Contains("icon"))
                     {
-                        file.CopyTo(path + "\\OutPut\\" + file.Name);
+                        file.CopyTo(string.Format(@"{0}\\{1}", savePath, file.Name));
                         break;
                     }
                 }
@@ -210,7 +217,7 @@ namespace RHFramework
                     continue;
                 }
                 
-                ZipUtil.ZipDir(DI.FullName, string.Format("{0}\\OutPut\\{1}.zip", path, DI.Name));
+                ZipUtil.ZipDir(DI.FullName, string.Format("{0}\\{1}.zip", savePath, DI.Name));
             }
         }
     }
