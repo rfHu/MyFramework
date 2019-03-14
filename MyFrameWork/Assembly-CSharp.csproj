@@ -70,6 +70,7 @@
     <Compile Include="Assets\Knowledges\Xudawang Lab\ExcelToObject\Codes\JsonToObject.cs" />
     <Compile Include="Assets\Knowledges\Xudawang Lab\ExcelToObject\ImageTGA.cs" />
     <Compile Include="Assets\LeetCode\1.两数之和\TwoSumSolution.cs" />
+    <Compile Include="Assets\LeetCode\2.两数相加\TwoListNodeSumSolution.cs" />
     <Compile Include="Assets\RHFramework\Example\1.复制文件到剪切板\CommonUtilExample.cs" />
     <Compile Include="Assets\RHFramework\Example\10.框架示例\FrameworkExample.cs" />
     <Compile Include="Assets\RHFramework\Example\11.MainManager\Game\GameModule.cs" />
