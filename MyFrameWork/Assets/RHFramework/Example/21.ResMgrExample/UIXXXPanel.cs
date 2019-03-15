@@ -21,10 +21,6 @@ namespace RHFramework
         void Start()
         {
             var coinClip = mResLoader.LoadAsset<AudioClip>("getcoin");
-
-            //var homeClip = mResLoader.LoadAsset<AudioClip>("home");
-
-            //var bgClip = mResLoader.LoadAsset<AudioClip>("bg");
         }
 
         private void OtherFunc()

@@ -87,6 +87,7 @@
     <Compile Include="Assets\RHFramework\Example\20.UnloadPrefab\UnloadPrefabExample.cs" />
     <Compile Include="Assets\RHFramework\Example\21.ResMgrExample\LogListCount.cs" />
     <Compile Include="Assets\RHFramework\Example\21.ResMgrExample\UIXXXPanel.cs" />
+    <Compile Include="Assets\RHFramework\Example\22.SimpleRCExample\SimpleRCExample.cs" />
     <Compile Include="Assets\RHFramework\Example\3.屏幕宽高比判断\ResolutionCheckExample.cs" />
     <Compile Include="Assets\RHFramework\Example\4.transform 位置赋值简化\TransformSimplifyExample.cs" />
     <Compile Include="Assets\RHFramework\Example\5.概率函数\MathUtilExample.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="Assets\RHFramework\Framework\Util\MsgDispatcher.cs" />
     <Compile Include="Assets\RHFramework\Framework\Util\ResolutionCheck.cs" />
     <Compile Include="Assets\RHFramework\Framework\Util\SimpleObjectPool.cs" />
+    <Compile Include="Assets\RHFramework\Framework\Util\SimpleRC.cs" />
     <Compile Include="Assets\RHFramework\Framework\Util\Singleton.cs" />
     <Compile Include="Assets\RHFramework\Test\V0_0_4.cs" />
     <None Include="Assets\Knowledges\Xudawang Lab\CreateMaterial\Base Floor.shader" />

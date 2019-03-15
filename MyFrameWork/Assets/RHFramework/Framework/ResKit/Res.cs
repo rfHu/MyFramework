@@ -2,7 +2,7 @@
 
 namespace RHFramework
 {
-    public class Res
+    public class Res : SimpleRC
     {
         public string Name
         {
@@ -15,23 +15,11 @@ namespace RHFramework
         }
         public Object Asset { get; private set; }
 
-        private int mReferenceCount = 0;
-
-        public void Retain()
+        protected override void OnZeroRef()
         {
-            mReferenceCount++;
-        }
+            Resources.UnloadAsset(Asset);
 
-        public void Release()
-        {
-            mReferenceCount--;
-
-            if (mReferenceCount == 0)
-            {
-                Resources.UnloadAsset(Asset);
-
-                ResLoader.SharedLoadedReses.Remove(this);
-            }
+            ResLoader.SharedLoadedReses.Remove(this);
 
             Asset = null;
         }
