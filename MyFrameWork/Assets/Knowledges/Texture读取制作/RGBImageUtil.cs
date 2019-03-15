@@ -114,10 +114,6 @@ namespace RHFramework {
 
             List<Bitmap> images = new List<Bitmap>();
 
-            int rnum = 0;
-            int gnum = 0;
-            int bnum = 0;
-
             //计算像素
             for (int y = 0; y < height; y++)
             {
@@ -137,15 +133,15 @@ namespace RHFramework {
                         {
                             if (tempColor.R > 240)
                             {
-                                rnum++;
+                                picLayerNum = i * 3 + 3;
                             }
                             else if (tempColor.G > 240)
                             {
-                                gnum++;
+                                picLayerNum = i * 3 + 2;
                             }
                             else if (tempColor.B > 240)
                             {
-                                bnum++;
+                                picLayerNum = i * 3 + 1;
                             }
                         }
                     }

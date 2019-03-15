@@ -207,7 +207,7 @@ namespace RHFramework
 
                     if (file.Name.Contains("icon"))
                     {
-                        file.CopyTo(string.Format(@"{0}\\{1}", savePath, file.Name));
+                        file.CopyTo(string.Format(@"{0}\\{1}.png", savePath, DI.Name));
                         break;
                     }
                 }
