@@ -19,7 +19,7 @@ namespace RHFramework
         {
             Resources.UnloadAsset(Asset);
 
-            ResLoader.SharedLoadedReses.Remove(this);
+            ResMgr.Instance.SharedLoadedReses.Remove(this);
 
             Asset = null;
         }

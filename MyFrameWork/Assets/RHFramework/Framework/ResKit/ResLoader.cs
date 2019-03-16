@@ -6,8 +6,6 @@ namespace RHFramework
 {
     public class ResLoader
     {
-        public static List<Res> SharedLoadedReses = new List<Res>();
-
         private List<Res> mResRecords = new List<Res>();
 
         public T LoadAsset<T>(string assetName) where T : Object
@@ -21,7 +19,7 @@ namespace RHFramework
             }
             
             //查询全局资源池
-            res = SharedLoadedReses.Find(loadedAsset => loadedAsset.Name == assetName);
+            res = ResMgr.Instance.SharedLoadedReses.Find(loadedAsset => loadedAsset.Name == assetName);
 
             if (res != null)
             {
@@ -37,7 +35,7 @@ namespace RHFramework
 
             res = new Res(asset);
             
-            SharedLoadedReses.Add(res);
+            ResMgr.Instance.SharedLoadedReses.Add(res);
 
             mResRecords.Add(res);
 
