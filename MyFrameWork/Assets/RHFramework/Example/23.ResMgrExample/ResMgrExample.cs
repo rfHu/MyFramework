@@ -22,23 +22,29 @@ namespace RHFramework
         {
             yield return new WaitForSeconds(5);
 
-            mResLoader.LoadAsset<Texture2D>("pic1");
+            mResLoader.LoadSync<Texture2D>("pic1");
 
             yield return new WaitForSeconds(2);
 
-            mResLoader.LoadAsset<AudioClip>("getcoin");
+            mResLoader.LoadSync<AudioClip>("getcoin");
 
             yield return new WaitForSeconds(2);
 
-            mResLoader.LoadAsset<AudioClip>("home");
+            mResLoader.LoadSync<AudioClip>("home");
 
             yield return new WaitForSeconds(2);
 
-            mResLoader.LoadAsset<AudioClip>("getcoin");
+            mResLoader.LoadSync<AudioClip>("getcoin");
+
+            yield return new WaitForSeconds(3);
+
+            var homePanelPrefab = mResLoader.LoadSync<GameObject>("HomePanel");
 
             yield return new WaitForSeconds(3);
 
             mResLoader.ReleaseAll();
+
+            Debug.Log(homePanelPrefab == null);
         }
     }
 }

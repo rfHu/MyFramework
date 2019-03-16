@@ -7,41 +7,37 @@ namespace RHFramework
     public class ResLoader
     {
         private List<Res> mResRecords = new List<Res>();
-
-        public T LoadAsset<T>(string assetName) where T : Object
+        
+        public T LoadSync<T>(string assetName) where T : Object
         {
             //查询当前资源记录
-            var res = mResRecords.Find(loadedAsset => loadedAsset.Name == assetName);
+            var res = GetResFromRecord(assetName);
             
             if (res != null)
             {
                 return res.Asset as T;
             }
-            
+
             //查询全局资源池
-            res = ResMgr.Instance.SharedLoadedReses.Find(loadedAsset => loadedAsset.Name == assetName);
+            res = GetResFromResMgr(assetName);
 
             if (res != null)
             {
-                mResRecords.Add(res);
-
-                res.Retain();
+                AddRes2Record(res);
 
                 return res as T;
             }
 
             //真正加载资源
-            var asset = Resources.Load<T>(assetName);
+            res = new Res(assetName);
 
-            res = new Res(asset);
+            res.LoadSync();
             
             ResMgr.Instance.SharedLoadedReses.Add(res);
-
-            mResRecords.Add(res);
-
-            res.Retain();
-
-            return asset;
+            
+            AddRes2Record(res);
+            
+            return res.Asset as T;
         }
 
         public void ReleaseAll()
@@ -51,5 +47,24 @@ namespace RHFramework
             mResRecords.Clear();
             mResRecords = null;
         }
+
+        #region private
+        private Res GetResFromRecord(string assetName)
+        {
+            return mResRecords.Find(loadedAsset => loadedAsset.Name == assetName);
+        }
+
+        private Res GetResFromResMgr(string assetName)
+        {
+            return ResMgr.Instance.SharedLoadedReses.Find(loadedAsset => loadedAsset.Name == assetName);
+        }
+
+        private void AddRes2Record(Res resFromResMgr)
+        {
+            mResRecords.Add(resFromResMgr);
+
+            resFromResMgr.Retain();
+        }
+        #endregion
     }
 }

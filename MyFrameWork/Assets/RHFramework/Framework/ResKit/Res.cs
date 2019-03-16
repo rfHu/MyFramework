@@ -1,24 +1,51 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace RHFramework
 {
     public class Res : SimpleRC
     {
-        public string Name
+        public UnityEngine.Object Asset { get; private set; }
+
+        public string Name { get; private set; }
+
+        private string mAssetPath;
+
+        public Res(string assetPath)
         {
-            get { return Asset.name; }
+            mAssetPath = assetPath;
+
+            Name = assetPath;
         }
 
-        public Res(Object asset)
+        public bool LoadSync()
         {
-            Asset = asset;
+            return Asset = Resources.Load(mAssetPath);
         }
-        public Object Asset { get; private set; }
+
+        public void LoadAsync(Action<Res> OnLoaded)
+        {
+            var resRequest = Resources.LoadAsync(mAssetPath);
+
+            resRequest.completed += operation =>
+            {
+                Asset = resRequest.asset;
+                OnLoaded(this);
+            };
+        }
 
         protected override void OnZeroRef()
         {
-            Resources.UnloadAsset(Asset);
-
+            if (Asset is GameObject)
+            {
+                Asset = null;
+                Resources.UnloadUnusedAssets();
+            }
+            else
+            {
+                Resources.UnloadAsset(Asset);
+            }
+            
             ResMgr.Instance.SharedLoadedReses.Remove(this);
 
             Asset = null;
