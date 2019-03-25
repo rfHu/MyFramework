@@ -116,6 +116,8 @@
     <Compile Include="Assets\RHFramework\Framework\Util\SimpleRC.cs" />
     <Compile Include="Assets\RHFramework\Framework\Util\Singleton.cs" />
     <Compile Include="Assets\RHFramework\Test\V0_0_4.cs" />
+    <Compile Include="Assets\UniRxStudy\Example\1.UI\UIExample.cs" />
+    <Compile Include="Assets\UniRxStudy\Example\2.LifeCycle\LifeCycleExample.cs" />
     <None Include="Assets\Knowledges\Xudawang Lab\CreateMaterial\Base Floor.shader" />
     <None Include="Assets\Knowledges\Xudawang Lab\ExcelToObject\更新说明.txt" />
     <Reference Include="UnityEngine.AIModule">
@@ -355,6 +357,12 @@
     <Reference Include="Boo.Lang">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unity/Boo.Lang.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{F255712E-EDDA-5AF4-6935-BAE7ABE974D2}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

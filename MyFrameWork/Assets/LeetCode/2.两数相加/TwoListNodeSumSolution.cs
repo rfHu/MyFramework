@@ -83,7 +83,7 @@ namespace LeetCode
         /// <summary>
         /// 利用逻辑实现进一操作赋值给新链表
         /// </summary>
-        public class Solution2
+        public class TwoListNodeSumSolution2
         {
             public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
             {

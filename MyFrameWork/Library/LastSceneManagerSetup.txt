@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/RHFramework/Example/TempScene.unity
+- path: Assets/UniRxStudy/Example/2.LifeCycle/LifeCycleExample.unity
   isLoaded: 1
   isActive: 1
