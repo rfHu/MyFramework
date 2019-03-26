@@ -302,17 +302,11 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Knowledges/Texture读取制作/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
-    </Reference>
     <Reference Include="LitJson">
       <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Knowledges/Xudawang Lab/ExcelToObject/Tools/LitJson.dll</HintPath>
     </Reference>
     <Reference Include="Excel">
       <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Knowledges/Xudawang Lab/ExcelToObject/Tools/Excel2Unity/Editor/Plugins/Excel.dll</HintPath>
-    </Reference>
-    <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Knowledges/Xudawang Lab/ExcelToObject/Tools/Excel2Unity/Editor/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Knowledges/Xudawang Lab/ExcelToObject/Tools/Excel2Unity/Editor/Plugins/Newtonsoft.Json.dll</HintPath>
@@ -320,8 +314,11 @@
     <Reference Include="System.Data">
       <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Knowledges/Xudawang Lab/ExcelToObject/Tools/Excel2Unity/Editor/Plugins/System.Data.dll</HintPath>
     </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing">
-      <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Knowledges/Xudawang Lab/Plugins/System.Drawing.dll</HintPath>
+      <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Plugins/System.Drawing.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/mscorlib.dll</HintPath>
@@ -352,17 +349,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{F255712E-EDDA-5AF4-6935-BAE7ABE974D2}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
-    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{34170D80-E8DF-3A80-A12E-6A80807F9835}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
-    <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
-      <Project>{CA2B8C3C-17B2-6B8D-38CE-F5703DC2F789}</Project>
-      <Name>Assembly-CSharp-Editor-firstpass</Name>
+    <ProjectReference Include="UniRx.csproj">
+      <Project>{9A0FF5CD-176A-A13D-90FD-B84A39C16D43}</Project>
+      <Name>UniRx</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniRx.Async.csproj">
+      <Project>{CFA211EE-43B7-C41B-9E17-5D1FB734B452}</Project>
+      <Name>UniRx.Async</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniRx.Async.Editor.csproj">
+      <Project>{8A259C09-57F2-4AD1-DB11-BF6CE6C15D23}</Project>
+      <Name>UniRx.Async.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

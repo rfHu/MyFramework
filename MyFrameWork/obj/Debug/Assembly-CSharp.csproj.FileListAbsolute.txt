@@ -168,3 +168,6 @@ E:\STClone\MyFramework\MyFrameWork\obj\Debug\Assembly-CSharp.pdb
 E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\LitJson.dll
 E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\System.Drawing.dll
 E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UniRx.pdb
+E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UniRx.Async.pdb
+E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UniRx.Async.Editor.pdb

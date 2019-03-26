@@ -61,6 +61,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ForOffer\1.SizeOf\SizeOfExample.cs" />
+    <Compile Include="Assets\ForOffer\2.StaticConstructors\StaticConstructorsExample.cs" />
+    <Compile Include="Assets\ForOffer\3.Reflection&amp;ProgramArea\ReflectionAndProgramAreaExample.cs" />
     <Compile Include="Assets\Knowledges\Texture读取制作\DecompressTest.cs" />
     <Compile Include="Assets\Knowledges\Texture读取制作\RGBImageUtil.cs" />
     <Compile Include="Assets\Knowledges\Texture读取制作\Scripts\TextureUtil.cs" />
@@ -321,14 +324,14 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.8f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
-    <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Knowledges/Texture读取制作/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
-    </Reference>
     <Reference Include="LitJson">
       <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Knowledges/Xudawang Lab/ExcelToObject/Tools/LitJson.dll</HintPath>
     </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing">
-      <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Knowledges/Xudawang Lab/Plugins/System.Drawing.dll</HintPath>
+      <HintPath>E:/STClone/MyFramework/MyFrameWork/Assets/Plugins/System.Drawing.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
@@ -359,9 +362,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{F255712E-EDDA-5AF4-6935-BAE7ABE974D2}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
+    <ProjectReference Include="UniRx.csproj">
+      <Project>{9A0FF5CD-176A-A13D-90FD-B84A39C16D43}</Project>
+      <Name>UniRx</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniRx.Async.csproj">
+      <Project>{CFA211EE-43B7-C41B-9E17-5D1FB734B452}</Project>
+      <Name>UniRx.Async</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniRx.Async.Editor.csproj">
+      <Project>{8A259C09-57F2-4AD1-DB11-BF6CE6C15D23}</Project>
+      <Name>UniRx.Async.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -102,8 +102,7 @@ namespace RHFramework
                     //todo : 是否需要抛出某些异常？
                 }
             }
-
-            //List<AssetBundleBuild> buildMaps = new List<AssetBundleBuild>();
+            
             foreach (string item in allPrefab)
             {
                 string strTemp = item.Replace(@"\", "/");
