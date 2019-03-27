@@ -64,6 +64,7 @@
     <Compile Include="Assets\ForOffer\1.SizeOf\SizeOfExample.cs" />
     <Compile Include="Assets\ForOffer\2.StaticConstructors\StaticConstructorsExample.cs" />
     <Compile Include="Assets\ForOffer\3.Reflection&amp;ProgramArea\ReflectionAndProgramAreaExample.cs" />
+    <Compile Include="Assets\ForOffer\4.AboutSingleton\SingletonExample.cs" />
     <Compile Include="Assets\Knowledges\Texture读取制作\DecompressTest.cs" />
     <Compile Include="Assets\Knowledges\Texture读取制作\RGBImageUtil.cs" />
     <Compile Include="Assets\Knowledges\Texture读取制作\Scripts\TextureUtil.cs" />
