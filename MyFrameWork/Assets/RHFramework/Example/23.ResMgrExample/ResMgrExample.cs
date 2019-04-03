@@ -8,13 +8,13 @@ namespace RHFramework
     {
 #if UNITY_EDITOR
         [UnityEditor.MenuItem("RHFramework/Example/23.ResMgrExample", false, 23)]
-#endif
         static void MenuCilcked()
         {
             UnityEditor.EditorApplication.isPlaying = true;
 
             var panel = new GameObject("UIXXXPanel").AddComponent<ResMgrExample>();
         }
+#endif
 
         ResLoader mResLoader = new ResLoader();
 

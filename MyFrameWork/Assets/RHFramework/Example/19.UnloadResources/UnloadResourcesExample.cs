@@ -7,13 +7,13 @@ public class UnloadResourcesExample : MonoBehaviour
 
 #if UNITY_EDITOR
     [UnityEditor.MenuItem("RHFramework/Example/19.UnloadResourcesExample", false, 19)]
-#endif
     static void MenuCilcked()
     {
         UnityEditor.EditorApplication.isPlaying = true;
 
         new GameObject().AddComponent<UnloadResourcesExample>();
     }
+#endif
 
     IEnumerator Start()
     {

@@ -7,7 +7,6 @@ namespace RHFramework
     {
 #if UNITY_EDITOR
         [UnityEditor.MenuItem("RHFramework/Example/21.UIXXXPanel", false, 21)]
-#endif
         static void MenuCilcked()
         {
             UnityEditor.EditorApplication.isPlaying = true;
@@ -15,6 +14,7 @@ namespace RHFramework
             var panel = new GameObject("UIXXXPanel").AddComponent<UIXXXPanel>();
             panel.gameObject.AddComponent<UIYYYPanel>();
         }
+#endif
         
         ResLoader mResLoader = new ResLoader();
         

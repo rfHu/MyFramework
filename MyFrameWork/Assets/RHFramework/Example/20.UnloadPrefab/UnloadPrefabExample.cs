@@ -6,13 +6,13 @@ public class UnloadPrefabExample : MonoBehaviour
 {
 #if UNITY_EDITOR
     [UnityEditor.MenuItem("RHFramework/Example/20.UnloadPrefabExample", false, 20)]
-#endif
     static void MenuCilcked()
     {
         UnityEditor.EditorApplication.isPlaying = true;
 
         new GameObject().AddComponent<UnloadPrefabExample>();
     }
+#endif
 
     IEnumerator Start()
     {
