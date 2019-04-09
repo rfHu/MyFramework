@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ForOffer.SizeOf.SizeOfExample" Collapsed="true">
+    <Position X="16.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\ForOffer\1.SizeOf\SizeOfExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForOffer.SizeOf.ClassA" Collapsed="true">
+    <Position X="27.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\ForOffer\1.SizeOf\SizeOfExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForOffer.SizeOf.ClassA2" Collapsed="true">
+    <Position X="29" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\ForOffer\1.SizeOf\SizeOfExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForOffer.SizeOf.ClassA3" Collapsed="true">
+    <Position X="13.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\ForOffer\1.SizeOf\SizeOfExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForOffer.SizeOf.ClassA4" Collapsed="true">
+    <Position X="15" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\ForOffer\1.SizeOf\SizeOfExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForOffer.StaticConstructors.StaticConstructorsExample" Collapsed="true">
+    <Position X="20.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\ForOffer\2.StaticConstructors\StaticConstructorsExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForOffer.StaticConstructors.A" Collapsed="true">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\ForOffer\2.StaticConstructors\StaticConstructorsExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForOffer.StaticConstructors.B" Collapsed="true">
+    <Position X="20.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAQAAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\ForOffer\2.StaticConstructors\StaticConstructorsExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForOffer.ReflectionAndProgramArea.ReflectionAndProgramAreaExample" Collapsed="true">
+    <Position X="13.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\ForOffer\3.Reflection&amp;ProgramArea\ReflectionAndProgramAreaExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForOffer.ReflectionAndProgramArea.A" Collapsed="true">
+    <Position X="15" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEBAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\ForOffer\3.Reflection&amp;ProgramArea\ReflectionAndProgramAreaExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForOffer.ReflectionAndProgramArea.B" Collapsed="true">
+    <Position X="18.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEBAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\ForOffer\3.Reflection&amp;ProgramArea\ReflectionAndProgramAreaExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForOffer.SingletonExample.Singleton1" Collapsed="true">
+    <Position X="25.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\ForOffer\4.AboutSingleton\SingletonExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForOffer.SingletonExample.Singleton2" Collapsed="true">
+    <Position X="27.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAABAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\ForOffer\4.AboutSingleton\SingletonExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForOffer.SingletonExample.Singleton3" Collapsed="true">
+    <Position X="29" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAABAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\ForOffer\4.AboutSingleton\SingletonExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForOffer.SingletonExample.Singleton4" Collapsed="true">
+    <Position X="13.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\ForOffer\4.AboutSingleton\SingletonExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForOffer.SingletonExample.Singleton5" Collapsed="true">
+    <Position X="15" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\ForOffer\4.AboutSingleton\SingletonExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForOffer.TDArraySearch.TDArraySearch" Collapsed="true">
+    <Position X="25.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\ForOffer\5.2DArraySearch\TDArraySearch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForOffer.AboutString.StringCharSame" Collapsed="true">
+    <Position X="23.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\ForOffer\6.StringAndChar\StringCharSame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForOffer.BITreeStudy.BITreeStudy" Collapsed="true">
+    <Position X="23.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\ForOffer\7.BinaryTree\BITree.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForOffer.BITreeStudy.BiTree&lt;T&gt;" Collapsed="true">
+    <Position X="22" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAgAAAABAIAAAAAAAAACAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\ForOffer\7.BinaryTree\BITree.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForOffer.ChainBinaryTree.TreeNode&lt;T&gt;" Collapsed="true">
+    <Position X="15" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAQAAABAAAEAQAABAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\ForOffer\7.BinaryTree\ChainBinaryTree.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ForOffer.ChainBinaryTree.LinkBinaryTree&lt;T&gt;" Collapsed="true">
+    <Position X="13.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAACgABAALAAAFAAEBQAAAEAAAQAAAAAAAAoAAA=</HashCode>
+      <FileName>Assets\OfferStudy\ForOffer\7.BinaryTree\ChainBinaryTree.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TwoSumSolution" Collapsed="true">
+    <Position X="22" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEACAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\LeetCode\1.两数之和\TwoSumSolution.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CommonUtilExample" Collapsed="true">
+    <Position X="18.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Example\1.复制文件到剪切板\CommonUtilExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnloadResourcesExample" Collapsed="true">
+    <Position X="13.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Example\19.UnloadResources\UnloadResourcesExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnloadPrefabExample" Collapsed="true">
+    <Position X="29" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Example\20.UnloadPrefab\UnloadPrefabExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CommomUtil" Collapsed="true">
+    <Position X="16.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Framework\Util\CommonUtil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CameraCtrl" Collapsed="true">
+    <Position X="25.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AHIAAKACIAgIAAFAAAAAMAAAIAAAAQAAQAAAAHAAAEA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\CameraCtrl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpaceConfig" Collapsed="true">
+    <Position X="18.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CBgAAAAAAQIAAAAAAAAAAIAAAAAAAAAAAAAAAABAAgA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\CameraCtrl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ZipUtil" Collapsed="true">
+    <Position X="16.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iAAAAAAAEAAACAAAACAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Assets\WorkUtil\Texture读取制作\Scripts\ZipUtil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JsonToObject" Collapsed="true">
+    <Position X="16.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Assets\WorkUtil\Xudawang Lab\ExcelToObject\Codes\JsonToObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LeetCode.TwoListNodeSum.TwoListNodeSumTest" Collapsed="true">
+    <Position X="20.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\LeetCode\2.两数相加\TwoListNodeSumSolution.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LeetCode.TwoListNodeSum.ListNode" Collapsed="true">
+    <Position X="15" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\LeetCode\2.两数相加\TwoListNodeSumSolution.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LeetCode.TwoListNodeSum.TwoListNodeSumSolution1" Collapsed="true">
+    <Position X="16.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAQAACAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Assets\OfferStudy\LeetCode\2.两数相加\TwoListNodeSumSolution.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LeetCode.TwoListNodeSum.TwoListNodeSumSolution2" Collapsed="true">
+    <Position X="18.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\LeetCode\2.两数相加\TwoListNodeSumSolution.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.FrameworkExample" Collapsed="true">
+    <Position X="0.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAACAAAAAAAEAAAAAAAAAgAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\RHFramework\Example\10.框架示例\FrameworkExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.GUIExample" Collapsed="true">
+    <Position X="3" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAEAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Example\12.GUIManager\GUIExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.AudioExample" Collapsed="true">
+    <Position X="5.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAEAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Example\13.AudioManager\AudioExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.PoolExample" Collapsed="true">
+    <Position X="27.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Example\14.PoolManager\PoolExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.LevelManagerExample" Collapsed="true">
+    <Position X="7.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAEAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Example\15.LevelManager\LevelManagerExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.SingletonExample" Collapsed="true">
+    <Position X="0.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Example\16.SingletonExample\SingletonExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.MonoSingletonExample" Collapsed="true">
+    <Position X="0.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Example\17.MonoSingletonExample\MonoSingletonExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.StaticThisExtension" Collapsed="true">
+    <Position X="22" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Example\18.StaticThisExtension\StaticThisExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.UIXXXPanel" Collapsed="true">
+    <Position X="25.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEBAAAAACAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Assets\RHFramework\Example\21.ResMgrExample\UIXXXPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.UIYYYPanel" Collapsed="true">
+    <Position X="27.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Assets\RHFramework\Example\21.ResMgrExample\UIXXXPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.SimpleRCExample" Collapsed="true">
+    <Position X="23.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Example\22.SimpleRCExample\SimpleRCExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.ResMgrExample" Collapsed="true">
+    <Position X="16.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAACAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Example\23.ResMgrExample\ResMgrExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.AssetBundleExample" Collapsed="true">
+    <Position X="16.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEBAAAAACAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Example\24.AssetBundleExample\AssetBundleExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.ResolutionCheckExample" Collapsed="true">
+    <Position X="20.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Example\3.屏幕宽高比判断\ResolutionCheckExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.TransformSimplifyExample" Collapsed="true">
+    <Position X="13.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Example\4.transform 位置赋值简化\TransformSimplifyExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.MathUtilExample" Collapsed="true">
+    <Position X="18.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Example\5.概率函数\MathUtilExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.GameObjectSimplifyExample" Collapsed="true">
+    <Position X="27.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Example\6.GameObject显示隐藏\GameObjectSimplifyExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.HideExample" Collapsed="true">
+    <Position X="13.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Example\7.Hide 脚本\HideExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.MsgDispatcherExample" Collapsed="true">
+    <Position X="22" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Example\9.简单消息机制\MsgDispatcherExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.GameObjectExtension" Collapsed="true">
+    <Position X="25.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Framework\Extension\GameObjectExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.TransformExtension" Collapsed="true">
+    <Position X="29" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAEAAAAAAAAAAAAAAAAAAAAEAAAAAAAGA=</HashCode>
+      <FileName>Assets\RHFramework\Framework\Extension\TransformExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.AudioManager" Collapsed="true">
+    <Position X="5.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABEEAACAAAAAAACEAAAA0AAAAAAAAIAAAAAAAAQQA=</HashCode>
+      <FileName>Assets\RHFramework\Framework\Manager\AudioManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.GUIManager" Collapsed="true">
+    <Position X="29" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAQEA=</HashCode>
+      <FileName>Assets\RHFramework\Framework\Manager\GUIManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.LevelManager" Collapsed="true">
+    <Position X="27.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAIAAAAAAAAAECACAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Framework\Manager\LevelManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.MainManager" Collapsed="true">
+    <Position X="9.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAIAAKAAAAAAAAAAICAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Framework\Manager\MainManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.MonoBehaviourSimplify" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="RHFramework.MonoBehaviourSimplify.MsgRecord" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\RHFramework\Framework\MonoBehaviourSimplify.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAEQAAAAAAAEIAAAAUAAAAAAEAAA=</HashCode>
+      <FileName>Assets\RHFramework\Framework\MonoBehaviourSimplify.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.Res">
+    <Position X="5" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAgAAAAAAAIAAAAAAQCAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Framework\ResKit\Res.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.ResLoader">
+    <Position X="3" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAEgAAAEAAAKAGAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Framework\ResKit\ResLoader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.ResMgr">
+    <Position X="3" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Framework\ResKit\ResMgr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.EditorUtil" Collapsed="true">
+    <Position X="23.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgEAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Framework\Util\EditorUtil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.Hide" Collapsed="true">
+    <Position X="9.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\RHFramework\Framework\Util\Hide.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.MathUtil" Collapsed="true">
+    <Position X="16.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Framework\Util\MathUtil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.MonoSingleton&lt;T&gt;" Collapsed="true">
+    <Position X="3" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Framework\Util\MonoSingleton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.MsgDispatcher" Collapsed="true">
+    <Position X="20.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAgAAABAAAAAAAgAAAAEAA=</HashCode>
+      <FileName>Assets\RHFramework\Framework\Util\MsgDispatcher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.ResolutionCheck" Collapsed="true">
+    <Position X="18.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACCAAARAAAAAABAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Framework\Util\ResolutionCheck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.Pool&lt;T&gt;" Collapsed="true">
+    <Position X="6.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIEAAAAAAAABAAAAAAAAABEAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Framework\Util\SimpleObjectPool.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RHFramework.CustomObjectFactory&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Framework\Util\SimpleObjectPool.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RHFramework.SimpleObjectPool&lt;T&gt;" Collapsed="true">
+    <Position X="6.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Framework\Util\SimpleObjectPool.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.SimpleRC">
+    <Position X="5" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAACACAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Framework\Util\SimpleRC.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RHFramework.Singleton&lt;T&gt;" Collapsed="true">
+    <Position X="0.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Framework\Util\Singleton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.V0_0_4" Collapsed="true">
+    <Position X="15" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Test\V0_0_4.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.ReadAssetBundle" Collapsed="true">
+    <Position X="29" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\ReadAssetBundle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.DecompressTest" Collapsed="true">
+    <Position X="22" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Assets\WorkUtil\Texture读取制作\DecompressTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.NewBehaviourScript" Collapsed="true">
+    <Position X="23.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\WorkUtil\Texture读取制作\RGBImageUtil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.RGBImageUtil" Collapsed="true">
+    <Position X="22" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAASAACUAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\WorkUtil\Texture读取制作\RGBImageUtil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RHFramework.TextureUtil" Collapsed="true">
+    <Position X="27.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Assets\WorkUtil\Texture读取制作\Scripts\TextureUtil.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Game.GameModule" Collapsed="true">
+    <Position X="8.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAIAAAAAAAAAAAAAACAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Example\11.MainManager\Game\GameModule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Game.HomeModule" Collapsed="true">
+    <Position X="10.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAIAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Example\11.MainManager\Home\HomeModule.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniRxStudy.UIExample" Collapsed="true">
+    <Position X="23.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAEAAAAAAAAAhAAAAACEAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\UniRxStudy\Example\1.UI\UIExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniRxStudy.LifeCycleExample" Collapsed="true">
+    <Position X="29" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\UniRxStudy\Example\2.LifeCycle\LifeCycleExample.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanCameraMove" Collapsed="true">
+    <Position X="18.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAAAAAAAABAAAAAAAJAAAAAAAAEAAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanCameraMove.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanCameraZoom" Collapsed="true">
+    <Position X="20.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EBACAAEAAAAAAAAAEgAMJAAAAAAAAEAAAAAAAgAAAAA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanCameraZoom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanCanvasArrow" Collapsed="true">
+    <Position X="22" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAgAA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanCanvasArrow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanDestroy" Collapsed="true">
+    <Position X="23.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanDestroy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanFingerDown" Collapsed="true">
+    <Position X="27.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAQAgAAAEAIAAAAAAAACAA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanFingerDown.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanFingerHeld" Collapsed="true">
+    <Position X="29" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAEAAECAAAAAAAAAAAABEACAAAJAEAIACAAAAAGCAA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanFingerHeld.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanFingerLine" Collapsed="true">
+    <Position X="8.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAACAAAAgAAAAAAAQAQEAUAAo=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanFingerLine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanFingerSet" Collapsed="true">
+    <Position X="13.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAEAACAABAAAAAAABAAAAAAALEAIAAQAAAAACAA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanFingerSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanFingerSwipe" Collapsed="true">
+    <Position X="15" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEBACAEBABAAEAABABACAAAAEIIAEAAAAAACAA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanFingerSwipe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanFingerTap" Collapsed="true">
+    <Position X="16.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAEABAAAAQAAAAAABAAAAAAAAEAIAAACAAAACAA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanFingerTap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanFingerTrail" Collapsed="true">
+    <Position X="8.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAEAACAABAAAAAAABAAADAAJIEAIAAaAAEAACAA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanFingerTrail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanFingerUp" Collapsed="true">
+    <Position X="18.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAABACABAAAAEAIAAAAAAAACAA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanFingerUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanOpenUrl" Collapsed="true">
+    <Position X="22" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanOpenUrl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanPlane" Collapsed="true">
+    <Position X="23.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAAIAIAxAAIAAAAAAAAAAAAAAAAAAAAAAQAACAAAAAA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanPlane.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanRotate" Collapsed="true">
+    <Position X="25.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAxCAAEAACAABAAAAAEABAAAEAAAAEAAAAAEAAAAAAA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanRotate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanScale" Collapsed="true">
+    <Position X="27.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAwCAAEAECAABAEAAAMEBAAAAAAAAEAABAAEAAAAAAA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanScale.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.P3D_Texture_Drawer" Collapsed="true">
+    <Position X="25.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanScreenDepth.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanSelect" Collapsed="true">
+    <Position X="29" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACAAAAAACAAgAAAAACAAAAAAAoAAAIQAAAQAAgiAQ=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanSelect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanSelectable_Editor" Collapsed="true">
+    <Position X="15" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAACAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanSelectable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanSelectable" Collapsed="true">
+    <Position X="13.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAUAQAIAAEAAAAAACKAAAFAAAIgAIQQBQSCEAKAA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanSelectable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanSelectableBehaviour" Collapsed="true">
+    <Position X="3" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAABAQAAAQAAAACAAAAAAAAAAIAAAAAAAAKAA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanSelectableBehaviour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanSelectableGraphicColor" Collapsed="true">
+    <Position X="0.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAQAAACAABgAAAAAAAAAAAAAAAAAAAAAAAAQAIAQ=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanSelectableGraphicColor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanSelectableRendererColor" Collapsed="true">
+    <Position X="3" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAQAAAAAABgAAAAAAABIAAAAAAAAAAAAAAAQAIEQ=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanSelectableRendererColor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanSelectableSpriteRendererColor" Collapsed="true">
+    <Position X="5.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAQAAACAAAgAAAAAAAAAAAAAAAAAAAAAAAAQAIAQ=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanSelectableSpriteRendererColor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanSpawnAt" Collapsed="true">
+    <Position X="18.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAgEAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanSpawnAt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanTouchEvents" Collapsed="true">
+    <Position X="23.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAEAAAAAAAAACAAAAAEAIAAAAAAASCAA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanTouchEvents.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanTranslate" Collapsed="true">
+    <Position X="25.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQCAAEAACAABAAAAAEABAAAAAAAAEAAAAAEAAAAAAA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanTranslate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanFinger" Collapsed="true">
+    <Position X="25.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAoQCkMAEAigBAACUmZCADmAAAgAIAEDSAEAQxAAgAY=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Scripts\LeanFinger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanGesture" Collapsed="true">
+    <Position X="20.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAABABSAAAAAAAAEAACOCAgEAQAAACQCFQAADQAQ=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Scripts\LeanGesture.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanSnapshot" Collapsed="true">
+    <Position X="16.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAEIkABAAAAAACAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Scripts\LeanSnapshot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanTouch_Editor" Collapsed="true">
+    <Position X="22" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAIAAAAAAAAESEAACAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Scripts\LeanTouch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lean.Touch.LeanTouch" Collapsed="true">
+    <Position X="20.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DAQMAAFEgUAABGCAAAUIJRge0AQCAEAYQACJEAQyCFA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Scripts\LeanTouch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zgke.MyImage.ImageFile.ImageTGA" Collapsed="true">
+    <Position X="15" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAEAAACAAQAACABAAAAAEIJACAgFAgAQAIAAAAAFA=</HashCode>
+      <FileName>Assets\WorkUtil\Xudawang Lab\ExcelToObject\ImageTGA.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="ForOffer.SizeOf.StructA" Collapsed="true">
+    <Position X="15" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\ForOffer\1.SizeOf\SizeOfExample.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ForOffer.SizeOf.StructA2" Collapsed="true">
+    <Position X="16.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\ForOffer\1.SizeOf\SizeOfExample.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ForOffer.SizeOf.StructA3" Collapsed="true">
+    <Position X="18.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\OfferStudy\ForOffer\1.SizeOf\SizeOfExample.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Lean.Touch.LeanScreenDepth" Collapsed="true">
+    <Position X="13.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIgAIAAAAAAAAABEAAIAAAAAAAA=</HashCode>
+      <FileName>Assets\WorkUtil\AssetScene\HYA\LeanTouch\Examples\Scripts\LeanScreenDepth.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="RHFramework.IPool&lt;T&gt;" Collapsed="true">
+    <Position X="15" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Framework\Util\SimpleObjectPool.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RHFramework.IObjectFactory&lt;T&gt;" Collapsed="true">
+    <Position X="13.25" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Framework\Util\SimpleObjectPool.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RHFramework.IRefCounter">
+    <Position X="5" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAACAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Framework\Util\SimpleRC.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="RHFramework.UILayer" Collapsed="true">
+    <Position X="15" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAACAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Framework\Manager\GUIManager.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="RHFramework.EnvironmentMode" Collapsed="true">
+    <Position X="13.25" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABBAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Assets\RHFramework\Framework\Manager\MainManager.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

@@ -103,9 +103,11 @@
     <Compile Include="Assets\RHFramework\Framework\Manager\LevelManager.cs" />
     <Compile Include="Assets\RHFramework\Framework\Manager\MainManager.cs" />
     <Compile Include="Assets\RHFramework\Framework\MonoBehaviourSimplify.cs" />
+    <Compile Include="Assets\RHFramework\Framework\ResKit\AssetBundleRes.cs" />
     <Compile Include="Assets\RHFramework\Framework\ResKit\Res.cs" />
     <Compile Include="Assets\RHFramework\Framework\ResKit\ResLoader.cs" />
     <Compile Include="Assets\RHFramework\Framework\ResKit\ResMgr.cs" />
+    <Compile Include="Assets\RHFramework\Framework\ResKit\ResourceRes.cs" />
     <Compile Include="Assets\RHFramework\Framework\Util\CommonUtil.cs" />
     <Compile Include="Assets\RHFramework\Framework\Util\EditorUtil.cs" />
     <Compile Include="Assets\RHFramework\Framework\Util\Hide.cs" />

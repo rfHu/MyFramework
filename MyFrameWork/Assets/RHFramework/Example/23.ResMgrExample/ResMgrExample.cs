@@ -22,12 +22,12 @@ namespace RHFramework
         {
             yield return new WaitForSeconds(5);
 
-            mResLoader.LoadSync<Texture2D>("pic1");
+            mResLoader.LoadSync<Texture2D>("resources://pic1");
 
             yield return new WaitForSeconds(2);
 
             Debug.Log("Start load:" + Time.time);
-            mResLoader.LoadAsync<AudioClip>("getcoin", callback => 
+            mResLoader.LoadAsync<AudioClip>("resources://getcoin", callback => 
             {
                 Debug.Log(callback.name);
 
@@ -36,15 +36,15 @@ namespace RHFramework
 
             yield return new WaitForSeconds(2);
 
-            mResLoader.LoadSync<AudioClip>("home");
+            mResLoader.LoadSync<AudioClip>("resources://home");
 
             yield return new WaitForSeconds(2);
 
-            mResLoader.LoadSync<AudioClip>("Audio/getcoin");
+            mResLoader.LoadSync<AudioClip>("resources://Audio/getcoin");
 
             yield return new WaitForSeconds(3);
 
-            var homePanelPrefab = mResLoader.LoadSync<GameObject>("HomePanel");
+            var homePanelPrefab = mResLoader.LoadSync<GameObject>("resources://HomePanel");
 
             yield return new WaitForSeconds(3);
 

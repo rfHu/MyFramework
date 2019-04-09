@@ -3,52 +3,23 @@ using UnityEngine;
 
 namespace RHFramework
 {
-    public class Res : SimpleRC
+    public abstract class Res : SimpleRC
     {
-        public UnityEngine.Object Asset { get; private set; }
+        public UnityEngine.Object Asset { get; protected set; }
 
-        public string Name { get; private set; }
+        public string Name { get; protected set; }
 
         private string mAssetPath;
 
-        public Res(string assetPath)
-        {
-            mAssetPath = assetPath;
+        public abstract bool LoadSync();
 
-            Name = assetPath;
-        }
-
-        public bool LoadSync()
-        {
-            return Asset = Resources.Load(mAssetPath);
-        }
-
-        public void LoadAsync(Action<Res> OnLoaded)
-        {
-            var resRequest = Resources.LoadAsync(mAssetPath);
-
-            resRequest.completed += operation =>
-            {
-                Asset = resRequest.asset;
-                OnLoaded(this);
-            };
-        }
+        public abstract void LoadAsync(Action<Res> OnLoaded);
+        
+        protected abstract void OnReleaseRes();
 
         protected override void OnZeroRef()
         {
-            if (Asset is GameObject)
-            {
-                Asset = null;
-                Resources.UnloadUnusedAssets();
-            }
-            else
-            {
-                Resources.UnloadAsset(Asset);
-            }
-            
-            ResMgr.Instance.SharedLoadedReses.Remove(this);
-
-            Asset = null;
+            OnReleaseRes();
         }
     }
 }

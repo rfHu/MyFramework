@@ -110,7 +110,6 @@ E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\Boo.Lang.Useful.dll
 E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\Unity.CecilTools.dll
 E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\Unity.Cecil.Pdb.dll
 E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\Unity.Cecil.Mdb.dll
-E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UniRx.Async.pdb
 E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UnityEngine.xml
 E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UnityEditor.xml
 E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UnityEngine.AIModule.xml
@@ -192,3 +191,4 @@ E:\STClone\MyFramework\MyFrameWork\obj\Debug\UniRx.csproj.CoreCompileInputs.cach
 E:\STClone\MyFramework\MyFrameWork\obj\Debug\UniRx.csproj.CopyComplete
 E:\STClone\MyFramework\MyFrameWork\obj\Debug\UniRx.dll
 E:\STClone\MyFramework\MyFrameWork\obj\Debug\UniRx.pdb
+E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UniRx.Async.pdb

@@ -169,12 +169,12 @@ E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\LitJson.dll
 E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\System.Drawing.dll
 E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\ICSharpCode.SharpZipLib.dll
 E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UniRx.pdb
-E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UniRx.Async.pdb
-E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UniRx.Async.Editor.pdb
 E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\Unity.Analytics.DataPrivacy.dll
 E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\Unity.CollabProxy.Editor.dll
 E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\Unity.PackageManagerUI.Editor.dll
 E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\Unity.TextMeshPro.dll
 E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\Unity.TextMeshPro.Editor.dll
 E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UnityEditor.UI.dll
+E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UniRx.Async.pdb
+E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UniRx.Async.Editor.pdb
 E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UnityEditor.UI.xml

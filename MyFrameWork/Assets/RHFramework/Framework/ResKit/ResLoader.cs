@@ -77,7 +77,16 @@ namespace RHFramework
 
         private Res CreateRes(string assetName)
         {
-            var res = new Res(assetName);
+            Res res = null;
+
+            if (assetName.StartsWith("resources://"))
+            {
+                res = new ResourceRes(assetName);
+            }
+            else
+            {
+                res = new AssetBundleRes(assetName);
+            }
 
             ResMgr.Instance.SharedLoadedReses.Add(res);
 

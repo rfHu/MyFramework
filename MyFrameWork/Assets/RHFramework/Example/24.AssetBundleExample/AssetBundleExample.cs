@@ -29,11 +29,13 @@ namespace RHFramework {
         }
 #endif
 
+        private ResLoader mResLoader = new ResLoader();
+
         private AssetBundle mBundle;
 
         private void Start()
         {
-            mBundle = AssetBundle.LoadFromFile(Application.streamingAssetsPath + "/testgo");
+            mBundle = mResLoader.LoadSync<AssetBundle>(Application.streamingAssetsPath + "/testgo");
             var go = mBundle.LoadAsset<GameObject>("GameObject");
 
             Instantiate(go);
@@ -41,7 +43,9 @@ namespace RHFramework {
 
         private void OnDestroy()
         {
-            mBundle.Unload(true);
+            mBundle = null;
+            mResLoader.ReleaseAll();
+            mResLoader = null;
         }
     }
 }

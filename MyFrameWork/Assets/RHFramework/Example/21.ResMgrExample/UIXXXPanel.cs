@@ -20,12 +20,12 @@ namespace RHFramework
         
         void Start()
         {
-            var coinClip = mResLoader.LoadSync<AudioClip>("getcoin");
+            var coinClip = mResLoader.LoadSync<AudioClip>("resources://getcoin");
         }
 
         private void OtherFunc()
         {
-            var otherClip = mResLoader.LoadSync<AudioClip>("getcoin");
+            var otherClip = mResLoader.LoadSync<AudioClip>("resources://getcoin");
         }
         
         void OnDestroy()
@@ -41,7 +41,7 @@ namespace RHFramework
 
         void Start()
         {
-            var coinClip = mResLoader.LoadSync<AudioClip>("getcoin");
+            var coinClip = mResLoader.LoadSync<AudioClip>("resources://getcoin");
 
             //var homeClip = mResLoader.LoadAsset<AudioClip>("home");
 
@@ -50,7 +50,7 @@ namespace RHFramework
 
         private void OtherFunc()
         {
-            var otherClip = mResLoader.LoadSync<AudioClip>("getcoin");
+            var otherClip = mResLoader.LoadSync<AudioClip>("resources://getcoin");
         }
 
         void OnDestroy()
