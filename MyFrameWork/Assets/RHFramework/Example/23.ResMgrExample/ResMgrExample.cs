@@ -26,7 +26,13 @@ namespace RHFramework
 
             yield return new WaitForSeconds(2);
 
-            mResLoader.LoadSync<AudioClip>("getcoin");
+            Debug.Log("Start load:" + Time.time);
+            mResLoader.LoadAsync<AudioClip>("getcoin", callback => 
+            {
+                Debug.Log(callback.name);
+
+                Debug.Log("end load:" + Time.time);
+            });
 
             yield return new WaitForSeconds(2);
 
@@ -34,7 +40,7 @@ namespace RHFramework
 
             yield return new WaitForSeconds(2);
 
-            mResLoader.LoadSync<AudioClip>("getcoin");
+            mResLoader.LoadSync<AudioClip>("Audio/getcoin");
 
             yield return new WaitForSeconds(3);
 

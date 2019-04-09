@@ -10,12 +10,12 @@ namespace RHFramework
     {
         private void Start()
         {
-            StartCoroutine(Load());
+            StartCoroutine(Load(Application.streamingAssetsPath + @"/adt2_0.res", "ADT2_0"));
         }
 
-        IEnumerator Load()
+        IEnumerator Load(string path, string sceneName)
         {
-            var abRequest = AssetBundle.LoadFromFileAsync(Application.streamingAssetsPath + @"/LifeCycleExample/lifecycleexample.res");
+            var abRequest = AssetBundle.LoadFromFileAsync(path);
 
             yield return abRequest;
 
@@ -28,10 +28,14 @@ namespace RHFramework
             }
             else
             {
-                AsyncOperation ao = SceneManager.LoadSceneAsync("LifeCycleExample", LoadSceneMode.Additive);
+                string oldSceneName = SceneManager.GetActiveScene().name;
+
+                AsyncOperation ao = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
                 yield return ao;
-                Scene newScene2 = SceneManager.GetSceneByName("LifeCycleExample");
+
+                Scene newScene2 = SceneManager.GetSceneByName(sceneName);
                 SceneManager.SetActiveScene(newScene2);
+                SceneManager.UnloadSceneAsync(oldSceneName);
 
                 ab.Unload(false);
             }
