@@ -6,6 +6,23 @@ namespace RHFramework
 {
     public class AssetBundleRes : Res
     {
+        private static AssetBundleManifest mManifest;
+
+        public static AssetBundleManifest Manifest
+        {
+            get
+            {
+                if (!mManifest)
+                {
+                    var mainBundle = AssetBundle.LoadFromFile(Application.streamingAssetsPath + "/StreamingAssets");
+
+                    mManifest = mainBundle.LoadAsset<AssetBundleManifest>("AssetBundleManifest");
+                }
+
+                return mManifest;
+            }
+        }
+
         public AssetBundle AssetBundle
         {
             get { return Asset as AssetBundle; }
@@ -21,8 +38,17 @@ namespace RHFramework
             Name = assetPath;
         }
 
+        private ResLoader mResLoader = new ResLoader();
+
         public override bool LoadSync()
         {
+            var dependencyBundleNames = Manifest.GetDirectDependencies(mAssetPath.Substring(Application.streamingAssetsPath.Length + 1));
+
+            foreach (var dependencyBundleName in dependencyBundleNames)
+            {
+                mResLoader.LoadSync<AssetBundle>(Application.streamingAssetsPath + "/" + dependencyBundleName);
+            }
+
             return AssetBundle = AssetBundle.LoadFromFile(mAssetPath);
         }
 
@@ -43,6 +69,9 @@ namespace RHFramework
             {
                 AssetBundle.Unload(true);
                 AssetBundle = null;
+
+                mResLoader.ReleaseAll();
+                mResLoader = null;
             }
 
             ResMgr.Instance.SharedLoadedReses.Remove(this);
