@@ -12,7 +12,13 @@ namespace RHFramework
 
             if (res != null)
             {
-                return res.Asset as T;
+                switch (res.State)
+                {
+                    case ResState.Loading:
+                        throw new System.Exception(string.Format("请不要在异步加载 {0} 时，进行 {0} 同步加载", res.Name));
+                    case ResState.Loaded:
+                        return res.Asset as T;
+                }
             }
 
             //真正加载资源
@@ -30,7 +36,15 @@ namespace RHFramework
 
             if (res != null)
             {
-                onLoaded(res.Asset as T);
+                switch (res.State)
+                {
+                    case ResState.Loading:
+                        break;
+                    case ResState.Loaded:
+                        onLoaded(res.Asset as T);
+                        break;
+                }
+
                 return;
             }
 

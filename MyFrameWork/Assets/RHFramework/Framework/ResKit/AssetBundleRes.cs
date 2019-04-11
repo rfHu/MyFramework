@@ -36,12 +36,16 @@ namespace RHFramework
             mAssetPath = assetPath;
 
             Name = assetPath;
+
+            State = ResState.Waiting;
         }
 
         private ResLoader mResLoader = new ResLoader();
 
         public override bool LoadSync()
         {
+            State = ResState.Loading;
+
             var dependencyBundleNames = Manifest.GetDirectDependencies(mAssetPath.Substring(Application.streamingAssetsPath.Length + 1));
 
             foreach (var dependencyBundleName in dependencyBundleNames)
@@ -49,17 +53,24 @@ namespace RHFramework
                 mResLoader.LoadSync<AssetBundle>(Application.streamingAssetsPath + "/" + dependencyBundleName);
             }
 
-            return AssetBundle = AssetBundle.LoadFromFile(mAssetPath);
+            AssetBundle = AssetBundle.LoadFromFile(mAssetPath);
+
+            State = ResState.Loaded;
+
+            return AssetBundle;
         }
 
-        public override void LoadAsync(System.Action<Res> OnLoaded)
+        public override void LoadAsync()
         {
+            State = ResState.Loading;
+
             var resRequest = AssetBundle.LoadFromFileAsync(mAssetPath);
 
             resRequest.completed += operation =>
             {
                 AssetBundle = resRequest.assetBundle;
-                OnLoaded(this);
+
+                State = ResState.Loaded;
             };
         }
 

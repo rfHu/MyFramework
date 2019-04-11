@@ -14,21 +14,32 @@ namespace RHFramework
             mAssetPath = assetPath.Substring("resources://".Length);//确认开头截掉内容的情况下这是一种好写法
 
             Name = assetPath;
+
+            State = ResState.Waiting;
         }
 
         public override bool LoadSync()
         {
-            return Asset = Resources.Load(mAssetPath);
+            State = ResState.Loading;
+
+            Asset = Resources.Load(mAssetPath);
+
+            State = ResState.Loaded;
+
+            return Asset;
         }
 
-        public override void LoadAsync(Action<Res> OnLoaded)
+        public override void LoadAsync()
         {
+            State = ResState.Loading;
+
             var resRequest = Resources.LoadAsync(mAssetPath);
 
             resRequest.completed += operation =>
             {
                 Asset = resRequest.asset;
-                OnLoaded(this);
+
+                State = ResState.Loaded;
             };
         }
 
