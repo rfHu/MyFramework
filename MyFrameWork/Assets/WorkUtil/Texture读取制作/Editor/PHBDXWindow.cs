@@ -59,12 +59,12 @@ namespace RHFramework
             {
                 var files = DI.GetFiles();
                 var rgbFiles = files.Where(f => f.Name.Substring(0, 3) == "rgb").OrderBy(f => f.Name[f.Name.LastIndexOf('.') - 1]).ToArray();
-                var images = new Bitmap[rgbFiles.Length];
+                var bitmaps = new  List<Bitmap>(rgbFiles.Length);
                 for (int i = 0; i < rgbFiles.Length; i++)
                 {
-                    images[i] = new Bitmap(rgbFiles[i].FullName);
+                    bitmaps[i] = new Bitmap(rgbFiles[i].FullName);
                 }
-                RGBImageUtil.DrawPartImg(images, DI.FullName, DI.Name);
+                RGBImageUtil.CreatePartImagesFromRGB(bitmaps, DI.FullName, DI.Name);
 
                 DirectoryInfo di = new DirectoryInfo(DI.FullName);
                 if (type == imgType.PH)

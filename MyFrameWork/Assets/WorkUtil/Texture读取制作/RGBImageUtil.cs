@@ -15,14 +15,6 @@ namespace RHFramework {
             var texture2D1 = Resources.Load<Texture2D>("28");
             var texture2D2 = Resources.Load<Texture2D>("28_1");
 
-            //DrawIcon(new Texture2D[] { texture2D1, texture2D2 }, new Texture2D[] { pic1, pic2, pic3, pic4, pic5 });
-            //RGBImageUtil.DrawPartPics(new Texture2D[] { texture2D1, texture2D2 });
-            //RGBImageUtil.DrawPartImg(new Bitmap[] 
-            //{
-            //    new Bitmap(@"E:\STClone\MyFramework\MyFrameWork\Assets\Knowledges\Texture读取制作\Resources\28.png"),
-            //    new Bitmap(@"E:\STClone\MyFramework\MyFrameWork\Assets\Knowledges\Texture读取制作\Resources\28_1.png")
-            //});
-
             texture2D1 = texture2D2 = null;
 
             DestroyImmediate(texture2D1, true);
@@ -106,13 +98,13 @@ namespace RHFramework {
             texture = null;
         }
 
-        public static void DrawPartImg(Bitmap[] RGBImages, string savePath, string savename)
+        public static void CreatePartImagesFromRGB(List<Bitmap> RGBBitmaps, string savePath, string savename)
         {
             //获得新图宽高
-            var width = RGBImages[0].Width;
-            var height = RGBImages[0].Height;
+            var width = RGBBitmaps[0].Width;
+            var height = RGBBitmaps[0].Height;
 
-            List<Bitmap> images = new List<Bitmap>();
+            List<Bitmap> createBitmaps = new List<Bitmap>();
 
             //计算像素
             for (int y = 0; y < height; y++)
@@ -121,9 +113,9 @@ namespace RHFramework {
                 {
                     var picLayerNum = -1;
 
-                    for (int i = 0; i < RGBImages.Length; i++)
+                    for (int i = 0; i < RGBBitmaps.Count; i++)
                     {
-                        System.Drawing.Color tempColor = RGBImages[i].GetPixel(x, y);
+                        System.Drawing.Color tempColor = RGBBitmaps[i].GetPixel(x, y);
 
                         if (tempColor == System.Drawing.Color.Black)
                         {
@@ -148,41 +140,83 @@ namespace RHFramework {
 
                     if (picLayerNum != -1)
                     {
-                        while (picLayerNum + 1 > images.Count)
+                        while (picLayerNum + 1 > createBitmaps.Count)
                         {
                             var image = new Bitmap(width, height);
-                            image = DrawWgoleImageColor(image, System.Drawing.Color.FromArgb(0,0,0,0));
-                            images.Add(image);
+                            image = DrawWholeBitmapColor(image, System.Drawing.Color.FromArgb(0,0,0,0));
+                            createBitmaps.Add(image);
                         }
-                        images[0].SetPixel(x, y, ColorTranslator.FromHtml("#ffffff"));
-                        images[picLayerNum].SetPixel(x, y, ColorTranslator.FromHtml("#ffffff"));
+                        createBitmaps[0].SetPixel(x, y, ColorTranslator.FromHtml("#ffffff"));
+                        createBitmaps[picLayerNum].SetPixel(x, y, ColorTranslator.FromHtml("#ffffff"));
                     }
                 }
             }
 
-            for (int i = 0; i < images.Count; i++)
+            for (int i = 0; i < createBitmaps.Count; i++)
             {
-                SaveImagePNG(images[i], string.Format("{0}/partimg_{1}_{2}.png", savePath, savename, i));
+                SaveBitmap2PNG(createBitmaps[i], string.Format("{0}/partimg_{1}_{2}.png", savePath, savename, i));
 
-                images[i].Dispose();
+                createBitmaps[i].Dispose();
+                createBitmaps[i] = null;
             }
 
+            createBitmaps = null;
             Debug.Log("finish");
         }
 
-        public static Bitmap DrawWgoleImageColor(Bitmap image, System.Drawing.Color color)
+        public static void CreateRGBImagesFromPart(List<Bitmap> partBitmaps)
         {
-            var colors = new System.Drawing.Color[image.Width * image.Height];
+            //获得新图宽高
+            var width = partBitmaps[0].Width;
+            var height = partBitmaps[0].Height;
 
-            for (int i = 0; i < image.Width; i++)
+            var partNum = partBitmaps.Count;
+            var createNum = Mathf.CeilToInt(partBitmaps.Count / 3.0f);
+
+            List<Bitmap> createBitmaps = new List<Bitmap>(createNum);
+
+            for (int i = 0; i < createNum; i++)
             {
-                for (int j = 0; j < image.Height; j++)
+                createBitmaps[i] = new Bitmap(width, height);
+
+                for (int x = 0; x < width; x++)
                 {
-                    image.SetPixel(i,j,color);
+                    for (int y = 0; y < height; y++)
+                    {
+                        if (i * 3 + 2 < partNum && partBitmaps[i].GetPixel(x, y).R > 240)
+                        {
+                            createBitmaps[i].SetPixel(x, y, System.Drawing.Color.Red);
+                        }
+                        else if (i * 3 + 1 < partNum && partBitmaps[i].GetPixel(x, y).R > 240)
+                        {
+                            createBitmaps[i].SetPixel(x, y, System.Drawing.Color.Green);
+                        }
+                        else if (i * 3 < partNum && partBitmaps[i].GetPixel(x, y).R > 240)
+                        {
+                            createBitmaps[i].SetPixel(x, y, System.Drawing.Color.Blue);
+                        }
+                        else
+                        {
+                            createBitmaps[i].SetPixel(x, y, System.Drawing.Color.Black);
+                        }
+                    }
+                }
+            }
+        }
+
+        public static Bitmap DrawWholeBitmapColor(Bitmap bitmap, System.Drawing.Color color)
+        {
+            var colors = new System.Drawing.Color[bitmap.Width * bitmap.Height];
+
+            for (int i = 0; i < bitmap.Width; i++)
+            {
+                for (int j = 0; j < bitmap.Height; j++)
+                {
+                    bitmap.SetPixel(i,j,color);
                 }
             }
             
-            return image;
+            return bitmap;
         }
 
         /// <summary>
@@ -230,9 +264,9 @@ namespace RHFramework {
             return scaledBitmap;
         }
 
-        private static void SaveImagePNG(Bitmap image, string path)
+        private static void SaveBitmap2PNG(Bitmap bitmap, string path)
         {
-            image.Save(path);
+            bitmap.Save(path);
         }
     }
 }

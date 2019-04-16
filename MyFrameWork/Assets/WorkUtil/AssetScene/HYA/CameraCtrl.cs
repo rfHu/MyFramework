@@ -26,6 +26,9 @@ public class CameraCtrl : MonoBehaviour
         Instance = this;
 
         _mainCam = Camera.main;
+
+
+
         _mainTran = _mainCam.transform;
 
         

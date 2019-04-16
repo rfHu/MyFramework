@@ -34,24 +34,34 @@ namespace RHFramework
             //查询当前资源记录
             var res = GetOrCreateRes(assetName);
 
+            System.Action<Res> onResLoaded = null;
+
+            onResLoaded = loadedRes =>
+            {
+                onLoaded(loadedRes.Asset as T);
+
+                res.UnregisterOnLoadedEvent(onResLoaded);
+            };
+
             if (res != null)
             {
-                switch (res.State)
+                if (res.State == ResState.Loading)
                 {
-                    case ResState.Loading:
-                        break;
-                    case ResState.Loaded:
-                        onLoaded(res.Asset as T);
-                        break;
+                    res.RegisterOnLoadedEvent(onResLoaded);
                 }
-
+                else if (res.State == ResState.Loaded)
+                {
+                    onLoaded(res.Asset as T);
+                }
                 return;
             }
 
             //真正加载资源
             res = CreateRes(assetName);
 
-            res.LoadAsync(loadedRes => { onLoaded(loadedRes.Asset as T); });
+            res.RegisterOnLoadedEvent(onResLoaded);
+
+            res.LoadAsync();
             
         }
 
