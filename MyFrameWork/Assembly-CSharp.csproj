@@ -155,6 +155,7 @@
     <Compile Include="Assets\WorkUtil\AssetScene\HYA\LeanTouch\Scripts\LeanSnapshot.cs" />
     <Compile Include="Assets\WorkUtil\AssetScene\HYA\LeanTouch\Scripts\LeanTouch.cs" />
     <Compile Include="Assets\WorkUtil\AssetScene\ReadAssetBundle.cs" />
+    <Compile Include="Assets\WorkUtil\CreateJson\CreateJson.cs" />
     <Compile Include="Assets\WorkUtil\Texture读取制作\DecompressTest.cs" />
     <Compile Include="Assets\WorkUtil\Texture读取制作\RGBImageUtil.cs" />
     <Compile Include="Assets\WorkUtil\Texture读取制作\Scripts\TextureUtil.cs" />
