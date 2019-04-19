@@ -373,7 +373,7 @@ public class BatchPictures : EditorWindow
 
     private static void BuildAllMaterial(string parenPath)
     {
-        Material tempMat = AssetDatabase.LoadAssetAtPath<Material>("Assets/Knowledges/Xudawang Lab/CreateMaterial/TempMat.mat");
+        Material tempMat = AssetDatabase.LoadAssetAtPath<Material>("Assets/WorkUtil/Xudawang Lab/CreateMaterial/TempMat.mat");
 
         string filesParentPath = parentPath + "\\finalpic";
 

@@ -122,7 +122,7 @@ namespace RHFramework
 #endif
 
 #if UNITY_IOS
-            BuildPipeline.BuildAssetBundles(assetBundlePath + "/" + abName.Remove(abName.IndexOf('.')), buildMaps.ToArray(), buildMaps.ToArray(), BuildAssetBundleOptions.None, BuildTarget.iOS);
+                BuildPipeline.BuildAssetBundles(assetBundlePath /*+ "/" + abName.Remove(abName.IndexOf('.'))*/, buildMaps.ToArray(), BuildAssetBundleOptions.None, BuildTarget.iOS);
 #endif
             }
 
