@@ -235,6 +235,7 @@ PlayerSettings:
   tvOSManualSigningProvisioningProfileType: 0
   appleEnableAutomaticSigning: 0
   iOSRequireARKit: 0
+  iOSAutomaticallyDetectAndAddCapabilities: 1
   appleEnableProMotion: 0
   clonedFromGUID: c0afd0d1d80e3634a9dac47e8a0426ea
   templatePackageId: 
@@ -598,6 +599,7 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
+    Collab: 1
     UNet: 1
   luminIcon:
     m_Name: 
@@ -618,10 +620,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 2
-  cloudProjectId: a8d42efb-4171-4974-a6f5-8a4dfc068974
+  cloudProjectId: f4896bd8-ea4c-482a-92ae-6b0971e9c85a
   framebufferDepthMemorylessMode: 0
   projectName: MyFrameWork
-  organizationId: hu-ruifeng
+  organizationId: rainehu
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

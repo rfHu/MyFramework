@@ -4,27 +4,8 @@ using System.Drawing.Drawing2D;
 using System.IO;
 using UnityEngine;
 
-namespace RHFramework {
-    public class NewBehaviourScript : MonoBehaviour
-    {
-#if UNITY_EDITOR
-        [UnityEditor.MenuItem("MyKnowledge/1_", false, 1)]
-#endif
-        private static void MenuClicked()
-        {
-            var texture2D1 = Resources.Load<Texture2D>("28");
-            var texture2D2 = Resources.Load<Texture2D>("28_1");
-
-            texture2D1 = texture2D2 = null;
-
-            DestroyImmediate(texture2D1, true);
-            DestroyImmediate(texture2D2, true);
-
-            Resources.UnloadUnusedAssets();
-
-        }
-
-    }
+namespace RHFramework
+{
 
     public static class RGBImageUtil
     {
@@ -143,7 +124,7 @@ namespace RHFramework {
                         while (picLayerNum + 1 > createBitmaps.Count)
                         {
                             var image = new Bitmap(width, height);
-                            image = DrawWholeBitmapColor(image, System.Drawing.Color.FromArgb(0,0,0,0));
+                            image = DrawWholeBitmapColor(image, System.Drawing.Color.FromArgb(0, 0, 0, 0));
                             createBitmaps.Add(image);
                         }
                         createBitmaps[0].SetPixel(x, y, ColorTranslator.FromHtml("#ffffff"));
@@ -164,7 +145,7 @@ namespace RHFramework {
             Debug.Log("finish");
         }
 
-        public static void CreateRGBImagesFromPart(List<Bitmap> partBitmaps)
+        public static List<Bitmap> CreatePart2RGB(List<Bitmap> partBitmaps)
         {
             //获得新图宽高
             var width = partBitmaps[0].Width;
@@ -173,27 +154,38 @@ namespace RHFramework {
             var partNum = partBitmaps.Count;
             var createNum = Mathf.CeilToInt(partBitmaps.Count / 3.0f);
 
-            List<Bitmap> createBitmaps = new List<Bitmap>(createNum);
+            List<Bitmap> createBitmaps = new List<Bitmap>();
+
+            while (createBitmaps.Count < createNum)
+            {
+                var bitmap = new Bitmap(width, height);
+                DrawWholeBitmapColor(bitmap, System.Drawing.Color.FromArgb(0, 0, 0, 0));
+                createBitmaps.Add(bitmap);
+            }
+
+            Bitmap partBG = new Bitmap(width, height);
+            DrawWholeBitmapColor(partBG, System.Drawing.Color.FromArgb(0, 0, 0, 0));
 
             for (int i = 0; i < createNum; i++)
             {
-                createBitmaps[i] = new Bitmap(width, height);
-
                 for (int x = 0; x < width; x++)
                 {
                     for (int y = 0; y < height; y++)
                     {
-                        if (i * 3 + 2 < partNum && partBitmaps[i].GetPixel(x, y).R > 240)
+                        if (i * 3 + 2 < partNum && partBitmaps[i * 3 + 2].GetPixel(x, y).R > 240)
                         {
-                            createBitmaps[i].SetPixel(x, y, System.Drawing.Color.Red);
+                            createBitmaps[i].SetPixel(x, y, System.Drawing.Color.FromArgb(255, 0, 0));
+                            partBG.SetPixel(x, y, System.Drawing.Color.FromArgb(255, 255, 255));
                         }
-                        else if (i * 3 + 1 < partNum && partBitmaps[i].GetPixel(x, y).R > 240)
+                        else if (i * 3 + 1 < partNum && partBitmaps[i * 3 + 1].GetPixel(x, y).R > 240)
                         {
-                            createBitmaps[i].SetPixel(x, y, System.Drawing.Color.Green);
+                            createBitmaps[i].SetPixel(x, y, System.Drawing.Color.FromArgb(0, 255, 0));
+                            partBG.SetPixel(x, y, System.Drawing.Color.FromArgb(255, 255, 255));
                         }
-                        else if (i * 3 < partNum && partBitmaps[i].GetPixel(x, y).R > 240)
+                        else if (i * 3 < partNum && partBitmaps[i * 3].GetPixel(x, y).R > 240)
                         {
-                            createBitmaps[i].SetPixel(x, y, System.Drawing.Color.Blue);
+                            createBitmaps[i].SetPixel(x, y, System.Drawing.Color.FromArgb(0, 0, 255));
+                            partBG.SetPixel(x, y, System.Drawing.Color.FromArgb(255, 255, 255));
                         }
                         else
                         {
@@ -202,6 +194,10 @@ namespace RHFramework {
                     }
                 }
             }
+
+            createBitmaps.Add(partBG);
+
+            return createBitmaps;
         }
 
         public static Bitmap DrawWholeBitmapColor(Bitmap bitmap, System.Drawing.Color color)
@@ -212,10 +208,10 @@ namespace RHFramework {
             {
                 for (int j = 0; j < bitmap.Height; j++)
                 {
-                    bitmap.SetPixel(i,j,color);
+                    bitmap.SetPixel(i, j, color);
                 }
             }
-            
+
             return bitmap;
         }
 

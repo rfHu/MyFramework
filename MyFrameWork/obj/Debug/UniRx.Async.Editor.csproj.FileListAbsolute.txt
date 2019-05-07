@@ -194,3 +194,5 @@ E:\STClone\MyFramework\MyFrameWork\obj\Debug\UniRx.Async.Editor.csproj.CopyCompl
 E:\STClone\MyFramework\MyFrameWork\obj\Debug\UniRx.Async.Editor.dll
 E:\STClone\MyFramework\MyFrameWork\obj\Debug\UniRx.Async.Editor.pdb
 E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UniRx.Async.pdb
+E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UnityEditor.iOS.Extensions.dll
+E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UnityEditor.iOS.Extensions.Common.dll

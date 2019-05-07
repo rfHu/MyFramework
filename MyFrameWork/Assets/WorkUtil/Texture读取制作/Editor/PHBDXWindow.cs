@@ -9,7 +9,7 @@ using System;
 
 namespace RHFramework
 {
-    enum imgType
+    public enum ImgType
     {
         BDX,
         PH
@@ -27,13 +27,13 @@ namespace RHFramework
 
         string path;
 
-        imgType type;
+        ImgType type;
 
         private void OnGUI()
         {
             path = EditorGUILayout.TextField("选择目录：", path);
 
-            type = (imgType)EditorGUILayout.EnumPopup("图片格式：", type);
+            type = (ImgType)EditorGUILayout.EnumPopup("图片格式：", type);
 
             if (GUILayout.Button("产生Part图，处理图片大小"))
             {
@@ -41,7 +41,7 @@ namespace RHFramework
             }
             if (GUILayout.Button("产生Json"))
             {
-                OutputJson();
+                OutputJson(path);
             }
             if (GUILayout.Button("生成ZIP"))
             {
@@ -67,11 +67,11 @@ namespace RHFramework
                 RGBImageUtil.CreatePartImagesFromRGB(bitmaps, DI.FullName, DI.Name);
 
                 DirectoryInfo di = new DirectoryInfo(DI.FullName);
-                if (type == imgType.PH)
+                if (type == ImgType.PH)
                 {
                     PHImgsScale(di.GetFiles());
                 }
-                else if (type == imgType.BDX)
+                else if (type == ImgType.BDX)
                 {
                     BDXImgsScale(di.GetFiles());
                 }
@@ -127,7 +127,7 @@ namespace RHFramework
             }
         }
 
-        void OutputJson()
+        public void OutputJson(string path)
         {
             DirectoryInfo parentDir = new DirectoryInfo(path);
             DirectoryInfo[] DirSub = parentDir.GetDirectories();
@@ -135,7 +135,7 @@ namespace RHFramework
             foreach (var DI in DirSub)
             {
                 var jsonData = new BDXPHJsonData();
-                jsonData.type = type == imgType.BDX ? 0 : 1;
+                jsonData.type = type == ImgType.BDX ? 0 : 1;
 
                 var files = DI.GetFiles();
                 foreach (var file in files)
@@ -220,18 +220,6 @@ namespace RHFramework
                 ZipUtil.ZipDir(DI.FullName, string.Format("{0}\\{1}.zip", savePath, DI.Name));
             }
         }
-    }
-
-    [System.Serializable]
-    public class BDXPHJsonData
-    {
-        public int type;
-        public string outline_img;
-        public string icon_img;
-        public List<string> rgb_imgs = new List<string>();
-        public int total_part_num;
-        public List<string> part_img_files = new List<string>();
-        public List<string> part_imgs = new List<string>();
     }
 }
 
