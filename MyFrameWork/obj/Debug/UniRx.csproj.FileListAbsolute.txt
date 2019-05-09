@@ -193,6 +193,4 @@ E:\STClone\MyFramework\MyFrameWork\obj\Debug\UniRx.dll
 E:\STClone\MyFramework\MyFrameWork\obj\Debug\UniRx.pdb
 E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UniRx.Async.pdb
 E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UnityEditor.iOS.Extensions.dll
-E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UnityEngine.SpatialTrackingModule.dll
 E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UnityEditor.iOS.Extensions.Common.dll
-E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UnityEngine.SpatialTrackingModule.xml

@@ -17,10 +17,30 @@ namespace RHFramework
         private InputField _IF_Path;
         private Text _Text_Path;
         private Button _Btn_Deal;
-        private InputField _IF_OriNo;
+        private InputField _IF_SavePath;
 
         private string str_Path;
-        private List<string> list_OriNo = new List<string>();
+        private string str_SavePath;
+        private string dirName;
+        private List<string> list_OriNo;
+
+        public string Str_SavePath
+        {
+            get
+            {
+                if (!Directory.Exists(str_SavePath + "\\" + dirName))
+                {
+                    Directory.CreateDirectory(str_SavePath + "\\" + dirName);
+                }
+                return str_SavePath + "\\" + dirName;
+            }
+
+            set
+            {
+
+                str_SavePath = value;
+            }
+        }
 
         // Start is called before the first frame update
         void Start()
@@ -29,11 +49,13 @@ namespace RHFramework
             _IF_Path = transform.Find("IF_Path").GetComponent<InputField>();
             _Text_Path = transform.Find("PathText").GetComponent<Text>();
             _Btn_Deal = transform.Find("Btn Deal").GetComponent<Button>();
-            _IF_OriNo = transform.Find("IF_PartOri").GetComponent<InputField>();
-
-            _IF_OriNo.onValueChanged.AddListener((str)=> 
+            _IF_SavePath = transform.Find("IF_Savepath").GetComponent<InputField>();
+            
+            Str_SavePath = _IF_SavePath.text = PlayerPrefs.GetString("savepath");
+            _IF_SavePath.onValueChanged.AddListener((str)=> 
             {
-                list_OriNo = str.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+                Str_SavePath = str;
+                PlayerPrefs.SetString("savepath", str);
             });
 
             _IF_Path.onValueChanged.AddListener((str) =>
@@ -41,38 +63,37 @@ namespace RHFramework
                 str_Path = str;
             });
 
-            //_Btn_Path.onClick.AddListener(() =>
-            //{
-            //    DllOpenFileDialog.SelectDir((path =>
-            //    {
-            //        str_Path = path;
-            //        _Text_Path.text = str_Path;
-            //    }));
-
-            //});
-
             _Btn_Deal.onClick.AddListener(() =>
             {
                 if (string.IsNullOrEmpty(str_Path)) return;
-
-
-
-                string dirName = str_Path.Split(new char[] { '\\' }, StringSplitOptions.RemoveEmptyEntries).Last();
-
-                string path1 = str_Path + "\\icon.png";
-                string path2 = string.Format("{0}\\icon_{1}.png", str_Path, dirName);
+                
+                //记录文件夹名
+                dirName = str_Path.Split(new char[] { '\\' }, StringSplitOptions.RemoveEmptyEntries).Last();
 
                 //处理icon图命名
-                ScaleAndSave(str_Path, "icon.png", string.Format("icon_{0}.png", dirName), 280);
+                ScaleAndSave(str_Path, Str_SavePath, "icon.png", string.Format("icon_{0}.png", dirName), 280);
                 //处理outline命名
-                ScaleAndSave(str_Path, "outline.png", string.Format("outline_{0}.png", dirName), 280);
+                ScaleAndSave(str_Path, Str_SavePath, "outline.png", string.Format("outline_{0}.png", dirName), 280);
 
 
                 //获取所有part图的bitmap
+                DirectoryInfo di = new DirectoryInfo(str_Path);
+                var files = di.GetFiles();
+                var partImgFiles =  files.Where(file => file.Name.Contains('_')).ToList();
                 List<Bitmap> partBitmapList = new List<Bitmap>();
-                for (int i = 0; File.Exists(string.Format(@"{0}\\{1}.png", str_Path, i + 1)); i++)
+                list_OriNo = new List<string>();
+                for (int i = 0; i < partImgFiles.Count; i++)
                 {
-                    partBitmapList.Add(new Bitmap(string.Format(@"{0}\\{1}.png", str_Path, i + 1)));
+                    partBitmapList.Add(null);
+                    list_OriNo.Add(null);
+                }
+
+                foreach (var file in partImgFiles)
+                {
+                    var msg = file.Name.Split(new char[] { '_', '.' }, StringSplitOptions.RemoveEmptyEntries);
+                    var num = int.Parse(msg[0]) - 1;
+                    partBitmapList[num] = new Bitmap(file.FullName);
+                    list_OriNo[num] = msg[1];
                 }
 
                 //得到RGB图List
@@ -83,12 +104,11 @@ namespace RHFramework
                 {
                     if (i == RGBBitmaps.Count - 1)
                     {
-                        string bgname = string.Format("{0}\\0.png", str_Path);
-                        RGBBitmaps[i].Save(bgname);
+                        partBitmapList.Insert(0, RGBBitmaps[i]);
                         continue;
                     }
 
-                    string name = string.Format("{0}\\{1}_{2}", str_Path, "rgb", dirName);
+                    string name = string.Format("{0}\\{1}_{2}", Str_SavePath, "rgb", dirName);
                     for (int j = i * 3; j < (i + 1) * 3; j++)
                     {
                         name += j < list_OriNo.Count ? "_" + list_OriNo[j] : "_null";
@@ -98,45 +118,45 @@ namespace RHFramework
                     RGBBitmaps[i].Save(name);
                 }
 
-                //清除IO
+                //part图名字处理
+                for (int i = 0; i < partBitmapList.Count; i++)
+                {
+                    partBitmapList[i].Black2Trans();
+                    partBitmapList[i] = RGBImageUtil.UniformScale(partBitmapList[i], 280);
+                    partBitmapList[i].Save(Str_SavePath + "\\" + string.Format("partimg_{0}_{1}.png", dirName, i));
+                }
+
+                //清除RGB Bitmap
                 foreach (var item in RGBBitmaps)
                 {
                     item.Dispose();
                 }
                 RGBBitmaps = null;
+
+                //清除part Bitmap
                 foreach (var item in partBitmapList)
                 {
                     item.Dispose();
                 }
                 partBitmapList = null;
 
-                //part图名字处理
-                for (int i = 0; File.Exists(string.Format(@"{0}\{1}.png", str_Path, i)); i++)
-                {
-                    ScaleAndSave(str_Path, string.Format(@"{0}.png", i), string.Format("partimg_{0}_{1}.png", dirName, i + 1), 280);
-                }
-
-
                 //生成JSON
-                OutputJson(str_Path);
+                OutputJson(Str_SavePath);
 
                 //打包ZIP
-                //BuildZip(str_Path);
-
-                //icon图片复制
-                //File.Copy(path2, @"C:\Users\Administrator\Desktop" + "\\icon_" + dirName + ".png");
+                //BuildZip(str_SavePath + "\\" + string.Format("{0}.zip", dirName));
             });
         }
 
-        void ScaleAndSave(string path, string oriname, string newname, int length)
+
+        void ScaleAndSave(string path, string savepath, string oriname, string newname, int length)
         {
             Bitmap bitmap = new Bitmap(string.Format("{0}\\{1}", path, oriname));
             bitmap = RGBImageUtil.UniformScale(bitmap, length);
-            bitmap.Save(string.Format("{0}\\{1}", path, newname));
+            bitmap.Save(string.Format("{0}\\{1}", savepath, newname));
 
             bitmap.Dispose();
             bitmap = null;
-            File.Delete(string.Format("{0}\\{1}", path, oriname));
         }
 
         void BuildZip(string path)

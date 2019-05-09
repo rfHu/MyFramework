@@ -159,7 +159,7 @@ namespace RHFramework
             while (createBitmaps.Count < createNum)
             {
                 var bitmap = new Bitmap(width, height);
-                DrawWholeBitmapColor(bitmap, System.Drawing.Color.FromArgb(0, 0, 0, 0));
+                DrawWholeBitmapColor(bitmap, System.Drawing.Color.FromArgb(0, 0, 0));
                 createBitmaps.Add(bitmap);
             }
 
@@ -198,6 +198,25 @@ namespace RHFramework
             createBitmaps.Add(partBG);
 
             return createBitmaps;
+        }
+
+        public static Bitmap Black2Trans(this Bitmap bitmap)
+        {
+            var width = bitmap.Width;
+            var height = bitmap.Height;
+
+            for (int i = 0; i < bitmap.Width; i++)
+            {
+                for (int j = 0; j < bitmap.Height; j++)
+                {
+                    if (bitmap.GetPixel(i,j).R < 10)
+                    {
+                        bitmap.SetPixel(i, j, System.Drawing.Color.FromArgb(0, 0, 0, 0));
+                    }
+                }
+            }
+
+            return bitmap;
         }
 
         public static Bitmap DrawWholeBitmapColor(Bitmap bitmap, System.Drawing.Color color)

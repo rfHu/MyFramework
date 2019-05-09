@@ -178,5 +178,3 @@ E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UnityEditor.UI.dll
 E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UniRx.Async.pdb
 E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UniRx.Async.Editor.pdb
 E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UnityEditor.UI.xml
-E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UnityEngine.SpatialTrackingModule.dll
-E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UnityEngine.SpatialTrackingModule.xml
