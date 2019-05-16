@@ -10,7 +10,7 @@ namespace RHFramework
     {
         private void Start()
         {
-            StartCoroutine(Load(Application.streamingAssetsPath + @"/adt2_0.res", "ADT2_0"));
+            StartCoroutine(Load(Application.streamingAssetsPath + @"/LifeCycleExample/lifecycleexample.res", "lifecycleexample"));
         }
 
         IEnumerator Load(string path, string sceneName)

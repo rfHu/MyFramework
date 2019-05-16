@@ -6,3 +6,7 @@ MyFrameWork/Library/
 MyFrameWork/Temp/UnityTempFile-992efa74725c1b3438012c94781f30bd
 MyFrameWork/Temp/
 MyFrameWork/Assets/Aim/
+*.csproj
+*.ide-wal
+*.ide-shm
+*.ide
