@@ -9,7 +9,7 @@ public class Node<T>
 
     public Node(T value)
     {
-        this.value = value;
+        this.Value = value;
         next = null;
     }
 
@@ -26,9 +26,22 @@ public class Node<T>
         }
     }
 
+    public T Value
+    {
+        get
+        {
+            return value;
+        }
+
+        set
+        {
+            this.value = value;
+        }
+    }
+
     public bool isThisValue(T outValue)
     {
-        return value.Equals(outValue);
+        return Value.Equals(outValue);
     }
 
     public bool isNotLast()
@@ -104,5 +117,41 @@ public class ListNodeUtil
         }
     }
 
+    //输入头结点，从尾到头打印value
 
+    void PrintListReversingly_Interatively<T>(Node<T> headNode)
+    {
+        Stack<Node<T>> nodes = new Stack<Node<T>>();
+
+        Node<T> tempNode = headNode;
+        while (tempNode != null)
+        {
+            nodes.Push(tempNode);
+            tempNode = tempNode.Next;
+        }
+
+        while (nodes.Count != 0)
+        {
+            tempNode = nodes.Pop();
+            Debug.Log(tempNode.Value.ToString());
+        }
+    }
+
+    //用栈实现自然可以想到用递归来实现
+    void PrintListReversingly_Recursively<T>(Node<T> headNode)
+    {
+        if (headNode != null)
+        {
+            if (headNode.Next != null)
+            {
+                PrintListReversingly_Recursively(headNode.Next);
+            }
+
+            Debug.Log(headNode.Value);
+        }
+    }
+
+    //递归代码很简洁，但是存在问题：当链表非常长的时候，会导致函数调用的层级很深，有可能导致函数调用栈溢出
+    //显式用栈基于循环实现的代码的鲁棒性好一些
+    //鲁棒性：及抗变换性，就是说代码更加健壮
 }
