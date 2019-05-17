@@ -117,7 +117,7 @@ public class ListNodeUtil
         }
     }
 
-    //输入头结点，从尾到头打印value
+    //题目：输入头结点，从尾到头打印value
 
     void PrintListReversingly_Interatively<T>(Node<T> headNode)
     {

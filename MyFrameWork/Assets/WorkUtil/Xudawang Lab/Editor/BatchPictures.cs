@@ -424,6 +424,7 @@ public class BatchPictures : EditorWindow
     }
 }
 
+[Serializable]
 public class ExcelData
 {
     public string productSeries;
