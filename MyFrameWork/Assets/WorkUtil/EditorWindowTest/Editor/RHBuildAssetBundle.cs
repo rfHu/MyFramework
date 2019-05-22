@@ -23,6 +23,8 @@ namespace RHFramework
 
         private string targetExtension = "prefab";
 
+        private string endlStr = ".res";
+
         void OnGUI()
         {
             Object[] objs = Selection.GetFiltered(typeof(Object), SelectionMode.TopLevel);
@@ -47,15 +49,12 @@ namespace RHFramework
 
             targetExtension = EditorGUILayout.TextField("目标扩展名", targetExtension);
 
+            endlStr = EditorGUILayout.TextField("目标扩展名", endlStr);
+
 #if UNITY_STANDALONE_WIN
             if (GUILayout.Button("打包Win64"))
             {
-                Build();
-            }
-
-            if (GUILayout.Button("生成文件夹"))
-            {
-                CreateDir();
+                Build(endlStr);
             }
 #endif
 
@@ -67,7 +66,7 @@ namespace RHFramework
 #endif
         }
 
-        private void Build()
+        private void Build(string endl)
         {
             if (!Directory.Exists(assetBundlePath))
             {
@@ -109,7 +108,7 @@ namespace RHFramework
                 strTemp = strTemp.Substring(strTemp.IndexOf("Assets"));
                 Debug.Log(strTemp);
 
-                string abName = strTemp.Substring(strTemp.LastIndexOf('/') + 1, strTemp.IndexOf("." + targetExtension) - strTemp.LastIndexOf('/') - 1) + ".res";
+                string abName = strTemp.Substring(strTemp.LastIndexOf('/') + 1, strTemp.IndexOf("." + targetExtension) - strTemp.LastIndexOf('/') - 1) + endl;
                 Debug.Log(abName);
 
                 AssetBundleBuild tempABBuild = new AssetBundleBuild();
@@ -117,32 +116,25 @@ namespace RHFramework
                 tempABBuild.assetNames = new string[] { strTemp };
 
                 AssetBundleBuild[] buildMaps = new AssetBundleBuild[] { tempABBuild };
+
+                var fullABPath = assetBundlePath + "/" + abName.Remove(abName.LastIndexOf('_'));
+
+                if (!Directory.Exists(fullABPath))
+                {
+                    Directory.CreateDirectory(fullABPath);
+                }
+
 #if UNITY_STANDALONE_WIN
-                BuildPipeline.BuildAssetBundles(assetBundlePath + "/" + abName.Remove(abName.IndexOf('.')), buildMaps.ToArray(), BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows64);
+                BuildPipeline.BuildAssetBundles(fullABPath, buildMaps.ToArray(), BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows64);
 #endif
 
 #if UNITY_IOS
-                BuildPipeline.BuildAssetBundles(assetBundlePath /*+ "/" + abName.Remove(abName.IndexOf('.'))*/, buildMaps.ToArray(), BuildAssetBundleOptions.None, BuildTarget.iOS);
+            BuildPipeline.BuildAssetBundles(assetBundlePath + "/" + abName.Remove(abName.IndexOf('.')), buildMaps.ToArray(), buildMaps.ToArray(), BuildAssetBundleOptions.None, BuildTarget.iOS);
 #endif
             }
 
             Debug.Log(string.Format("生成成功，共处理{0}个预制体", allPrefab.Count));
             AssetDatabase.Refresh();
-        }
-
-        private void CreateDir()
-        {
-            string pp = @"E:\STClone\MyFramework\MyFrameWork\AssetBundles";
-
-            DirectoryInfo parentDir = new DirectoryInfo(pp);
-
-            FileInfo[] fileSub = parentDir.GetFiles("*.res");
-
-            foreach (var file in fileSub)
-            {
-                DirectoryInfo di = Directory.CreateDirectory(pp + "/" + file.Name.Substring(0, file.Name.IndexOf(".")));
-                File.Copy(file.FullName, di.FullName + "/" + file.Name);
-            }
         }
     }
 }

@@ -8,12 +8,18 @@ namespace RHFramework
 {
     public class ReadAssetBundle : MonoBehaviour
     {
-        private void Start()
-        {
-            StartCoroutine(Load(Application.streamingAssetsPath + @"/LifeCycleExample/lifecycleexample.res", "lifecycleexample"));
-        }
+        public string StreamingAssets_BundlePath;
+        public string SceneName;
 
-        IEnumerator Load(string path, string sceneName)
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                StartCoroutine(Load(Application.streamingAssetsPath + StreamingAssets_BundlePath, SceneName));
+            }
+        }
+        
+        public IEnumerator Load(string path, string sceneName)
         {
             var abRequest = AssetBundle.LoadFromFileAsync(path);
 
