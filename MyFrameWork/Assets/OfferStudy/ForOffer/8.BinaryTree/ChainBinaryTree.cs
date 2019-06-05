@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace ForOffer
@@ -258,6 +259,48 @@ namespace ForOffer
                 }
 
             }
+
+            //根据前序和中序重构二叉树
+            //思路：前序首位是根节点，在中序中找到根节点，左右分别是左右子树的前序中序，递归其根节点直到无子树
+            public TreeNode<T> Construct(T[] preOrder, T[] inOrder)
+            {
+                if (preOrder == null || inOrder == null || preOrder.Length == 0 || inOrder.Length == 0 || preOrder.Length != inOrder.Length)
+                {
+                    return null;
+                }
+
+                TreeNode<T> root = new TreeNode<T>(preOrder[0]);
+
+                int i = 0;
+                for (i = 0; i < inOrder.Length; i++)
+                {
+                    if (inOrder[i].Equals(preOrder[0]))
+                    {
+                        break;
+                    }
+                }
+
+                //左子树前序和中序
+                T[] leftPre = preOrder.Skip(1).Take(i).ToArray();
+                T[] leftIn = inOrder.Skip(0).Take(i).ToArray();
+
+                //右子树前序和中序
+                T[] rightPre = preOrder.Skip(i + 1).ToArray();
+                T[] rightIn = inOrder.Skip(i + 1).ToArray();
+
+                //递归当前左子树
+                root.LChild = Construct(leftPre, leftIn);
+
+                //递归当前右子树
+                root.RChild = Construct(rightPre, rightIn);
+
+                return root;
+            }
+
+            //随记：前序和后序可以重构出唯一二叉树吗？
+            //不一定可以
+            //前序{3，1,2}，后序{2,1,3}。可构成两种二叉树不唯一；
+            //前序{3,1,2}，后序{1,2,3}。则有唯一二叉树。
         }
     }
 }
