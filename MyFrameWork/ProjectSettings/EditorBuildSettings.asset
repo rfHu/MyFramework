@@ -5,19 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/RHFramework/Example/11.MainManager/Home/Home.unity
-    guid: ac412d4f8f2c14f488f800917269dd49
-  - enabled: 0
-    path: Assets/RHFramework/Example/11.MainManager/Game/Game.unity
-    guid: a58aca295d5983c43a4d2411d5bd958f
-  - enabled: 0
-    path: Assets/RHFramework/Example/15.LevelManager/Level.unity
-    guid: 19173e97bda4f344eb247b25cd60e84f
-  - enabled: 0
-    path: Assets/test.unity
-    guid: 184db9d553b914f408240713dda372b6
   - enabled: 1
-    path: Assets/WorkUtil/Scenes/ExportPic.unity
-    guid: 3dfd51629bf870e48a39ae906d88b71c
+    path: Assets/WorkUtil/WWebView/MyTest/test.unity
+    guid: 184db9d553b914f408240713dda372b6
   m_configObjects: {}

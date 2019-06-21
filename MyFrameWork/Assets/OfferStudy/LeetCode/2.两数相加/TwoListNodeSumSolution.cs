@@ -18,16 +18,11 @@ namespace LeetCode
 #endif
             static void MenuCilcked()
             {
-                //var temp = TwoListNodeSumSolution1.IntToListNode(374);
-                //var temp2 = TwoListNodeSumSolution1.IntToListNode(322);
+                var l1 = new ListNode(5);
+                var l2 = new ListNode(5);
 
-                //Debug.Log(TwoListNodeSumSolution1.ListNodeToStr(TwoListNodeSumSolution1.AddTwoNumbers(temp, temp2)));
-
-                var a = new ListNode(6);
-                var b = a;
-                a.val = 7;
-                Debug.Log(b.val);
-
+                var solution = new TwoListNodeSumSolution3();
+                solution.AddTwoNumbers(l1, l2);
             }
         }
 
@@ -106,6 +101,36 @@ namespace LeetCode
                     curr.next = new ListNode(carry);
                 }
                 return dummyHead.next;
+            }
+        }
+
+        public class TwoListNodeSumSolution3
+        {
+            public ListNode AddTwoNumbers(ListNode l1, ListNode l2)
+            {
+                var listNodeResult = new ListNode(0);
+                var p = l1;
+                var q = l2;
+                var r = listNodeResult;
+                bool addOne = false;
+
+                while(p != null || q != null || addOne)
+                {
+                    var sum = (p == null ? 0 : p.val) + (q == null ? 0 : q.val);
+
+                    r.val = (sum + (addOne ? 1 : 0)) % 10;
+
+                    addOne = ((sum + (addOne ? 1 : 0)) / 10) >= 1;
+                    p = (p == null)? null : p.next;
+                    q = (q == null) ? null : q.next;
+                    if (p != null || q != null || addOne)
+                    {
+                        r.next = new ListNode(0);
+                        r = r.next;
+                    }
+                }
+
+                return listNodeResult;
             }
         }
     }

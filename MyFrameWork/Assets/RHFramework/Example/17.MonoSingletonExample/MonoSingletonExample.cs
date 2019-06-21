@@ -11,11 +11,11 @@ namespace RHFramework
             UnityEditor.EditorApplication.isPlaying = true;
         }
 #endif
-        [RuntimeInitializeOnLoadMethod]
-        private static void Example()
-        {
-            var initInstance = MonoSingletonExample.Instance;
-            initInstance = MonoSingletonExample.Instance;
-        }
+        //[RuntimeInitializeOnLoadMethod]
+        //private static void Example()
+        //{
+        //    var initInstance = MonoSingletonExample.Instance;
+        //    initInstance = MonoSingletonExample.Instance;
+        //}
     }
 }

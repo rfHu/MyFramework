@@ -191,3 +191,5 @@ E:\STClone\MyFramework\MyFrameWork\obj\Debug\UniRx.Async.csproj.CoreCompileInput
 E:\STClone\MyFramework\MyFrameWork\obj\Debug\UniRx.Async.csproj.CopyComplete
 E:\STClone\MyFramework\MyFrameWork\obj\Debug\UniRx.Async.dll
 E:\STClone\MyFramework\MyFrameWork\obj\Debug\UniRx.Async.pdb
+E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\Win32.dll
+E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\WSA-WebView.dll

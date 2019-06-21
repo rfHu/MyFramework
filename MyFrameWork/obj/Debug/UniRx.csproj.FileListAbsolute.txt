@@ -192,3 +192,5 @@ E:\STClone\MyFramework\MyFrameWork\obj\Debug\UniRx.csproj.CopyComplete
 E:\STClone\MyFramework\MyFrameWork\obj\Debug\UniRx.dll
 E:\STClone\MyFramework\MyFrameWork\obj\Debug\UniRx.pdb
 E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\UniRx.Async.pdb
+E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\Win32.dll
+E:\STClone\MyFramework\MyFrameWork\Temp\bin\Debug\WSA-WebView.dll

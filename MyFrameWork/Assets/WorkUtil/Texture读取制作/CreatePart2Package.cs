@@ -175,8 +175,10 @@ namespace RHFramework
             DirectoryInfo parentDir = new DirectoryInfo(path);
             FileInfo[] files = parentDir.GetFiles();
 
-            var jsonData = new BDXPHJsonData();
-            jsonData.type = 1;
+            var jsonData = new BDXPHJsonData
+            {
+                type = 1
+            };
 
             foreach (var file in files)
             {

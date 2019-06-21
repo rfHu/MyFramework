@@ -1,7 +1,0 @@
-ManifestFileVersion: 0
-CRC: 3821938539
-AssetBundleManifest:
-  AssetBundleInfos:
-    Info_0:
-      Name: lifecycleexample.res
-      Dependencies: {}
