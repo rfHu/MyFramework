@@ -70,9 +70,9 @@ namespace RHFramework
 
             var audioSource = gameObject.AddComponent<AudioSource>();
 
-            var coinSound = Resources.Load<AudioClip>(soundName);
+            var sound = Resources.Load<AudioClip>(soundName);
 
-            audioSource.clip = coinSound;
+            audioSource.clip = sound;
             audioSource.Play();
         }
 
