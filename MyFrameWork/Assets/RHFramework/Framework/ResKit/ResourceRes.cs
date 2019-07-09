@@ -32,7 +32,7 @@ namespace RHFramework
         public override void LoadAsync()
         {
             State = ResState.Loading;
-
+            
             var resRequest = Resources.LoadAsync(mAssetPath);
 
             resRequest.completed += operation =>

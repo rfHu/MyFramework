@@ -2,27 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnloadPrefabExample : MonoBehaviour
+namespace RHFramework
 {
-#if UNITY_EDITOR
-    [UnityEditor.MenuItem("RHFramework/Example/20.UnloadPrefabExample", false, 20)]
-    static void MenuCilcked()
+    public class UnloadPrefabExample : MonoBehaviour
     {
-        UnityEditor.EditorApplication.isPlaying = true;
+#if UNITY_EDITOR
+        [UnityEditor.MenuItem("RHFramework/Example/20.UnloadPrefabExample", false, 20)]
+        static void MenuCilcked()
+        {
+            UnityEditor.EditorApplication.isPlaying = true;
 
-        new GameObject().AddComponent<UnloadPrefabExample>();
-    }
+            new GameObject().AddComponent<UnloadPrefabExample>();
+        }
 #endif
 
-    IEnumerator Start()
-    {
-        var gamePanel = Resources.Load("GamePanel");
+        IEnumerator Start()
+        {
+            var gamePanel = Resources.Load("GamePanel");
 
-        yield return new WaitForSeconds(5.0f);
+            yield return new WaitForSeconds(5.0f);
 
-        gamePanel = null;
-        
-        Resources.UnloadUnusedAssets();
-        Debug.Log("gamePanel Unloaded");
+            gamePanel = null;
+
+            Resources.UnloadUnusedAssets();
+            Debug.Log("gamePanel Unloaded");
+        }
     }
 }

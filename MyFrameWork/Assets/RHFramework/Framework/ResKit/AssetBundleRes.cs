@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -64,14 +65,43 @@ namespace RHFramework
         {
             State = ResState.Loading;
 
-            var resRequest = AssetBundle.LoadFromFileAsync(mAssetPath);
-
-            resRequest.completed += operation =>
+            LoadDependencyBundlesAsync(()=> 
             {
-                AssetBundle = resRequest.assetBundle;
+                var resRequest = AssetBundle.LoadFromFileAsync(mAssetPath);
 
-                State = ResState.Loaded;
-            };
+                resRequest.completed += operation =>
+                {
+                    AssetBundle = resRequest.assetBundle;
+
+                    State = ResState.Loaded;
+                };
+            });
+        }
+
+        private void LoadDependencyBundlesAsync(Action onAllLoaded)
+        {
+            var dependencyBundleNames = Manifest.GetDirectDependencies(mAssetPath.Substring(Application.streamingAssetsPath.Length + 1));
+
+            if (dependencyBundleNames.Length == 0)
+            {
+                onAllLoaded();
+            }
+
+            int loadedCount = 0;
+
+            foreach (var dependencyBundleName in dependencyBundleNames)
+            {
+                mResLoader.LoadAsync<AssetBundle>(Application.streamingAssetsPath + "/" + dependencyBundleName,
+                    dependBundle =>
+                    {
+                        loadedCount++;
+
+                        if (loadedCount == dependencyBundleNames.Length)
+                        {
+                            onAllLoaded();
+                        }
+                    });
+            }
         }
 
         protected override void OnReleaseRes()

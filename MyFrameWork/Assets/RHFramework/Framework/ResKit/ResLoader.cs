@@ -1,12 +1,41 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace RHFramework
 {
     public class ResLoader
     {
+        #region API
+        public T LoadSync<T>(string assetBundleName, string assetName) where T : Object
+        {
+            return DoLoadSync<T>(assetName, assetBundleName);
+        }
+
         public T LoadSync<T>(string assetName) where T : Object
+        {
+            return DoLoadSync<T>(assetName);
+        }
+        
+        public void LoadAsync<T>(string assetName, System.Action<T> onLoaded) where T : Object
+        {
+            DoLoadAsync(assetName, null, onLoaded);
+        }
+
+        public void LoadAsync<T>(string assetBundleName, string assetName, System.Action<T> onLoaded) where T : Object
+        {
+            DoLoadAsync(assetName, assetBundleName, onLoaded);
+        }
+
+        public void ReleaseAll()
+        {
+            mResRecords.ForEach(loadedAsset => loadedAsset.Release());
+
+            mResRecords.Clear();
+        }
+        #endregion
+        
+        #region private
+        private T DoLoadSync<T>(string assetName, string assetBundleName = null) where T : Object
         {
             var res = GetOrCreateRes(assetName);
 
@@ -22,14 +51,14 @@ namespace RHFramework
             }
 
             //真正加载资源
-            res = CreateRes(assetName);
+            res = CreateRes(assetName, assetBundleName);
 
             res.LoadSync();
-            
+
             return res.Asset as T;
         }
-
-        public void LoadAsync<T>(string assetName, System.Action<T> onLoaded) where T : Object
+        
+        private void DoLoadAsync<T>(string assetName, string ownerBundleName, System.Action<T> onLoaded) where T : Object
         {
             //查询当前资源记录
             var res = GetOrCreateRes(assetName);
@@ -57,23 +86,13 @@ namespace RHFramework
             }
 
             //真正加载资源
-            res = CreateRes(assetName);
+            res = CreateRes(assetName, ownerBundleName);
 
             res.RegisterOnLoadedEvent(onResLoaded);
 
             res.LoadAsync();
-            
         }
 
-        public void ReleaseAll()
-        {
-            mResRecords.ForEach(loadedAsset => loadedAsset.Release());
-
-            mResRecords.Clear();
-            mResRecords = null;
-        }
-
-        #region private
         private List<Res> mResRecords = new List<Res>();
 
         private Res GetOrCreateRes(string assetName)
@@ -99,11 +118,15 @@ namespace RHFramework
             return res;
         }
 
-        private Res CreateRes(string assetName)
+        private Res CreateRes(string assetName, string ownerBundle = null)
         {
             Res res = null;
 
-            if (assetName.StartsWith("resources://"))
+            if (ownerBundle != null)
+            {
+                res = new AssetRes(assetName, ownerBundle);
+            }
+            else if (assetName.StartsWith("resources://"))
             {
                 res = new ResourceRes(assetName);
             }
