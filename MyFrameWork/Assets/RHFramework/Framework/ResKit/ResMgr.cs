@@ -15,7 +15,7 @@ namespace RHFramework
             {
                 GUILayout.BeginVertical(style: "box");
 
-                ResMgr.Instance.SharedLoadedReses.ForEach(loadedRes =>
+                SharedLoadedReses.ForEach(loadedRes =>
                 {
                     GUILayout.Label(string.Format("Name : {0} RefCount : {1} State : {2}", loadedRes.Name, loadedRes.RefCount, loadedRes.State));
                 });

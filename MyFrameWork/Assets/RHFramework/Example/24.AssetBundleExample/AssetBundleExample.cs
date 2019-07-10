@@ -35,7 +35,7 @@ namespace RHFramework {
 
         private void Start()
         {
-            mBundle = mResLoader.LoadSync<AssetBundle>(Application.streamingAssetsPath + "/testgo");
+            mBundle = mResLoader.LoadSync<AssetBundle>("/testgo");
             var go = mBundle.LoadAsset<GameObject>("GameObject");
 
             Instantiate(go);

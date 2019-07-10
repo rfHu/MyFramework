@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2845322776
+CRC: 1095147979
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: fc9d76332c620b39024ce8c897e3a0db
+    Hash: e678b3874b16c0dfda06c9330eea43a9
   TypeTreeHash:
     serializedVersion: 2
     Hash: c14c144446a0d5e7633ca1d79f4d7b01
@@ -24,4 +24,4 @@ ClassTypes:
 Assets:
 - Assets/RHFramework/Example/24.AssetBundleExample/GameObject.prefab
 Dependencies:
-- E:/STClone/MyFramework/MyFrameWork/Assets/StreamingAssets/square
+- E:/STClone/MyFramework/MyFrameWork/Assets/StreamingAssets/AssetBundles/Windows/square

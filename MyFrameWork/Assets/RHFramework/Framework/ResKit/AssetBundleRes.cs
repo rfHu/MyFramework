@@ -15,7 +15,7 @@ namespace RHFramework
             {
                 if (!mManifest)
                 {
-                    var mainBundle = AssetBundle.LoadFromFile(Application.streamingAssetsPath + "/StreamingAssets");
+                    var mainBundle = AssetBundle.LoadFromFile(ResKitUtil.FullPathForAssetBundle(ResKitUtil.GetPlatformName()));
 
                     mManifest = mainBundle.LoadAsset<AssetBundleManifest>("AssetBundleManifest");
                 }
@@ -30,13 +30,13 @@ namespace RHFramework
             set { Asset = value; }
         }
 
-        private string mAssetPath;
+        private string mPath;
 
-        public AssetBundleRes(string assetPath)
+        public AssetBundleRes(string assetName)
         {
-            mAssetPath = assetPath;
+            mPath = ResKitUtil.FullPathForAssetBundle(assetName);
 
-            Name = assetPath;
+            Name = assetName;
 
             State = ResState.Waiting;
         }
@@ -47,14 +47,14 @@ namespace RHFramework
         {
             State = ResState.Loading;
 
-            var dependencyBundleNames = Manifest.GetDirectDependencies(mAssetPath.Substring(Application.streamingAssetsPath.Length + 1));
+            var dependencyBundleNames = Manifest.GetDirectDependencies(Name);
 
             foreach (var dependencyBundleName in dependencyBundleNames)
             {
-                mResLoader.LoadSync<AssetBundle>(Application.streamingAssetsPath + "/" + dependencyBundleName);
+                mResLoader.LoadSync<AssetBundle>(dependencyBundleName);
             }
 
-            AssetBundle = AssetBundle.LoadFromFile(mAssetPath);
+            AssetBundle = AssetBundle.LoadFromFile(mPath);
 
             State = ResState.Loaded;
 
@@ -67,7 +67,7 @@ namespace RHFramework
 
             LoadDependencyBundlesAsync(()=> 
             {
-                var resRequest = AssetBundle.LoadFromFileAsync(mAssetPath);
+                var resRequest = AssetBundle.LoadFromFileAsync(mPath);
 
                 resRequest.completed += operation =>
                 {
@@ -80,18 +80,18 @@ namespace RHFramework
 
         private void LoadDependencyBundlesAsync(Action onAllLoaded)
         {
-            var dependencyBundleNames = Manifest.GetDirectDependencies(mAssetPath.Substring(Application.streamingAssetsPath.Length + 1));
+            var dependencyBundleNames = Manifest.GetDirectDependencies(Name);
+
+            int loadedCount = 0;
 
             if (dependencyBundleNames.Length == 0)
             {
                 onAllLoaded();
             }
 
-            int loadedCount = 0;
-
             foreach (var dependencyBundleName in dependencyBundleNames)
             {
-                mResLoader.LoadAsync<AssetBundle>(Application.streamingAssetsPath + "/" + dependencyBundleName,
+                mResLoader.LoadAsync<AssetBundle>(dependencyBundleName,
                     dependBundle =>
                     {
                         loadedCount++;
