@@ -20,7 +20,7 @@ namespace RHFramework
             {
                 if (mInstance == null)
                 {
-                    // 先获取所有⾮非public的构造⽅方法 
+                    // 先获取所有非public的构造⽅方法 
                     var ctors = typeof(T).GetConstructors(BindingFlags.Instance | BindingFlags.NonPublic);
                     // 从ctors中获取⽆无参的构造⽅方法 
                     var ctor = Array.Find(ctors, c => c.GetParameters().Length == 0);
