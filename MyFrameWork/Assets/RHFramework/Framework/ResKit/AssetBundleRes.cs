@@ -15,7 +15,8 @@ namespace RHFramework
             {
                 if (!mManifest)
                 {
-                    var mainBundle = AssetBundle.LoadFromFile(ResKitUtil.FullPathForAssetBundle(ResKitUtil.GetPlatformName()));
+                    var mainBundle =
+                        AssetBundle.LoadFromFile(ResKitUtil.FullPathForAssetBundle(ResKitUtil.GetPlatformName()));
 
                     mManifest = mainBundle.LoadAsset<AssetBundleManifest>("AssetBundleManifest");
                 }
@@ -23,6 +24,7 @@ namespace RHFramework
                 return mManifest;
             }
         }
+
 
         public AssetBundle AssetBundle
         {
@@ -61,28 +63,11 @@ namespace RHFramework
             return AssetBundle;
         }
 
-        public override void LoadAsync()
-        {
-            State = ResState.Loading;
-
-            LoadDependencyBundlesAsync(()=> 
-            {
-                var resRequest = AssetBundle.LoadFromFileAsync(mPath);
-
-                resRequest.completed += operation =>
-                {
-                    AssetBundle = resRequest.assetBundle;
-
-                    State = ResState.Loaded;
-                };
-            });
-        }
-
         private void LoadDependencyBundlesAsync(Action onAllLoaded)
         {
             var dependencyBundleNames = Manifest.GetDirectDependencies(Name);
 
-            int loadedCount = 0;
+            var loadedCount = 0;
 
             if (dependencyBundleNames.Length == 0)
             {
@@ -102,6 +87,23 @@ namespace RHFramework
                         }
                     });
             }
+        }
+
+        public override void LoadAsync()
+        {
+            State = ResState.Loading;
+
+            LoadDependencyBundlesAsync(() =>
+            {
+                var resRequest = AssetBundle.LoadFromFileAsync(mPath);
+
+                resRequest.completed += operation =>
+                {
+                    AssetBundle = resRequest.assetBundle;
+
+                    State = ResState.Loaded;
+                };
+            });
         }
 
         protected override void OnReleaseRes()

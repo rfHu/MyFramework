@@ -19,10 +19,10 @@ namespace RHFramework {
 
         private void Start()
         {
-            mResLoader.LoadAsync<AssetBundle>("/square", 
+            mResLoader.LoadAsync<AssetBundle>("square", 
                 squareBundle => { Debug.Log(squareBundle.name);  });
 
-            mResLoader.LoadSync<AssetBundle>("/square");
+            mResLoader.LoadSync<AssetBundle>("square");
         }
     }
 }

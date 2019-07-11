@@ -17,7 +17,7 @@ namespace RHFramework
 
         private void Start()
         {
-            mResLoader.LoadAsync<AssetBundle>("/testgo", bundle =>
+            mResLoader.LoadAsync<AssetBundle>("testgo", bundle =>
             {
                 var gameObjPrefab = bundle.LoadAsset<GameObject>("GameObject");
 
@@ -27,11 +27,8 @@ namespace RHFramework
 
         private void OnDestroy()
         {
-            if (mResLoader != null)
-            {
-                mResLoader.ReleaseAll();
-                mResLoader = null;
-            }
+            mResLoader.ReleaseAll();
+            mResLoader = null;
         }
     }
 }

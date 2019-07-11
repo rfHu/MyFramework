@@ -11,13 +11,15 @@ namespace RHFramework
             return Application.streamingAssetsPath + "/AssetBundles/" + GetPlatformName() + "/" + assetBundleName;
         }
 
+
         public static string GetPlatformName()
         {
+
 #if UNITY_EDITOR
             return GetPlatformName(UnityEditor.EditorUserBuildSettings.activeBuildTarget);
 #else
             return GetPlatformName(Application.platform);
-#endif 
+#endif
         }
 
 #if UNITY_EDITOR
@@ -25,8 +27,6 @@ namespace RHFramework
         {
             switch (buildTarget)
             {
-                case UnityEditor.BuildTarget.StandaloneOSX:
-                    return "OSX";
                 case UnityEditor.BuildTarget.StandaloneWindows:
                 case UnityEditor.BuildTarget.StandaloneWindows64:
                     return "Windows";
@@ -38,6 +38,8 @@ namespace RHFramework
                 case UnityEditor.BuildTarget.StandaloneLinux64:
                 case UnityEditor.BuildTarget.StandaloneLinuxUniversal:
                     return "Linux";
+                case UnityEditor.BuildTarget.StandaloneOSX:
+                    return "OSX";
                 case UnityEditor.BuildTarget.WebGL:
                     return "WebGL";
                 default:
@@ -50,20 +52,19 @@ namespace RHFramework
         {
             switch (runtimePlatform)
             {
+                case RuntimePlatform.WebGLPlayer:
+                    return "WebgGL";
                 case RuntimePlatform.OSXPlayer:
                     return "OSX";
                 case RuntimePlatform.WindowsPlayer:
                     return "Windows";
                 case RuntimePlatform.IPhonePlayer:
                     return "iOS";
-                case RuntimePlatform.LinuxPlayer:
-                    return "Linux";
-                case RuntimePlatform.WebGLPlayer:
-                    return "WebGL";
+                case RuntimePlatform.Android:
+                    return "Android";
                 default:
                     return null;
             }
         }
-
     }
 }
