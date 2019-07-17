@@ -7,7 +7,7 @@ namespace RHFramework
     public class ResolutionCheckExample
     {
 #if UNITY_EDITOR
-        [UnityEditor.MenuItem("RHFramework/Example/3.屏幕宽高比", false, 3)]
+        [UnityEditor.MenuItem("RHFramework/Example/Util/3.屏幕宽高比", false, 3)]
         private static void MenuClicked()
         {
             Debug.Log(ResolutionCheck.IsPadResolution() ? "是Pad宽高比" : "不是Pad宽高比");

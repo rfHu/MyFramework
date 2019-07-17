@@ -7,7 +7,7 @@ namespace RHFramework
     public class MathUtilExample 
     {
 #if UNITY_EDITOR
-        [UnityEditor.MenuItem("RHFramework/Example/5.概率判断 和 随机函数", false, 5)]
+        [UnityEditor.MenuItem("RHFramework/Example/Util/5.概率判断 和 随机函数", false, 5)]
         private static void MenuClicked()
         {
             Debug.Log(MathUtil.Percent(50));

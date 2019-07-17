@@ -7,7 +7,7 @@ namespace RHFramework
     public class GameObjectSimplifyExample
     {
 #if UNITY_EDITOR
-        [UnityEditor.MenuItem("RHFramework/Example/6.GameObject API简化", false, 6)]
+        [UnityEditor.MenuItem("RHFramework/Example/Util/6.GameObject API简化", false, 6)]
         private static void MenuClicked()
         {
             GameObject gameObject = new GameObject();

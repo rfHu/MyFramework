@@ -7,7 +7,7 @@ namespace RHFramework
     public class TransformSimplifyExample
     {
 #if UNITY_EDITOR
-        [UnityEditor.MenuItem("RHFramework/Example/4.Transform API简化", false, 4)]
+        [UnityEditor.MenuItem("RHFramework/Example/Util/4.Transform API简化", false, 4)]
         private static void MenuClicked()
         {
             GameObject gameObject = new GameObject();
