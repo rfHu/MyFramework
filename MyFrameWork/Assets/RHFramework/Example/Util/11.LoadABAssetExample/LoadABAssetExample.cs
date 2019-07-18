@@ -23,10 +23,10 @@ namespace RHFramework
             var squareTexture = mResLoader.LoadSync<Texture2D>("square", "Square");
             Debug.Log(squareTexture.name);
 
-            mResLoader.LoadAsync<GameObject>("testgo", "GameObject", gameObjPrefab => 
-            {
-                Instantiate(gameObjPrefab);
-            });
+            //mResLoader.LoadAsync<GameObject>("testgo", "GameObject", gameObjPrefab => 
+            //{
+            //    Instantiate(gameObjPrefab);
+            //});
         }
 
         private void OnDestroy()

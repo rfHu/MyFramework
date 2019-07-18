@@ -21,9 +21,15 @@ namespace RHFramework
         {
             State = ResState.Loading;
 
+#if UNITY_EDITOR
+
+            var assetPaths = UnityEditor.AssetDatabase.GetAssetPathsFromAssetBundleAndAssetName(mOwnerBundleName, Name);
+
             var ownerBundle = mResLoader.LoadSync<AssetBundle>(mOwnerBundleName);
 
-            Asset = ownerBundle.LoadAsset(Name);
+            Asset = UnityEditor.AssetDatabase.LoadAssetAtPath<Object>(assetPaths[0]);
+#endif
+            //Asset = ownerBundle.LoadAsset(Name);
 
             State = ResState.Loaded;
 
