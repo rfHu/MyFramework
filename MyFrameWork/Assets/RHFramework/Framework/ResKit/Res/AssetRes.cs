@@ -21,15 +21,20 @@ namespace RHFramework
         {
             State = ResState.Loading;
 
-#if UNITY_EDITOR
-
-            var assetPaths = UnityEditor.AssetDatabase.GetAssetPathsFromAssetBundleAndAssetName(mOwnerBundleName, Name);
-
             var ownerBundle = mResLoader.LoadSync<AssetBundle>(mOwnerBundleName);
 
-            Asset = UnityEditor.AssetDatabase.LoadAssetAtPath<Object>(assetPaths[0]);
+            if (ResMgr.IsSimulationModeLogic)
+            {
+#if UNITY_EDITOR
+                var assetPaths = UnityEditor.AssetDatabase.GetAssetPathsFromAssetBundleAndAssetName(mOwnerBundleName, Name);
+                
+                Asset = UnityEditor.AssetDatabase.LoadAssetAtPath<Object>(assetPaths[0]);
 #endif
-            //Asset = ownerBundle.LoadAsset(Name);
+            }
+            else
+            {
+                Asset = ownerBundle.LoadAsset(Name);
+            }
 
             State = ResState.Loaded;
 
@@ -42,13 +47,26 @@ namespace RHFramework
 
             mResLoader.LoadAsync<AssetBundle>(mOwnerBundleName, ownerBundle => 
             {
-                var assetBundleRequest = ownerBundle.LoadAssetAsync(Name);
-
-                assetBundleRequest.completed += operation =>
+                if (ResMgr.IsSimulationModeLogic)
                 {
-                    Asset = assetBundleRequest.asset;
+#if UNITY_EDITOR
+                    var assetPaths = UnityEditor.AssetDatabase.GetAssetPathsFromAssetBundleAndAssetName(mOwnerBundleName, Name);
+
+                    Asset = UnityEditor.AssetDatabase.LoadAssetAtPath<Object>(assetPaths[0]);
+
                     State = ResState.Loaded;
-                };
+#endif
+                }
+                else
+                {
+                    var assetBundleRequest = ownerBundle.LoadAssetAsync(Name);
+
+                    assetBundleRequest.completed += operation =>
+                    {
+                        Asset = assetBundleRequest.asset;
+                        State = ResState.Loaded;
+                    };
+                }
             });
         }
 

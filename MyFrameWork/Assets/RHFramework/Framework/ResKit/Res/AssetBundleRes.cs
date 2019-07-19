@@ -7,25 +7,6 @@ namespace RHFramework
 {
     public class AssetBundleRes : Res
     {
-        private static AssetBundleManifest mManifest;
-
-        public static AssetBundleManifest Manifest
-        {
-            get
-            {
-                if (!mManifest)
-                {
-                    var mainBundle =
-                        AssetBundle.LoadFromFile(ResKitUtil.FullPathForAssetBundle(ResKitUtil.GetPlatformName()));
-
-                    mManifest = mainBundle.LoadAsset<AssetBundleManifest>("AssetBundleManifest");
-                }
-
-                return mManifest;
-            }
-        }
-
-
         public AssetBundle AssetBundle
         {
             get { return Asset as AssetBundle; }
@@ -48,9 +29,7 @@ namespace RHFramework
         public override bool LoadSync()
         {
             State = ResState.Loading;
-
-            //var dependencyBundleNames = Manifest.GetDirectDependencies(Name);
-
+            
             var dependencyBundleNames = ResData.Instance.GetDirectDependencies(Name);
 
             foreach (var dependencyBundleName in dependencyBundleNames)
@@ -58,7 +37,10 @@ namespace RHFramework
                 mResLoader.LoadSync<AssetBundle>(dependencyBundleName);
             }
 
-            //AssetBundle = AssetBundle.LoadFromFile(mPath);
+            if (!ResMgr.IsSimulationModeLogic)
+            {
+                AssetBundle = AssetBundle.LoadFromFile(mPath);
+            }
 
             State = ResState.Loaded;
 
@@ -67,7 +49,7 @@ namespace RHFramework
 
         private void LoadDependencyBundlesAsync(Action onAllLoaded)
         {
-            var dependencyBundleNames = Manifest.GetDirectDependencies(Name);
+            var dependencyBundleNames = ResData.Instance.GetDirectDependencies(Name);
 
             var loadedCount = 0;
 
@@ -97,14 +79,21 @@ namespace RHFramework
 
             LoadDependencyBundlesAsync(() =>
             {
-                var resRequest = AssetBundle.LoadFromFileAsync(mPath);
-
-                resRequest.completed += operation =>
+                if (ResMgr.IsSimulationModeLogic)
                 {
-                    AssetBundle = resRequest.assetBundle;
-
                     State = ResState.Loaded;
-                };
+                }
+                else
+                {
+                    var resRequest = AssetBundle.LoadFromFileAsync(mPath);
+
+                    resRequest.completed += operation =>
+                    {
+                        AssetBundle = resRequest.assetBundle;
+
+                        State = ResState.Loaded;
+                    };
+                }
             });
         }
 

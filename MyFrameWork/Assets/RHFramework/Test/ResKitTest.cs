@@ -83,5 +83,35 @@ namespace RHFramework.Tests
             resLoader.ReleaseAll();
             resLoader = null;
         }
+
+        [UnityTest]
+        public IEnumerator LoadAssetSyncTest()
+        {
+            var resLoader = new ResLoader();
+
+            var squareTexture = resLoader.LoadSync<Texture2D>("square", "Square");
+
+            Assert.IsNotNull(squareTexture);
+
+            resLoader.ReleaseAll();
+            resLoader = null;
+            yield return null;
+        }
+
+        [UnityTest]
+        public IEnumerator LoadAssetAsyncTest()
+        {
+            var resLoader = new ResLoader();
+
+            resLoader.LoadAsync<Texture2D>("square", "Square", squareTesture =>
+            {
+                Assert.IsNotNull(squareTesture);
+
+                resLoader.ReleaseAll();
+                resLoader = null;
+            });
+
+            yield return null;
+        }
     }
 }

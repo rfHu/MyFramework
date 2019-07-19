@@ -10,7 +10,9 @@ namespace RHFramework
         {
             Delay(3.0f, () =>
             {
+#if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;
+#endif
             });
         }
 

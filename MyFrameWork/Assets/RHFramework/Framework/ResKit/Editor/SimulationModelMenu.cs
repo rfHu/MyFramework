@@ -4,13 +4,12 @@ namespace RHFramework
 {
     public class SimulationModelMenu
     {
-        private const string kSimulationModeKey = "simulation mode";
         private const string kSimulationModePath = "RHFramework/Framework/ResKit/Simulation Mode";
 
         private static bool SimulationMode
         {
-            get { return EditorPrefs.GetBool(kSimulationModeKey, true); }
-            set { EditorPrefs.SetBool(kSimulationModeKey, value); }
+            get { return ResMgr.SimulationMode; }
+            set { ResMgr.SimulationMode = value; }
         }
 
         [MenuItem(kSimulationModePath)]

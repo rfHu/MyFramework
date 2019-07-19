@@ -1,0 +1,11 @@
+ManifestFileVersion: 0
+CRC: 2934621121
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: square
+      Dependencies: {}
+    Info_1:
+      Name: testgo
+      Dependencies:
+        Dependency_0: square
