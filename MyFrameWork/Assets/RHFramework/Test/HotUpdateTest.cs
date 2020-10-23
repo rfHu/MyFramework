@@ -10,40 +10,26 @@ namespace RHFramework.Tests
     {
 
 
-        [Test]
-        public void HotUpdateTestSimpleTest()
+        [UnityTest]
+        public IEnumerator HotUpdateTestSimpleTest()
         {
-            var needUpdate = HotUpdateMgr.Instance.HasNewVersionRes;
-
-            if (needUpdate)
+            HotUpdateMgr.Instance.HasNewVersionRes(needUpdate => 
             {
-                UpdateRes();
-                Debug.Log("继续");
-            }
-            else
-            {
-                Debug.Log("继续");
-            }
-
-            Assert.IsTrue(true);
-        }
-
-        void UpdateRes()
-        {
-            Debug.Log("开始更新");
-            DownloadRes();
-            ReplaceLocalRes();
-            Debug.Log("结束更新");
-        }
-
-        private void DownloadRes()
-        {
-            Debug.Log("1.下载资源");
-        }
-
-        private static void ReplaceLocalRes()
-        {
-            Debug.Log("2.替换掉本地资源");
+                if (needUpdate)
+                {
+                    HotUpdateMgr.Instance.UpdateRes(() =>
+                    {
+                        Debug.Log("继续");
+                        Assert.IsTrue(true);
+                    });
+                }
+                else
+                {
+                    Debug.Log("继续");
+                    Assert.IsTrue(true);
+                }
+            });
+            yield return null;
         }
     }
 }
