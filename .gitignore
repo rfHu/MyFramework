@@ -3,3 +3,5 @@ MyFrameWork/Temp/
 MyFrameWork/Library/
 MyFrameWork/Temp/
 MyFrameWork/obj/
+*.csproj
+*.sln
