@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace RHFramework
 {
@@ -8,9 +6,15 @@ namespace RHFramework
     {
         public static string FullPathForAssetBundle(string assetBundleName)
         {
-            return Application.streamingAssetsPath + "/AssetBundles/" + GetPlatformName() + "/" + assetBundleName;
-        }
+            var hotUpdateState = HotUpdateMgr.Instance.State;
 
+            if (hotUpdateState == HotUpdateState.NeverUpdate || hotUpdateState == HotUpdateState.Overrided)
+            {
+                return HotUpdateMgr.Instance.Config.LocalAssetBundlesFolder + assetBundleName;
+            }
+
+            return HotUpdateMgr.Instance.Config.HotUpdateAssetBundlesFolder + assetBundleName;
+        }
 
         public static string GetPlatformName()
         {

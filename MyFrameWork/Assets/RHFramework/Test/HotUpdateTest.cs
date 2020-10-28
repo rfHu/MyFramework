@@ -8,28 +8,43 @@ namespace RHFramework.Tests
 {
     public class HotUpdateTest
     {
-
-
         [UnityTest]
         public IEnumerator HotUpdateTestSimpleTest()
         {
-            HotUpdateMgr.Instance.HasNewVersionRes(needUpdate => 
+            // 弹出 persistentDataPath 目录
+            Application.OpenURL(Application.persistentDataPath);
+
+            var finished = false;
+
+            HotUpdateMgr.Instance.CheckState(() =>
             {
-                if (needUpdate)
+                Debug.Log(HotUpdateMgr.Instance.State);
+
+                HotUpdateMgr.Instance.HasNewVersionRes(needUpdate =>
                 {
-                    HotUpdateMgr.Instance.UpdateRes(() =>
+                    if (needUpdate)
                     {
+                        HotUpdateMgr.Instance.UpdateRes(() =>
+                        {
+                            Debug.Log("继续");
+                            Assert.IsTrue(true);
+                            finished = true;
+                        });
+                    }
+                    else
+                    {
+                        Debug.Log("不需要热更新");
                         Debug.Log("继续");
                         Assert.IsTrue(true);
-                    });
-                }
-                else
-                {
-                    Debug.Log("继续");
-                    Assert.IsTrue(true);
-                }
+                        finished = true;
+                    }
+                });
             });
-            yield return null;
+
+            while (!finished) 
+            {
+                yield return null;
+            }
         }
     }
 }

@@ -6,22 +6,83 @@ using UnityEngine;
 
 namespace RHFramework
 {
+    public enum HotUpdateState 
+    {
+        /// <summary>
+        /// 从未更新
+        /// </summary>
+        NeverUpdate,
+        /// <summary>
+        /// 有更新过
+        /// </summary>
+        Updated,
+        /// <summary>
+        /// 有个更新过，覆盖安装
+        /// </summary>
+        Overrided
+    }
+
     public class HotUpdateMgr : MonoSingleton<HotUpdateMgr>
     {
-        public int GetLocalResVersion() 
+        private HotUpdateState mState;
+
+        public HotUpdateState State { get => mState; }
+
+        public HotUpdateConfig Config { get; set; }
+
+        private void Awake()
         {
-            var path = Application.streamingAssetsPath + "/AssetBundles/Windows/Resversion.json";
-            var jsonString = File.ReadAllText(path);
-            var localResVersion = JsonUtility.FromJson<ResVersion>(jsonString);
-            return localResVersion.version;
+            Config = new HotUpdateConfig();
+        }
+
+        public void CheckState(Action done) 
+        {
+            var persistResVersion = Config.LoadHotUpdateAssetBundlesFolderResVersion();
+            if (persistResVersion == null)
+            {
+                mState = HotUpdateState.NeverUpdate;
+                done();
+            }
+            else 
+            {
+                StartCoroutine(Config.GetStreamingAssetResVersion(streamingResVersion =>
+                {
+                    if (persistResVersion.Version > streamingResVersion.Version)
+                    {
+                        mState = HotUpdateState.Updated;
+                    }
+                    else
+                    {
+                        mState = HotUpdateState.Overrided;
+                    }
+                    done();
+                }));
+
+            }
+        }
+
+        public void GetLocalResVersion(Action<int> onResult) 
+        {
+            if (mState == HotUpdateState.NeverUpdate || mState == HotUpdateState.Overrided)
+            {
+                StartCoroutine(Config.GetStreamingAssetResVersion(resVersion => onResult(resVersion.Version)));
+                return;
+            }
+
+            var localResVersion = Config.LoadHotUpdateAssetBundlesFolderResVersion();
+            onResult(localResVersion.Version);
         }
 
         public void HasNewVersionRes(Action<bool> onResult)
         {
             FakeResServer.Instance.GetRemoteResVersion(remoteResVersion => 
             {
-                var result = remoteResVersion > GetLocalResVersion();
-                onResult(result);
+                GetLocalResVersion(localResVersion =>
+                {
+                    var result = remoteResVersion > localResVersion;
+                    onResult(result);
+                });
+
             });
         }
 
@@ -29,19 +90,31 @@ namespace RHFramework
         {
             Debug.Log("开始更新");
             Debug.Log("1.下载资源");
-            FakeResServer.Instance.DownloadRes(remoteResVersion =>
+            FakeResServer.Instance.DownloadRes(() =>
             {
-                ReplaceLocalRes(remoteResVersion);
+                ReplaceLocalRes();
                 Debug.Log("结束更新");
+                onUpdateDone();
             });
         }
 
-        private void ReplaceLocalRes(ResVersion remoteVerVersion)
+        private void ReplaceLocalRes()
         {
             Debug.Log("2.替换掉本地资源");
-            var path = Application.streamingAssetsPath + "/AssetBundles/Windows/Resversion.json";
-            var jsonString = JsonUtility.ToJson(remoteVerVersion);
-            File.WriteAllText(path, jsonString);
+            var tempAssetBundleFolders = FakeResServer.TempAssetBundlesPath;
+            var assetBundlefolders = Config.HotUpdateAssetBundlesFolder;
+
+            if (Directory.Exists(assetBundlefolders))
+            {
+                Directory.Delete(assetBundlefolders, true);
+            }
+
+            Directory.Move(tempAssetBundleFolders, assetBundlefolders);
+
+            if (Directory.Exists(tempAssetBundleFolders))
+            {
+                Directory.Delete(tempAssetBundleFolders, true);
+            }
         }
     }
 }

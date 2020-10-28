@@ -34,7 +34,10 @@ namespace RHFramework
                         }
 
                         mInstance = instanceObj.AddComponent<T>();
-                        DontDestroyOnLoad(instanceObj);
+                        if (Application.isPlaying)
+                        {
+                            DontDestroyOnLoad(instanceObj);
+                        }
 
                         Debug.LogFormat("Add New Singleton {0} in Game!", instanceName);
                     }

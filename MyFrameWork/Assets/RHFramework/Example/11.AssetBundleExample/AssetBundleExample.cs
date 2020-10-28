@@ -20,7 +20,7 @@ namespace RHFramework {
 #endif
 
 #if UNITY_EDITOR
-        [UnityEditor.MenuItem("RHFramework/Example/24.AssetBundleExample/Run", false, 24)]
+        [UnityEditor.MenuItem("RHFramework/Example/11.AssetBundleExample/Run", false, 24)]
         static void MenuCilcked2()
         {
             UnityEditor.EditorApplication.isPlaying = true;
@@ -35,10 +35,15 @@ namespace RHFramework {
 
         private void Start()
         {
-            mBundle = mResLoader.LoadSync<AssetBundle>("/testgo");
-            var go = mBundle.LoadAsset<GameObject>("GameObject");
 
-            Instantiate(go);
+            HotUpdateMgr.Instance.CheckState(() =>
+            {
+                mBundle = mResLoader.LoadSync<AssetBundle>("testgo");
+
+                var go = mBundle.LoadAsset<GameObject>("GameObject");
+
+                Instantiate(go);
+            });
         }
 
         private void OnDestroy()
