@@ -1,0 +1,27 @@
+ManifestFileVersion: 0
+CRC: 1629047761
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 0524964d8a40c5034f3b464d1c69b417
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 25b0de44755a2b3dd1af8bc0a7e5588f
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/RHFramework/Example/11.AssetBundleExample/GameObject.prefab
+Dependencies:
+- D:/projects/MyFramework/MyFrameWork/Assets/StreamingAssets/AssetBundles/Windows/square
