@@ -34,9 +34,9 @@ namespace RHFramework
 
         private string mAssetPath;
 
-        public abstract bool LoadSync();
+        public abstract bool LoadSync<T>() where T : UnityEngine.Object;
 
-        public abstract void LoadAsync();
+        public abstract void LoadAsync<T>() where T : UnityEngine.Object;
         
         protected abstract void OnReleaseRes();
 

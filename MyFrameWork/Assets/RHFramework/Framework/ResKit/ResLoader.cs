@@ -53,7 +53,7 @@ namespace RHFramework
             //真正加载资源
             res = CreateRes(assetName, assetBundleName);
 
-            res.LoadSync();
+            res.LoadSync<T>();
 
             return res.Asset as T;
         }
@@ -90,7 +90,7 @@ namespace RHFramework
 
             res.RegisterOnLoadedEvent(onResLoaded);
 
-            res.LoadAsync();
+            res.LoadAsync<T>();
         }
 
         private List<Res> mResRecords = new List<Res>();

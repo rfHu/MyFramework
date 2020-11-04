@@ -5,3 +5,5 @@ MyFrameWork/Temp/
 MyFrameWork/obj/
 *.csproj
 *.sln
+MyFrameWork/Logs/
+MyFrameWork/Packages/

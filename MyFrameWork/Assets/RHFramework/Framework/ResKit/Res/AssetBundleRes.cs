@@ -26,7 +26,7 @@ namespace RHFramework
 
         private ResLoader mResLoader = new ResLoader();
 
-        public override bool LoadSync()
+        public override bool LoadSync<T>()
         {
             State = ResState.Loading;
             
@@ -73,7 +73,7 @@ namespace RHFramework
             }
         }
 
-        public override void LoadAsync()
+        public override void LoadAsync<T>()
         {
             State = ResState.Loading;
 

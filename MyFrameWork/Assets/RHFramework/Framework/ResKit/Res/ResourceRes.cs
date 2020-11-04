@@ -18,22 +18,22 @@ namespace RHFramework
             State = ResState.Waiting;
         }
 
-        public override bool LoadSync()
+        public override bool LoadSync<T>()
         {
             State = ResState.Loading;
 
-            Asset = Resources.Load(mAssetPath);
+            Asset = Resources.Load<T>(mAssetPath);
 
             State = ResState.Loaded;
 
             return Asset;
         }
 
-        public override void LoadAsync()
+        public override void LoadAsync<T>()
         {
             State = ResState.Loading;
             
-            var resRequest = Resources.LoadAsync(mAssetPath);
+            var resRequest = Resources.LoadAsync<T>(mAssetPath);
 
             resRequest.completed += operation =>
             {

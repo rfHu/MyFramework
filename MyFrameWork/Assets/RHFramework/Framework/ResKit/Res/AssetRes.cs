@@ -17,7 +17,7 @@ namespace RHFramework
 
         ResLoader mResLoader = new ResLoader();
 
-        public override bool LoadSync()
+        public override bool LoadSync<T>()
         {
             State = ResState.Loading;
 
@@ -33,7 +33,7 @@ namespace RHFramework
             }
             else
             {
-                Asset = ownerBundle.LoadAsset(Name);
+                Asset = ownerBundle.LoadAsset<T>(Name);
             }
 
             State = ResState.Loaded;
@@ -41,7 +41,7 @@ namespace RHFramework
             return Asset;
         }
 
-        public override void LoadAsync()
+        public override void LoadAsync<T>()
         {
             State = ResState.Loading;
 
@@ -59,7 +59,7 @@ namespace RHFramework
                 }
                 else
                 {
-                    var assetBundleRequest = ownerBundle.LoadAssetAsync(Name);
+                    var assetBundleRequest = ownerBundle.LoadAssetAsync<T>(Name);
 
                     assetBundleRequest.completed += operation =>
                     {
