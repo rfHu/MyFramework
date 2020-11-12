@@ -12,7 +12,9 @@ namespace RHFramework
         [MenuItem("RHFramework/Framework/ResKit/Build AssetBundles", false)]
         static void BuildAssetBundles()
         {
-            var outputPath = ResKitUtil.FullPathForAssetBundle(string.Empty);
+            SetBuildBundleConfig();
+
+            var outputPath = ResKitUtil.FullPathForBuildAssetBundle(string.Empty);
 
             if (!Directory.Exists(outputPath))
             {
@@ -23,10 +25,14 @@ namespace RHFramework
 
             var versionConfigFilePath = outputPath + "/ResVersion.json";
 
+
+            List<string> AssetBundleMD5s = GetAssetBundleMD5s(outputPath);
+
             var resVersion = new ResVersion()
             {
                 Version = 15,
-                AssetBundleNames = AssetDatabase.GetAllAssetBundleNames().ToList()
+                AssetBundleNames = AssetDatabase.GetAllAssetBundleNames().Where(name => File.Exists(string.Format("{0}/{1}", outputPath, name))).ToList(),
+                AssetBundleMD5s = AssetBundleMD5s
             };
 
             var resVersionJson = JsonUtility.ToJson(resVersion, true);
@@ -34,6 +40,36 @@ namespace RHFramework
             File.WriteAllText(versionConfigFilePath, resVersionJson);
 
             AssetDatabase.Refresh();
+        }
+
+        private static void SetBuildBundleConfig()
+        {
+            if (HotUpdateMgrConfig.HotUpdateType == HotUpdateType.full)
+            {
+                FullHotUpdateMgr.Instance.Config = HotUpdateMgrConfig.BuildAssetBundlesConfig;
+            }
+            else
+            {
+                IncrementHotUpdateMgr.Instance.Config = HotUpdateMgrConfig.BuildAssetBundlesConfig;
+            }
+        }
+
+        private static List<string> GetAssetBundleMD5s(string outputPath)
+        {
+
+            var AssetBundleNames = AssetDatabase.GetAllAssetBundleNames();
+            var AssetBundleMD5s = new List<string>();
+            for (int i = 0; i < AssetBundleNames.Length; i++)
+            {
+                var bundlePath = string.Format("{0}/{1}", outputPath, AssetBundleNames[i]);
+                if (File.Exists(bundlePath))
+                {
+                    var bundleMD5Str = FileMD5Tools.MD5Stream(bundlePath);
+                    AssetBundleMD5s.Add(bundleMD5Str);
+                }
+            }
+
+            return AssetBundleMD5s;
         }
     }
 }

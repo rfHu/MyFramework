@@ -1,7 +1,11 @@
 {
-    "Version": 17,
+    "Version": 15,
     "AssetBundleNames": [
         "square",
         "testgo"
+    ],
+    "AssetBundleMD5s": [
+        "41DD3EDE380FAB87F87C838AB07968C7",
+        "3F484945BD58559BF5A1D2317A9C80A8"
     ]
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.IO;
+using UnityEngine;
 
 namespace RHFramework
 {
@@ -6,14 +7,43 @@ namespace RHFramework
     {
         public static string FullPathForAssetBundle(string assetBundleName)
         {
-            var hotUpdateState = HotUpdateMgr.Instance.State;
-
-            if (hotUpdateState == HotUpdateState.NeverUpdate || hotUpdateState == HotUpdateState.Overrided)
+            if (HotUpdateMgrConfig.HotUpdateType == HotUpdateType.full)
             {
-                return HotUpdateMgr.Instance.Config.LocalAssetBundlesFolder + assetBundleName;
-            }
+                var hotUpdateState = FullHotUpdateMgr.Instance.State;
 
-            return HotUpdateMgr.Instance.Config.HotUpdateAssetBundlesFolder + assetBundleName;
+                if (hotUpdateState == FullHotUpdateState.Updated)
+                {
+                    return FullHotUpdateMgr.Instance.Config.HotUpdateAssetBundlesFolder + assetBundleName;
+                }
+
+                else
+                {
+                    return FullHotUpdateMgr.Instance.Config.LocalAssetBundlesFolder + assetBundleName;
+                }
+            }
+            else 
+            {
+                if (File.Exists(IncrementHotUpdateMgr.Instance.Config.HotUpdateAssetBundlesFolder + assetBundleName))
+                {
+                    return IncrementHotUpdateMgr.Instance.Config.HotUpdateAssetBundlesFolder + assetBundleName;
+                }
+                else 
+                {
+                    return IncrementHotUpdateMgr.Instance.Config.LocalAssetBundlesFolder + assetBundleName;
+                }
+            }
+        }
+
+        public static string FullPathForBuildAssetBundle(string assetBundleName)
+        {
+            if (HotUpdateMgrConfig.HotUpdateType == HotUpdateType.full)
+            {
+                return FullHotUpdateMgr.Instance.Config.LocalAssetBundlesFolder + assetBundleName;
+            }
+            else
+            {
+                return IncrementHotUpdateMgr.Instance.Config.LocalAssetBundlesFolder + assetBundleName;
+            }
         }
 
         public static string GetPlatformName()

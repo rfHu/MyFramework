@@ -6,25 +6,25 @@ using UnityEngine.TestTools;
 
 namespace RHFramework.Tests
 {
-    public class HotUpdateTest
+    public class FullHotUpdateTest
     {
         [UnityTest]
-        public IEnumerator HotUpdateTestSimpleTest()
+        public IEnumerator FullHotUpdateTestSimpleTest()
         {
             // 弹出 persistentDataPath 目录
             Application.OpenURL(Application.persistentDataPath);
 
             var finished = false;
 
-            HotUpdateMgr.Instance.CheckState(() =>
+            FullHotUpdateMgr.Instance.CheckState(() =>
             {
-                Debug.Log(HotUpdateMgr.Instance.State);
+                Debug.Log(FullHotUpdateMgr.Instance.State);
 
-                HotUpdateMgr.Instance.HasNewVersionRes(needUpdate =>
+                FullHotUpdateMgr.Instance.HasNewVersionRes(needUpdate =>
                 {
                     if (needUpdate)
                     {
-                        HotUpdateMgr.Instance.UpdateRes(() =>
+                        FullHotUpdateMgr.Instance.UpdateRes(() =>
                         {
                             Debug.Log("继续");
                             Assert.IsTrue(true);

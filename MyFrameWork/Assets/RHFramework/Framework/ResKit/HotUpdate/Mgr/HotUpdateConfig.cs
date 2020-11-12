@@ -67,9 +67,16 @@ namespace RHFramework
             var path = RemoteResVersionURL;
             var www = new WWW(path);
             yield return www;
-            var jsonString = www.text;
-            var remoteResVersion = JsonUtility.FromJson<ResVersion>(jsonString);
-            onResDownloaded(remoteResVersion);
+            if (www.error != null)
+            {
+                Debug.LogError("download ResVersion error: " + www.error);
+            }
+            else
+            {
+                var jsonString = www.text;
+                var remoteResVersion = JsonUtility.FromJson<ResVersion>(jsonString);
+                onResDownloaded(remoteResVersion);
+            }
         }
     }
 }

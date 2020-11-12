@@ -3,5 +3,9 @@
     "AssetBundleNames": [
         "square",
         "testgo"
+    ],
+    "AssetBundleMD5s": [
+        "41DD3EDE380FAB87F87C838AB07968C7",
+        "4F14303DCD4347A249825AF0E4C741D3"
     ]
 }

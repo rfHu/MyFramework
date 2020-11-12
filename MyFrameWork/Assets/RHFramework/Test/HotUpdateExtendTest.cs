@@ -24,16 +24,16 @@ namespace RHFramework.Tests
 
             if (testEnv)
             {
-                HotUpdateMgr.Instance.Config = new TestHotUpdateConfig();
+                FullHotUpdateMgr.Instance.Config = new TestHotUpdateConfig();
             }
             else 
             {
-                HotUpdateMgr.Instance.Config = new HotUpdateConfig();
+                FullHotUpdateMgr.Instance.Config = new HotUpdateConfig();
             }
 
-            HotUpdateMgr.Instance.CheckState(()=> 
+            FullHotUpdateMgr.Instance.CheckState(()=> 
             {
-                Debug.Log(HotUpdateMgr.Instance.State);
+                Debug.Log(FullHotUpdateMgr.Instance.State);
 
                 //Assert.AreEqual(HotUpdateMgr.Instance.State, HotUpdateState.NeverUpdate);
             });

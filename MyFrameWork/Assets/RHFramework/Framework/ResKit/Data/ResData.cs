@@ -61,7 +61,9 @@ namespace RHFramework {
             }
             else
             {
-                var mainBundle = AssetBundle.LoadFromFile(ResKitUtil.FullPathForAssetBundle(ResKitUtil.GetPlatformName()));
+                var mainBundlePath = ResKitUtil.FullPathForAssetBundle(ResKitUtil.GetPlatformName());
+
+                AssetBundle mainBundle = AssetBundle.LoadFromFile(mainBundlePath);
 
                 mManifest = mainBundle.LoadAsset<AssetBundleManifest>("AssetBundleManifest");
             }

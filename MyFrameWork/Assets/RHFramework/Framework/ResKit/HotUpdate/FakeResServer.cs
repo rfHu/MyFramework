@@ -13,6 +13,8 @@ namespace RHFramework
         public int Version;
 
         public List<string> AssetBundleNames = new List<string>();
+
+        public List<string> AssetBundleMD5s = new List<string>();
     }
 
     public class FakeResServer : MonoSingleton<FakeResServer>
@@ -22,20 +24,33 @@ namespace RHFramework
             get { return Application.persistentDataPath + "/TempAssetBundles/"; }
         }
 
-        public void GetRemoteResVersion(Action<int> onRemoteResVersionGet) 
+        public void FullGetRemoteResVersion(Action<int> onRemoteResVersionGet) 
         {
-            StartCoroutine(HotUpdateMgr.Instance.Config.RequestRemoteResVersion(remoteResversion => 
+            StartCoroutine(FullHotUpdateMgr.Instance.Config.RequestRemoteResVersion(remoteResversion => 
             {
                 onRemoteResVersionGet(remoteResversion.Version);
             }));
         }
 
-        public void DownloadRes(Action downloadDone)
+        public void IncrementGetRemoteResVersion(Action<ResVersion> onRemoteResVersionGet)
         {
-            StartCoroutine(HotUpdateMgr.Instance.Config.RequestRemoteResVersion(remoteResVersion => 
+            StartCoroutine(IncrementHotUpdateMgr.Instance.Config.RequestRemoteResVersion(remoteResversion =>
+            {
+                onRemoteResVersionGet(remoteResversion);
+            }));
+        }
+
+        public void FullDownloadRes(Action downloadDone)
+        {
+            StartCoroutine(FullHotUpdateMgr.Instance.Config.RequestRemoteResVersion(remoteResVersion => 
             {
                 StartCoroutine(DoDownloadRes(remoteResVersion, downloadDone));
             }));
+        }
+
+        public void IncrementDownloadRes(ResVersion needBundleResVersion, Action downloadDone) 
+        {
+            StartCoroutine(DoDownloadRes(needBundleResVersion, downloadDone));
         }
 
         private IEnumerator DoDownloadRes(ResVersion remoteResVersion, Action downloadDone) 
@@ -46,29 +61,41 @@ namespace RHFramework
                 Directory.CreateDirectory(TempAssetBundlesPath);
             }
 
-            //保存 ResVersion.json
-            var tempResVersionFilePath = TempAssetBundlesPath + "ResVersion.json";
-            var tempResVersionJson = JsonUtility.ToJson(remoteResVersion);
-            File.WriteAllText(tempResVersionFilePath, tempResVersionJson);
-
-            var remoteBasePath = HotUpdateMgr.Instance.Config.RemoteAssetBundleURLBase;
+            var remoteBasePath = GetRemoteAssetBundleURLBase();
 
             //补上 AssetBundleMenifest 文件
-
             remoteResVersion.AssetBundleNames.Add(ResKitUtil.GetPlatformName());
 
             foreach (var assetBundleName in remoteResVersion.AssetBundleNames)
             {
                 var www = new WWW(remoteBasePath + assetBundleName);
                 yield return www;
+                if (www.error != null)
+                {
+                    Debug.LogError("download bundle error: " + www.error);
+                }
+                else
+                {
+                    var bytes = www.bytes;
 
-                var bytes = www.bytes;
-
-                var filepath = TempAssetBundlesPath + assetBundleName;
-                File.WriteAllBytes(filepath, bytes);
+                    var filepath = TempAssetBundlesPath + assetBundleName;
+                    File.WriteAllBytes(filepath, bytes);
+                }
             }
 
             downloadDone();
+        }
+
+        private string GetRemoteAssetBundleURLBase()
+        {
+            if (HotUpdateMgrConfig.HotUpdateType == HotUpdateType.full)
+            {
+                return FullHotUpdateMgr.Instance.Config.RemoteAssetBundleURLBase;
+            }
+            else
+            {
+                return IncrementHotUpdateMgr.Instance.Config.RemoteAssetBundleURLBase;
+            }
         }
     }
 }

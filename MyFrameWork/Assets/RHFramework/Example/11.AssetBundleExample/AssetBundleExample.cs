@@ -36,7 +36,7 @@ namespace RHFramework {
         private void Start()
         {
 
-            HotUpdateMgr.Instance.CheckState(() =>
+            FullHotUpdateMgr.Instance.CheckState(() =>
             {
                 mBundle = mResLoader.LoadSync<AssetBundle>("testgo");
 

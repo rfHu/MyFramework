@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace RHFramework
 {
-    public enum HotUpdateState 
+    public enum FullHotUpdateState 
     {
         /// <summary>
         /// 从未更新
@@ -22,17 +22,17 @@ namespace RHFramework
         Overrided
     }
 
-    public class HotUpdateMgr : MonoSingleton<HotUpdateMgr>
+    public class FullHotUpdateMgr : MonoSingleton<FullHotUpdateMgr>
     {
-        private HotUpdateState mState;
+        private FullHotUpdateState mState;
 
-        public HotUpdateState State { get => mState; }
+        public FullHotUpdateState State { get => mState; }
 
         public HotUpdateConfig Config { get; set; }
 
         private void Awake()
         {
-            Config = new HotUpdateConfig();
+            Config = HotUpdateMgrConfig.MgrAssetBundlesConfig;
         }
 
         public void CheckState(Action done) 
@@ -40,7 +40,7 @@ namespace RHFramework
             var persistResVersion = Config.LoadHotUpdateAssetBundlesFolderResVersion();
             if (persistResVersion == null)
             {
-                mState = HotUpdateState.NeverUpdate;
+                mState = FullHotUpdateState.NeverUpdate;
                 done();
             }
             else 
@@ -49,11 +49,11 @@ namespace RHFramework
                 {
                     if (persistResVersion.Version > streamingResVersion.Version)
                     {
-                        mState = HotUpdateState.Updated;
+                        mState = FullHotUpdateState.Updated;
                     }
                     else
                     {
-                        mState = HotUpdateState.Overrided;
+                        mState = FullHotUpdateState.Overrided;
                     }
                     done();
                 }));
@@ -63,7 +63,7 @@ namespace RHFramework
 
         public void GetLocalResVersion(Action<int> onResult) 
         {
-            if (mState == HotUpdateState.NeverUpdate || mState == HotUpdateState.Overrided)
+            if (mState == FullHotUpdateState.NeverUpdate || mState == FullHotUpdateState.Overrided)
             {
                 StartCoroutine(Config.GetStreamingAssetResVersion(resVersion => onResult(resVersion.Version)));
                 return;
@@ -75,7 +75,7 @@ namespace RHFramework
 
         public void HasNewVersionRes(Action<bool> onResult)
         {
-            FakeResServer.Instance.GetRemoteResVersion(remoteResVersion => 
+            FakeResServer.Instance.FullGetRemoteResVersion(remoteResVersion => 
             {
                 GetLocalResVersion(localResVersion =>
                 {
@@ -90,7 +90,7 @@ namespace RHFramework
         {
             Debug.Log("开始更新");
             Debug.Log("1.下载资源");
-            FakeResServer.Instance.DownloadRes(() =>
+            FakeResServer.Instance.FullDownloadRes(() =>
             {
                 ReplaceLocalRes();
                 Debug.Log("结束更新");
