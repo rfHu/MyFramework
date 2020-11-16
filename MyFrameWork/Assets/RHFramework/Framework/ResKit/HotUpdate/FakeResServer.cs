@@ -88,7 +88,7 @@ namespace RHFramework
 
         private string GetRemoteAssetBundleURLBase()
         {
-            if (HotUpdateMgrConfig.HotUpdateType == HotUpdateType.full)
+            if (HotUpdateStaticConfig.HotUpdateType == HotUpdateType.full)
             {
                 return FullHotUpdateMgr.Instance.Config.RemoteAssetBundleURLBase;
             }

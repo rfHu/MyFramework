@@ -7,43 +7,46 @@ namespace RHFramework
     {
         public static string FullPathForAssetBundle(string assetBundleName)
         {
-            if (HotUpdateMgrConfig.HotUpdateType == HotUpdateType.full)
+            if (HotUpdateStaticConfig.HotUpdateType == HotUpdateType.full)
             {
-                var hotUpdateState = FullHotUpdateMgr.Instance.State;
-
-                if (hotUpdateState == FullHotUpdateState.Updated)
-                {
-                    return FullHotUpdateMgr.Instance.Config.HotUpdateAssetBundlesFolder + assetBundleName;
-                }
-
-                else
-                {
-                    return FullHotUpdateMgr.Instance.Config.LocalAssetBundlesFolder + assetBundleName;
-                }
+                return FullBundleFullPath(assetBundleName);
             }
-            else 
+            else
             {
-                if (File.Exists(IncrementHotUpdateMgr.Instance.Config.HotUpdateAssetBundlesFolder + assetBundleName))
-                {
-                    return IncrementHotUpdateMgr.Instance.Config.HotUpdateAssetBundlesFolder + assetBundleName;
-                }
-                else 
-                {
-                    return IncrementHotUpdateMgr.Instance.Config.LocalAssetBundlesFolder + assetBundleName;
-                }
+                return IncrementBundleFullPath(assetBundleName);
             }
         }
 
-        public static string FullPathForBuildAssetBundle(string assetBundleName)
+        private static string IncrementBundleFullPath(string assetBundleName)
         {
-            if (HotUpdateMgrConfig.HotUpdateType == HotUpdateType.full)
+            if (File.Exists(IncrementHotUpdateMgr.Instance.Config.HotUpdateAssetBundlesFolder + assetBundleName))
             {
-                return FullHotUpdateMgr.Instance.Config.LocalAssetBundlesFolder + assetBundleName;
+                return IncrementHotUpdateMgr.Instance.Config.HotUpdateAssetBundlesFolder + assetBundleName;
             }
             else
             {
                 return IncrementHotUpdateMgr.Instance.Config.LocalAssetBundlesFolder + assetBundleName;
             }
+        }
+
+        private static string FullBundleFullPath(string assetBundleName)
+        {
+            var hotUpdateState = FullHotUpdateMgr.Instance.State;
+
+            if (hotUpdateState == FullHotUpdateState.Updated)
+            {
+                return FullHotUpdateMgr.Instance.Config.HotUpdateAssetBundlesFolder + assetBundleName;
+            }
+
+            else
+            {
+                return FullHotUpdateMgr.Instance.Config.LocalAssetBundlesFolder + assetBundleName;
+            }
+        }
+
+        public static string BuildAssetBundleFullPath(string assetBundleName)
+        {
+            return HotUpdateStaticConfig.BuildAssetBundlesFolder(assetBundleName);
         }
 
         public static string GetPlatformName()

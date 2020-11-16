@@ -12,9 +12,7 @@ namespace RHFramework
         [MenuItem("RHFramework/Framework/ResKit/Build AssetBundles", false)]
         static void BuildAssetBundles()
         {
-            SetBuildBundleConfig();
-
-            var outputPath = ResKitUtil.FullPathForBuildAssetBundle(string.Empty);
+            var outputPath = ResKitUtil.BuildAssetBundleFullPath(string.Empty);
 
             if (!Directory.Exists(outputPath))
             {
@@ -31,7 +29,7 @@ namespace RHFramework
             var resVersion = new ResVersion()
             {
                 Version = 15,
-                AssetBundleNames = AssetDatabase.GetAllAssetBundleNames().Where(name => File.Exists(string.Format("{0}/{1}", outputPath, name))).ToList(),
+                AssetBundleNames = AssetDatabase.GetAllAssetBundleNames().Where(name => File.Exists(string.Format("{0}/{1}", outputPath, name)) && !HotUpdateStaticConfig.LocalBundleNames.Contains(name)).ToList(),
                 AssetBundleMD5s = AssetBundleMD5s
             };
 
@@ -40,18 +38,6 @@ namespace RHFramework
             File.WriteAllText(versionConfigFilePath, resVersionJson);
 
             AssetDatabase.Refresh();
-        }
-
-        private static void SetBuildBundleConfig()
-        {
-            if (HotUpdateMgrConfig.HotUpdateType == HotUpdateType.full)
-            {
-                FullHotUpdateMgr.Instance.Config = HotUpdateMgrConfig.BuildAssetBundlesConfig;
-            }
-            else
-            {
-                IncrementHotUpdateMgr.Instance.Config = HotUpdateMgrConfig.BuildAssetBundlesConfig;
-            }
         }
 
         private static List<string> GetAssetBundleMD5s(string outputPath)

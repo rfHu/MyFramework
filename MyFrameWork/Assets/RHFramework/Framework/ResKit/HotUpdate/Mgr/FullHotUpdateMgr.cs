@@ -32,7 +32,7 @@ namespace RHFramework
 
         private void Awake()
         {
-            Config = HotUpdateMgrConfig.MgrAssetBundlesConfig;
+            Config = HotUpdateStaticConfig.MgrAssetBundlesConfig;
         }
 
         public void CheckState(Action done) 
