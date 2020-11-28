@@ -8,7 +8,7 @@ using UnityEngine.Networking;
 namespace RHFramework
 {
     [Serializable]
-    public class ResVersion 
+    public class ResVersion
     {
         public int Version;
 
@@ -19,14 +19,14 @@ namespace RHFramework
 
     public class FakeResServer : MonoSingleton<FakeResServer>
     {
-        public static string TempAssetBundlesPath 
+        public static string TempAssetBundlesPath
         {
             get { return Application.persistentDataPath + "/TempAssetBundles/"; }
         }
 
-        public void FullGetRemoteResVersion(Action<int> onRemoteResVersionGet) 
+        public void FullGetRemoteResVersion(Action<int> onRemoteResVersionGet)
         {
-            StartCoroutine(FullHotUpdateMgr.Instance.Config.RequestRemoteResVersion(remoteResversion => 
+            StartCoroutine(FullHotUpdateMgr.Instance.Config.RequestRemoteResVersion(remoteResversion =>
             {
                 onRemoteResVersionGet(remoteResversion.Version);
             }));
@@ -42,18 +42,13 @@ namespace RHFramework
 
         public void FullDownloadRes(Action downloadDone)
         {
-            StartCoroutine(FullHotUpdateMgr.Instance.Config.RequestRemoteResVersion(remoteResVersion => 
+            StartCoroutine(FullHotUpdateMgr.Instance.Config.RequestRemoteResVersion(remoteResVersion =>
             {
-                StartCoroutine(DoDownloadRes(remoteResVersion, downloadDone));
+                StartCoroutine(DoFullDownloadRes(remoteResVersion, downloadDone));
             }));
         }
 
-        public void IncrementDownloadRes(ResVersion needBundleResVersion, Action downloadDone) 
-        {
-            StartCoroutine(DoDownloadRes(needBundleResVersion, downloadDone));
-        }
-
-        private IEnumerator DoDownloadRes(ResVersion remoteResVersion, Action downloadDone) 
+        private IEnumerator DoFullDownloadRes(ResVersion remoteResVersion, Action downloadDone)
         {
             //创建临时目录
             if (!Directory.Exists(TempAssetBundlesPath))
@@ -61,22 +56,92 @@ namespace RHFramework
                 Directory.CreateDirectory(TempAssetBundlesPath);
             }
 
-            var remoteBasePath = GetRemoteAssetBundleURLBase();
+            var remoteBasePath = FullHotUpdateMgr.Instance.Config.RemoteAssetBundleURLBase;
 
             //补上 AssetBundleMenifest 文件
+
             remoteResVersion.AssetBundleNames.Add(ResKitUtil.GetPlatformName());
 
-            foreach (var assetBundleName in remoteResVersion.AssetBundleNames)
+            for (int i = 0; i < remoteResVersion.AssetBundleNames.Count; i++)
             {
-                var www = new WWW(remoteBasePath + assetBundleName);
-                yield return www;
-                if (www.error != null)
+                string assetBundleName = remoteResVersion.AssetBundleNames[i];
+
+                UnityWebRequest uwr = UnityWebRequest.Get(string.Format("{0}/{1}", remoteBasePath, assetBundleName));
+                uwr.timeout = 5;
+                uwr.SendWebRequest();
+                if (uwr.isHttpError || uwr.isNetworkError)
                 {
-                    Debug.LogError("download bundle error: " + www.error);
+                    Debug.Log(uwr.error);
+                    //todo error处理
                 }
                 else
                 {
-                    var bytes = www.bytes;
+                    while (!uwr.isDone)
+                    {
+                        var progress = uwr.downloadProgress;
+                        yield return 0;
+                    }
+
+                    if (uwr.isDone) //如果下载完成了
+                    {
+                        Debug.Log("完成");
+                    }
+
+                    var bytes = uwr.downloadHandler.data;
+
+                    var filepath = TempAssetBundlesPath + assetBundleName;
+                    File.WriteAllBytes(filepath, bytes);
+                }
+
+            }
+
+            downloadDone();
+        }
+
+        public void IncrementDownloadRes(List<string> AssetBundleNames, Action downloadDone, Action<string> downloadError)
+        {
+            StartCoroutine(DoIncrementDownloadRes(AssetBundleNames, downloadDone, downloadError));
+        }
+
+        private IEnumerator DoIncrementDownloadRes(List<string> AssetBundleNames, Action downloadDone, Action<string> downloadError)
+        {
+            if (!Directory.Exists(IncrementHotUpdateMgr.Instance.Config.HotUpdateAssetBundlesFolder))
+            {
+                Directory.CreateDirectory(IncrementHotUpdateMgr.Instance.Config.HotUpdateAssetBundlesFolder);
+            }
+
+            var remoteBasePath = IncrementHotUpdateMgr.Instance.Config.RemoteAssetBundleURLBase;
+
+            //补上 AssetBundleMenifest 文件
+
+            AssetBundleNames.Add(ResKitUtil.GetPlatformName());
+
+            for (int i = 0; i < AssetBundleNames.Count; i++)
+            {
+                string assetBundleName = AssetBundleNames[i];
+
+                UnityWebRequest uwr = UnityWebRequest.Get(string.Format("{0}/{1}", remoteBasePath, assetBundleName));
+                uwr.timeout = 5;
+                uwr.SendWebRequest();
+
+                if (uwr.isHttpError || uwr.isNetworkError)
+                {
+                    downloadError(uwr.error);
+                }
+                else
+                {
+                    while (!uwr.isDone)
+                    {
+                        var progress = uwr.downloadProgress;
+                        yield return 0;
+                    }
+
+                    if (uwr.isDone) //如果下载完成了
+                    {
+                        Debug.Log("完成");
+                    }
+
+                    var bytes = uwr.downloadHandler.data;
 
                     var filepath = TempAssetBundlesPath + assetBundleName;
                     File.WriteAllBytes(filepath, bytes);
@@ -84,18 +149,6 @@ namespace RHFramework
             }
 
             downloadDone();
-        }
-
-        private string GetRemoteAssetBundleURLBase()
-        {
-            if (HotUpdateStaticConfig.HotUpdateType == HotUpdateType.full)
-            {
-                return FullHotUpdateMgr.Instance.Config.RemoteAssetBundleURLBase;
-            }
-            else
-            {
-                return IncrementHotUpdateMgr.Instance.Config.RemoteAssetBundleURLBase;
-            }
         }
     }
 }

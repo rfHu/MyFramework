@@ -28,8 +28,8 @@ namespace RHFramework
 
             var resVersion = new ResVersion()
             {
-                Version = 15,
-                AssetBundleNames = AssetDatabase.GetAllAssetBundleNames().Where(name => File.Exists(string.Format("{0}/{1}", outputPath, name)) && !HotUpdateStaticConfig.LocalBundleNames.Contains(name)).ToList(),
+                Version = HotUpdateStaticConfig.RemoteBundleVersion,
+                AssetBundleNames = AssetDatabase.GetAllAssetBundleNames().Where(name => File.Exists(string.Format("{0}/{1}", outputPath, name)) && !HotUpdateStaticConfig.UnrecordBundleName.Contains(name)).ToList(),
                 AssetBundleMD5s = AssetBundleMD5s
             };
 
@@ -48,7 +48,7 @@ namespace RHFramework
             for (int i = 0; i < AssetBundleNames.Length; i++)
             {
                 var bundlePath = string.Format("{0}/{1}", outputPath, AssetBundleNames[i]);
-                if (File.Exists(bundlePath))
+                if (File.Exists(bundlePath) && !HotUpdateStaticConfig.UnrecordBundleName.Contains(AssetBundleNames[i]))
                 {
                     var bundleMD5Str = FileMD5Tools.MD5Stream(bundlePath);
                     AssetBundleMD5s.Add(bundleMD5Str);

@@ -16,15 +16,18 @@ namespace RHFramework.Tests
 
             var finished = false;
 
-            IncrementHotUpdateMgr.Instance.HasNewVersionRes((needDownloadResVersion, needUpdate) => 
+            IncrementHotUpdateMgr.Instance.HasNewVersionRes((needDownloadResVersion) => 
             {
-                if (needUpdate)
+                if (needDownloadResVersion.AssetBundleNames.Count != 0)
                 {
-                    IncrementHotUpdateMgr.Instance.UpdateRes(needDownloadResVersion, () => 
+                    IncrementHotUpdateMgr.Instance.UpdateRes(needDownloadResVersion.AssetBundleNames, () => 
                     {
                         finished = true;
                         Debug.Log("更新完毕，继续");
                         Assert.IsTrue(true);
+                    },error=> 
+                    {
+                        Debug.Log(error);
                     });
                 }
                 else

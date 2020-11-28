@@ -20,10 +20,11 @@ namespace RHFramework
             return Application.streamingAssetsPath + "/AssetBundles/" + ResKitUtil.GetPlatformName() + "/" + bundleName;
         }
 
-        //填写的bundle名将不录入json文件，不会被热更新下载
-        public static string[] LocalBundleNames = new string[]
-        {
+        public static int RemoteBundleVersion = 0;
 
+        //不记录在ResVersion中的包名
+        public static string[] UnrecordBundleName =
+        {
         };
     }
 }
